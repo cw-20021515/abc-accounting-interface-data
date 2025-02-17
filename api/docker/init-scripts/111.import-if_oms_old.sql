@@ -33,10 +33,10 @@ COPY if_customer(customer_id,email,phone,user_id,last_name,first_name,account_ty
     DELIMITER ','
     CSV HEADER;
 
-COPY if_customer(customer_id,email,phone,user_id,last_name,first_name,account_type,customer_status,referrer_code,create_time,update_time)
-    FROM '/data/iface/oms_old/if_customer_vendor.csv'
-    DELIMITER ','
-    CSV HEADER;
+-- COPY if_customer(customer_id,email,phone,user_id,last_name,first_name,account_type,customer_status,referrer_code,create_time,update_time)
+--     FROM '/data/iface/oms_old/if_customer_vendor.csv'
+--     DELIMITER ','
+--     CSV HEADER;
 
 COPY if_invoice(id,invoice_id,contract_id,invoice_status,billing_month,payment_due_date,total_price,charges,create_time,update_time)
     FROM '/data/iface/oms_old/if_invoice.csv'
@@ -53,20 +53,20 @@ COPY if_onetime_payment(id,payment_id,transaction_type,order_id,transaction_id,p
     DELIMITER ','
     CSV HEADER;
 
-COPY if_onetime_payment(id,payment_id,transaction_type,order_id,transaction_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,prepaid_amount,registration_price,promotions,tax_lines,address,refund,update_time)
-    FROM '/data/iface/oms_old/if_onetime_payment_2502.csv'
-    DELIMITER ','
-    CSV HEADER;
+-- COPY if_onetime_payment(id,payment_id,transaction_type,order_id,transaction_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,prepaid_amount,registration_price,promotions,tax_lines,address,refund,update_time)
+--     FROM '/data/iface/oms_old/if_onetime_payment_2502.csv'
+--     DELIMITER ','
+--     CSV HEADER;
 
 COPY if_order_item(id,order_item_id,order_item_status,last_order_item_status,order_product_type,order_item_type,order_id,channel_id,customer_id,referrer_code,contract_id,material_id,quantity,address,tax,tax_lines,subtotal_price,item_price,discount_price,registration_price,create_time,update_time)
     FROM '/data/iface/oms_old/if_order_item.csv'
     DELIMITER ','
     CSV HEADER;
 
-COPY if_order_item(id,order_item_id,order_item_status,last_order_item_status,order_product_type,order_item_type,order_id,channel_id,customer_id,referrer_code,contract_id,material_id,quantity,address,tax,tax_lines,subtotal_price,item_price,discount_price,registration_price,create_time,update_time)
-    FROM '/data/iface/oms_old/if_order_item_2502.csv'
-    DELIMITER ','
-    CSV HEADER;
+-- COPY if_order_item(id,order_item_id,order_item_status,last_order_item_status,order_product_type,order_item_type,order_id,channel_id,customer_id,referrer_code,contract_id,material_id,quantity,address,tax,tax_lines,subtotal_price,item_price,discount_price,registration_price,create_time,update_time)
+--     FROM '/data/iface/oms_old/if_order_item_2502.csv'
+--     DELIMITER ','
+--     CSV HEADER;
 
 COPY if_service_charge(id,service_charge_id,charge_status,last_charge_status,service_flow_id,service_billing_type,create_time,update_time)
     FROM '/data/iface/oms_old/if_service_charge.csv'
