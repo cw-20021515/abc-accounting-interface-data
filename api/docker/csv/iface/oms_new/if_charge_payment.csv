@@ -1,0 +1,1 @@
+id,payment_id,transaction_type,charge_id,invoice_id,transaction_id,payment_method,payment_time,total_price,tax,subtotal_price,charge_items,tax_lines,installment_months,currency,address

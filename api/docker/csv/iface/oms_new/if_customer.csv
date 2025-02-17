@@ -1,0 +1,22 @@
+customer_id,email,phone,user_id,last_name,first_name,account_type,customer_status,referrer_code,create_time,update_time
+f71968c8a4c3fd5926e4c4bb321bb79b,jhjeon@coway.com,12345678111,jhjeon@coway.com,jeon,jihun,INDIVIDUAL,ACTIVE,SHX3TeRFve8Q,2025-02-13 06:28:39.500182,2025-02-13 10:55:21.713123
+dad5ba42340e866599062feb98effbaa,hanh.nguyen17@ntq-solution.com.vn,+84987654321,hanh.nguyen17@ntq-solution.com.vn,Test,NTQ,INDIVIDUAL,ACTIVE,gWbUQ50twy9w,2025-02-13 10:57:58.222007,2025-02-13 10:57:58.223193
+79aa2ca46d29fdbe3610e9776b679f68,nttung1211@gmail.com,6028672690,nttung1211@gmail.com,Nguyen,Tung,INDIVIDUAL,ACTIVE,pKJLqPnE6hqq,2025-02-14 09:30:19.938260,2025-02-14 09:30:19.946877
+7923ff6cce4d5183753ce7f7bb917bb2,quynh.bui+9@ntq-solution.com.vn,16025566896,quynh.bui+9@ntq-solution.com.vn,D,S,INDIVIDUAL,ACTIVE,GxBAR5aCWaa1,2025-02-14 07:11:44.751310,2025-02-14 10:10:21.390111
+2a0132b142f79252c00059fa9ce4a532,hanh.nguyen17+1421@ntq-solution.com.vn,+84987654321,hanh.nguyen17+1421@ntq-solution.com.vn,Test,NTQ,INDIVIDUAL,ACTIVE,zul4657yri7V,2025-02-14 10:41:14.239339,2025-02-14 10:41:14.241118
+ac27ced97d363281070371f039f29838,hanh.nguyen17+122@ntq-solution.com.vn,+821035348697,hanh.nguyen17+122@ntq-solution.com.vn,nguyen,hanh,INDIVIDUAL,ACTIVE,jK9L8A6G9GeJ,2025-02-14 02:57:25.504083,2025-02-14 02:57:25.505060
+81feed3eb7c38862d4d490586e0ac4d0,1@any.pink,+821041238821,1@any.pink,qq,qq,INDIVIDUAL,ACTIVE,B71j9tp8MLKH,2025-02-13 05:44:54.145698,2025-02-13 05:44:54.148736
+dad3bf0884a05aaffe5f589a4eebd331,bluenight1020@hanmail.net,+821065577307,bluenight1020@hanmail.net,IL,SUN,INDIVIDUAL,ACTIVE,r3LTbB0cTjLE,2025-02-13 05:52:58.778617,2025-02-13 05:52:58.879589
+3009174df135e2752f0c50bc270681ad,hanh.nguyen17+1421@ntq-solution.com.vn,+84987654321,hanh.nguyen17+1421@ntq-solution.com.vn,Test,NTQ,INDIVIDUAL,ACTIVE,M7VwJphEZ18J,2025-02-14 10:41:26.404880,2025-02-14 10:41:26.405513
+53a5a56db097a5e4ade0602e06e2e3e5,tung.nguyen16+3@ntq-solution.com.vn,6024213544,tung.nguyen16+3@ntq-solution.com.vn,Nguyen,Tung,INDIVIDUAL,ACTIVE,NspK061DMAoS,2025-02-13 08:50:20.681126,2025-02-14 03:08:45.872120
+561eef0851d5fa48ab58dcb5d095bd44,bluenight1020@hanmail.net,+821065577307,,IL,SUN,INDIVIDUAL,ACTIVE,wKf7rdn7Vetk,2025-02-14 06:10:17.959566,2025-02-14 06:10:17.961063
+629e3409a0a76feb8507252e1635c0d8,hanh.nguyen17+121@ntq-solution.com.vn,+84987654321,hanh.nguyen17+121@ntq-solution.com.vn,Nguyen,Hanh,INDIVIDUAL,ACTIVE,7wcnrgMjqQEa,2025-02-13 06:38:20.340820,2025-02-13 06:38:20.361833
+8dddc3c0df38f528d01edbb2e39ce0b1,hanh.nguyen17+121@ntq-solution.com.vn,+84987654321,hanh.nguyen17+121@ntq-solution.com.vn,Nguyen,Hanh,INDIVIDUAL,ACTIVE,UesDB1I6a3fy,2025-02-13 06:58:56.242428,2025-02-13 06:58:56.243483
+adad220f04af6decc68d330fc600e114,t2412493@partner.coway.com,12345678111,t2412493@partner.coway.com,lee,seonghyeon,INDIVIDUAL,ACTIVE,P1NLLuw1ks2p,2025-02-13 08:05:19.104074,2025-02-13 08:05:19.203095
+1b0ffaca85bda96f1e77287d00c45a88,hwang.sy@gsneotek.com,+12345678111,hwang.sy@gsneotek.com,SaeYoung,Hwang,INDIVIDUAL,ACTIVE,sK04AVys6GIn,2025-02-14 02:17:56.716264,2025-02-14 02:17:56.730084
+ae6396cf0005c9420b8b53c45d91ab18,hanh.nguyen17@ntq-solution.com.vn,+821046772909,hanh.nguyen17@ntq-solution.com.vn,Test,NTQ,INDIVIDUAL,ACTIVE,B8cPjayEPWAu,2025-02-13 10:57:24.710697,2025-02-14 02:37:03.786136
+d86d87dd3bff4925bc117e4398e9a656,nhung.vu+29@ntq-solution.com.vn,+12312322334,nhung.vu+29@ntq-solution.com.vn,HaiChin,Nhung,INDIVIDUAL,ACTIVE,2LCzxgpI3JUu,2025-02-14 07:37:41.519574,2025-02-14 07:37:41.530072
+2dcf8331b8e00fec30fa29f51ef62672,steve.chung@coway.com,+821048998690,steve.chung@coway.com,Chung,JaeYong,INDIVIDUAL,ACTIVE,Jl8IBVjeVIQ5,2025-02-14 07:54:36.994974,2025-02-14 07:54:37.004976
+3943efd99703cd94a577469fbe5983ea,nam.nguyen12+stg@ntq-solution.com.vn,+821035348697,nam.nguyen12+stg@ntq-solution.com.vn,Nguyen,nam,INDIVIDUAL,ACTIVE,SHX3TeRFve8Q,2025-02-13 13:04:36.342457,2025-02-13 13:04:36.382977
+301f71d0ea791d1225d5b817daac918d,nhung.vu+27@ntq-solution.com.vn,+12312322334,nhung.vu+27@ntq-solution.com.vn,HaiBay,Nhung,INDIVIDUAL,ACTIVE,UsdDw9fSjrlO,2025-02-14 08:03:34.123707,2025-02-14 08:03:34.130773
+e77062e77f19139ca44de13081f405ee,hanh.nguyen17+122@ntq-solution.com.vn,+821035348697,hanh.nguyen17+122@ntq-solution.com.vn,nguyen,hanh,INDIVIDUAL,ACTIVE,95GmgmB6HrKP,2025-02-14 02:57:04.010529,2025-02-14 08:05:20.709055
