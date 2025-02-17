@@ -1,0 +1,56 @@
+package com.abc.us.accounting.collects.domain.type
+
+enum class ItemCreateTypeEnum(val symbol: String, val description: String) {
+    GOODS("G", "재화"),
+    SALES("S", "매출"),
+    DISMANTLE("D", "해체비"),
+
+
+    SERVICE_SALES("SS", "서비스 매출"),
+    SERVICE_INCOME("SI", "서비스 매출"),
+    FILTER_DELIVERY("FD", "매출"),
+    GOODS_BILL("GB", "재화-청구"),
+    SERVICE_PREPAYMENT("SP", "서비스 선수금"),
+    INTEREST_INCOME("II", "이자수익"),
+    REGISTRATION_FEE("RF", "등록비"),
+    PENALTY_FEE("PF", "위약금"),
+    PAID_SERVICE("PS", "유료서비스"),
+    CONSUME_FILTER("CF", "소모품-필터"),
+    CONSUME_PART("CP", "소모품-부품"),
+    GRIR_GOODS("GG", "GR/IR-상품"),
+    GRIR_FILTER("GF", "GR/IR-필터"),
+    GRIR_PART("GP", "GR/IR-부품"),
+    LATE_FEE("LAF", "연체료"),
+    LOSS_FEE("LOF", "분실료"),
+    PAID_SERVICE_PART("PSP", "유료서비스-부품"),
+    PRICE_DIFFERENCE_MERCHANDISE("PDM", "가격차이-상품"),
+    PRICE_DIFFERENCE_FILTER("PDF", "가격차이-필터"),
+    PRICE_DIFFERENCE_PART("PDP", "가격차이-부품"),
+    NONE("N", "기타")
+
+
+//    GOODS("GOODS", "재화"),
+//    SALES("SALES", "매출"),
+//    SERVICE_SALES("SERVICE_REVENUE", "서비스 매출"),
+//    SERVICE_INCOME("SERVICE_INCOME", "서비스 매출"),
+//    FILTER_DELIVERY("REVENUE", "매출"),
+//    GOODS_BILL("GOODS_BILL", "재화-청구"),
+//    SERVICE_PREPAYMENT("SERVICE_PREPAYMENT", "서비스 선수금"),
+//    INTEREST_INCOME("INTEREST_INCOME", "이자수익"),
+//    REGISTRATION_FEE("REGISTRATION_FEE", "등록비"),
+//    LATE_FEE("LATE_FEE", "연체료"),
+//    PENALTY_FEE("PENALTY_FEE", "위약금"),
+//    LOSS_FEE("LOSS_FEE", "분실료"),
+//    PAID_SERVICE("PAID_SERVICE", "유료서비스"),
+//    PAID_SERVICE_PART("PAID_SERVICE_PART", "유료서비스-부품"),
+//    DISMANTLE("DISMANTLE", "해체비"),
+//    CONSUME_FILTER("CONSUME_FILTER", "소모품-필터"),
+//    CONSUME_PART("CONSUME_PART", "소모품-부품"),
+//    GRIR_GOODS("GRIR_GOODS", "GR/IR-상품"),
+//    GRIR_FILTER("GRIR_FILTER", "GR/IR-필터"),
+//    GRIR_PART("GRIR_PART", "GR/IR-부품"),
+//    PRICE_DIFFERENCE_MERCHANDISE("PRICE_DIFFERENCE_MERCHANDISE", "가격차이-상품"),
+//    PRICE_DIFFERENCE_FILTER("PRICE_DIFFERENCE_FILTER", "가격차이-필터"),
+//    PRICE_DIFFERENCE_PART("PRICE_DIFFERENCE_PART", "가격차이-부품"),
+//    OTHER("OTHER", "기타")
+}

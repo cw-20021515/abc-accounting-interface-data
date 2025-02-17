@@ -1,0 +1,47 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalPricingMaster/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Pricing Master",
+  "description": "렌탈 가격 마스터",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "material_series_code": {
+        "type": "string",
+        "description": "품목 코드"
+      },
+      "rental_code": {
+        "type": "string",
+        "description": "렌탈 코드 (https://abc.necoa.dev/system/common-masters/RentalCodeMaster)"
+      },
+      "material_care_type": {
+        "type": "string",
+        "description": "관리 방식 (https://abc.coway.dev/system/common-codes/common-code?id=MaterialCareType)"
+      },
+      "price": {
+        "type": "number",
+        "description": "가격"
+      },
+      "currency": {
+        "type": "string",
+        "description": "통화 (USD)"
+      },
+      "tax_included": {
+        "type": "boolean",
+        "description": "세금 포함 여부 (false)"
+      },
+      "period_type": {
+        "type": "string",
+        "description": "기준 (MONTHLY, https://abc.necoa.dev/system/common-codes/common-code?id=PeriodType)"
+      }
+    },
+    "required": [
+      "rental_code",
+      "material_care_type",
+      "price",
+      "material_series_code"
+    ],
+    "additionalProperties": false
+  }
+}

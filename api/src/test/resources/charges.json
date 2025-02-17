@@ -1,0 +1,1754 @@
+{
+  "code": "SUCCESS",
+  "message": "Success.",
+  "data": {
+    "page": {
+      "current": 1,
+      "total": 1,
+      "size": 100,
+      "totalItems": 60
+    },
+    "items": [
+      {
+        "chargeId": "0105433700038-0101-50000A-60",
+        "billingCycle": 60,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzz",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637732Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888781Z",
+        "updateTime": "2024-12-03T13:11:57.654713Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-11",
+        "startDate": "2029-11-01",
+        "endDate": "2029-11-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-59",
+        "billingCycle": 59,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzx",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637699Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88875Z",
+        "updateTime": "2024-12-03T13:11:57.654693Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-10",
+        "startDate": "2029-10-01",
+        "endDate": "2029-10-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-58",
+        "billingCycle": 58,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzv",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637662Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888719Z",
+        "updateTime": "2024-12-03T13:11:57.654673Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-09",
+        "startDate": "2029-09-01",
+        "endDate": "2029-09-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-57",
+        "billingCycle": 57,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzt",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637629Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888688Z",
+        "updateTime": "2024-12-03T13:11:57.654653Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-08",
+        "startDate": "2029-08-01",
+        "endDate": "2029-08-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-56",
+        "billingCycle": 56,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzr",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637596Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888657Z",
+        "updateTime": "2024-12-03T13:11:57.654633Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-07",
+        "startDate": "2029-07-01",
+        "endDate": "2029-07-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-55",
+        "billingCycle": 55,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzp",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637563Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888625Z",
+        "updateTime": "2024-12-03T13:11:57.654613Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-06",
+        "startDate": "2029-06-01",
+        "endDate": "2029-06-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-54",
+        "billingCycle": 54,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzn",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.63753Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888593Z",
+        "updateTime": "2024-12-03T13:11:57.654594Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-05",
+        "startDate": "2029-05-01",
+        "endDate": "2029-05-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-53",
+        "billingCycle": 53,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzl",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637497Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88856Z",
+        "updateTime": "2024-12-03T13:11:57.654574Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-04",
+        "startDate": "2029-04-01",
+        "endDate": "2029-04-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-52",
+        "billingCycle": 52,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzj",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637462Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888266Z",
+        "updateTime": "2024-12-03T13:11:57.654553Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-03",
+        "startDate": "2029-03-01",
+        "endDate": "2029-03-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-51",
+        "billingCycle": 51,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzh",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637429Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888235Z",
+        "updateTime": "2024-12-03T13:11:57.654531Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-02",
+        "startDate": "2029-02-01",
+        "endDate": "2029-02-28"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-50",
+        "billingCycle": 50,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzf",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637396Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888204Z",
+        "updateTime": "2024-12-03T13:11:57.654511Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2029-01",
+        "startDate": "2029-01-01",
+        "endDate": "2029-01-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-49",
+        "billingCycle": 49,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzd",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637364Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888173Z",
+        "updateTime": "2024-12-03T13:11:57.65449Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-12",
+        "startDate": "2028-12-01",
+        "endDate": "2028-12-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-48",
+        "billingCycle": 48,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzb",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637329Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888142Z",
+        "updateTime": "2024-12-03T13:11:57.65447Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-11",
+        "startDate": "2028-11-01",
+        "endDate": "2028-11-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-47",
+        "billingCycle": 47,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzZ",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637297Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88811Z",
+        "updateTime": "2024-12-03T13:11:57.654451Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-10",
+        "startDate": "2028-10-01",
+        "endDate": "2028-10-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-46",
+        "billingCycle": 46,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzX",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637265Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888079Z",
+        "updateTime": "2024-12-03T13:11:57.654432Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-09",
+        "startDate": "2028-09-01",
+        "endDate": "2028-09-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-45",
+        "billingCycle": 45,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzV",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637232Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888047Z",
+        "updateTime": "2024-12-03T13:11:57.654412Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-08",
+        "startDate": "2028-08-01",
+        "endDate": "2028-08-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-44",
+        "billingCycle": 44,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzT",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637199Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.888014Z",
+        "updateTime": "2024-12-03T13:11:57.654394Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-07",
+        "startDate": "2028-07-01",
+        "endDate": "2028-07-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-43",
+        "billingCycle": 43,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzR",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637166Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887949Z",
+        "updateTime": "2024-12-03T13:11:57.654375Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-06",
+        "startDate": "2028-06-01",
+        "endDate": "2028-06-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-42",
+        "billingCycle": 42,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzP",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637131Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.8878Z",
+        "updateTime": "2024-12-03T13:11:57.654356Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-05",
+        "startDate": "2028-05-01",
+        "endDate": "2028-05-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-41",
+        "billingCycle": 41,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzN",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.637088Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887766Z",
+        "updateTime": "2024-12-03T13:11:57.654337Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-04",
+        "startDate": "2028-04-01",
+        "endDate": "2028-04-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-40",
+        "billingCycle": 40,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzL",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.63703Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887711Z",
+        "updateTime": "2024-12-03T13:11:57.654318Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-03",
+        "startDate": "2028-03-01",
+        "endDate": "2028-03-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-39",
+        "billingCycle": 39,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzJ",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636889Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887427Z",
+        "updateTime": "2024-12-03T13:11:57.654299Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-02",
+        "startDate": "2028-02-01",
+        "endDate": "2028-02-29"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-38",
+        "billingCycle": 38,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzH",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636854Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887396Z",
+        "updateTime": "2024-12-03T13:11:57.65428Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2028-01",
+        "startDate": "2028-01-01",
+        "endDate": "2028-01-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-37",
+        "billingCycle": 37,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzF",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636819Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887364Z",
+        "updateTime": "2024-12-03T13:11:57.65426Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-12",
+        "startDate": "2027-12-01",
+        "endDate": "2027-12-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-36",
+        "billingCycle": 36,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzD",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636782Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887332Z",
+        "updateTime": "2024-12-03T13:11:57.65424Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-11",
+        "startDate": "2027-11-01",
+        "endDate": "2027-11-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-35",
+        "billingCycle": 35,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXzB",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.63674Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887301Z",
+        "updateTime": "2024-12-03T13:11:57.65422Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-10",
+        "startDate": "2027-10-01",
+        "endDate": "2027-10-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-34",
+        "billingCycle": 34,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXz9",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636659Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88727Z",
+        "updateTime": "2024-12-03T13:11:57.654198Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-09",
+        "startDate": "2027-09-01",
+        "endDate": "2027-09-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-33",
+        "billingCycle": 33,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXz7",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636625Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887238Z",
+        "updateTime": "2024-12-03T13:11:57.654178Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-08",
+        "startDate": "2027-08-01",
+        "endDate": "2027-08-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-32",
+        "billingCycle": 32,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXz5",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636591Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887206Z",
+        "updateTime": "2024-12-03T13:11:57.654159Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-07",
+        "startDate": "2027-07-01",
+        "endDate": "2027-07-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-31",
+        "billingCycle": 31,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXz3",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636557Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887174Z",
+        "updateTime": "2024-12-03T13:11:57.654141Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-06",
+        "startDate": "2027-06-01",
+        "endDate": "2027-06-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-30",
+        "billingCycle": 30,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXz1",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636523Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887143Z",
+        "updateTime": "2024-12-03T13:11:57.654123Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-05",
+        "startDate": "2027-05-01",
+        "endDate": "2027-05-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-29",
+        "billingCycle": 29,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXyz",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636488Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887111Z",
+        "updateTime": "2024-12-03T13:11:57.654104Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-04",
+        "startDate": "2027-04-01",
+        "endDate": "2027-04-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-28",
+        "billingCycle": 28,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaMEXyx",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636454Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887079Z",
+        "updateTime": "2024-12-03T13:11:57.654085Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-03",
+        "startDate": "2027-03-01",
+        "endDate": "2027-03-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-27",
+        "billingCycle": 27,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqr",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.63642Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.887025Z",
+        "updateTime": "2024-12-03T13:11:57.654066Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-02",
+        "startDate": "2027-02-01",
+        "endDate": "2027-02-28"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-26",
+        "billingCycle": 26,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqp",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636386Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886993Z",
+        "updateTime": "2024-12-03T13:11:57.654048Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2027-01",
+        "startDate": "2027-01-01",
+        "endDate": "2027-01-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-25",
+        "billingCycle": 25,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqn",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636349Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88696Z",
+        "updateTime": "2024-12-03T13:11:57.654028Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-12",
+        "startDate": "2026-12-01",
+        "endDate": "2026-12-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-24",
+        "billingCycle": 24,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwql",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636314Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886921Z",
+        "updateTime": "2024-12-03T13:11:57.654007Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-11",
+        "startDate": "2026-11-01",
+        "endDate": "2026-11-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-23",
+        "billingCycle": 23,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqj",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636279Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886889Z",
+        "updateTime": "2024-12-03T13:11:57.653988Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-10",
+        "startDate": "2026-10-01",
+        "endDate": "2026-10-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-22",
+        "billingCycle": 22,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqh",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636244Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886857Z",
+        "updateTime": "2024-12-03T13:11:57.653969Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-09",
+        "startDate": "2026-09-01",
+        "endDate": "2026-09-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-21",
+        "billingCycle": 21,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqf",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636209Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886811Z",
+        "updateTime": "2024-12-03T13:11:57.65395Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-08",
+        "startDate": "2026-08-01",
+        "endDate": "2026-08-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-20",
+        "billingCycle": 20,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqd",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636174Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88678Z",
+        "updateTime": "2024-12-03T13:11:57.653931Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-07",
+        "startDate": "2026-07-01",
+        "endDate": "2026-07-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-19",
+        "billingCycle": 19,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqb",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636136Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886748Z",
+        "updateTime": "2024-12-03T13:11:57.653912Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-06",
+        "startDate": "2026-06-01",
+        "endDate": "2026-06-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-18",
+        "billingCycle": 18,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqZ",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.636077Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886717Z",
+        "updateTime": "2024-12-03T13:11:57.653892Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-05",
+        "startDate": "2026-05-01",
+        "endDate": "2026-05-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-17",
+        "billingCycle": 17,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqX",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635902Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886685Z",
+        "updateTime": "2024-12-03T13:11:57.653874Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-04",
+        "startDate": "2026-04-01",
+        "endDate": "2026-04-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-16",
+        "billingCycle": 16,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqV",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635869Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886655Z",
+        "updateTime": "2024-12-03T13:11:57.653855Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-03",
+        "startDate": "2026-03-01",
+        "endDate": "2026-03-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-15",
+        "billingCycle": 15,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqT",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635836Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886624Z",
+        "updateTime": "2024-12-03T13:11:57.653837Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-02",
+        "startDate": "2026-02-01",
+        "endDate": "2026-02-28"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-14",
+        "billingCycle": 14,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqR",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635803Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886593Z",
+        "updateTime": "2024-12-03T13:11:57.653818Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2026-01",
+        "startDate": "2026-01-01",
+        "endDate": "2026-01-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-13",
+        "billingCycle": 13,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqP",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635767Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886562Z",
+        "updateTime": "2024-12-03T13:11:57.6538Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-12",
+        "startDate": "2025-12-01",
+        "endDate": "2025-12-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-12",
+        "billingCycle": 12,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqN",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635732Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88653Z",
+        "updateTime": "2024-12-03T13:11:57.653781Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-11",
+        "startDate": "2025-11-01",
+        "endDate": "2025-11-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-11",
+        "billingCycle": 11,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqL",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635697Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886498Z",
+        "updateTime": "2024-12-03T13:11:57.653762Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-10",
+        "startDate": "2025-10-01",
+        "endDate": "2025-10-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-10",
+        "billingCycle": 10,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqJ",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635658Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886466Z",
+        "updateTime": "2024-12-03T13:11:57.653743Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-09",
+        "startDate": "2025-09-01",
+        "endDate": "2025-09-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-09",
+        "billingCycle": 9,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqH",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635612Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886431Z",
+        "updateTime": "2024-12-03T13:11:57.653724Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-08",
+        "startDate": "2025-08-01",
+        "endDate": "2025-08-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-08",
+        "billingCycle": 8,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqF",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635573Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886355Z",
+        "updateTime": "2024-12-03T13:11:57.653705Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-07",
+        "startDate": "2025-07-01",
+        "endDate": "2025-07-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-07",
+        "billingCycle": 7,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqD",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635538Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886323Z",
+        "updateTime": "2024-12-03T13:11:57.653685Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-06",
+        "startDate": "2025-06-01",
+        "endDate": "2025-06-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-06",
+        "billingCycle": 6,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwqB",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635503Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88629Z",
+        "updateTime": "2024-12-03T13:11:57.653666Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-05",
+        "startDate": "2025-05-01",
+        "endDate": "2025-05-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-05",
+        "billingCycle": 5,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwq9",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635468Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886259Z",
+        "updateTime": "2024-12-03T13:11:57.653645Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-04",
+        "startDate": "2025-04-01",
+        "endDate": "2025-04-30"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-04",
+        "billingCycle": 4,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwq7",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635431Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886226Z",
+        "updateTime": "2024-12-03T13:11:57.653624Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-03",
+        "startDate": "2025-03-01",
+        "endDate": "2025-03-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-03",
+        "billingCycle": 3,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwq5",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635389Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.88619Z",
+        "updateTime": "2024-12-03T13:11:57.653604Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-02",
+        "startDate": "2025-02-01",
+        "endDate": "2025-02-28"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-02",
+        "billingCycle": 2,
+        "totalPrice": 32.0,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 32.0,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 32.0,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwq3",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.63535Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886158Z",
+        "updateTime": "2024-12-03T13:11:57.653583Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "CREATED",
+        "targetMonth": "2025-01",
+        "startDate": "2025-01-01",
+        "endDate": "2025-01-31"
+      },
+      {
+        "chargeId": "0105433700038-0101-50000A-01",
+        "billingCycle": 1,
+        "totalPrice": 30.08,
+        "chargeItems": [
+          {
+            "chargeItemType": "RENTAL_FEE",
+            "totalPrice": 30.08,
+            "priceDetail": {
+              "discountPrice": 0.0,
+              "itemPrice": 30.08,
+              "currency": "USD",
+              "prepaidAmount": 0.0,
+              "promotions": []
+            },
+            "chargeItemId": "1Z1oJaLwwq1",
+            "quantity": 1,
+            "isTaxExempt": false,
+            "createTime": "2024-12-03T13:11:57.635261Z"
+          }
+        ],
+        "createTime": "2024-12-02T08:05:20.886105Z",
+        "updateTime": "2024-12-03T13:11:57.653555Z",
+        "contractId": "0105433700038-0101-50000A",
+        "chargeStatus": "SCHEDULED",
+        "targetMonth": "2024-12",
+        "startDate": "2024-12-03",
+        "endDate": "2024-12-31"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+id,material_series_code,rental_distribution_type,onetime_price,membership_price,membership_dcprice_c24,free_service_duration,start_date
+1,NECOA_ROCT,SP02,1540.0,10.0,7.0,36,2024-01-01
+2,NECOA_NTCT,SP02,2230.0,10.0,7.0,36,2024-01-01
+3,NECOA_ROICE,SP02,1540.0,10.0,7.0,36,2024-01-01
+4,NECOA_ROBI_HP,SP02,1510.0,10.0,7.0,36,2024-01-01
+5,NECOA_ROBI,SP02,1890.0,10.0,7.0,36,2024-01-01
+6,NECOA_NTBI,SP02,1680.0,10.0,7.0,36,2024-01-01

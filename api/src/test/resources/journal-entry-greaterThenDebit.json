@@ -1,0 +1,71 @@
+{
+  "docNumber": "SA2500701156",
+  "txnDate": "2024-11-29T00:00:00.000+00:00",
+  "privateNote": "[일시불] 대금입금",
+  "linkedTxn": [],
+  "line": [
+    {
+      "lineNum": 1,
+      "description": "[일시불] 대금입금-현금-보통예금",
+      "amount": 19.5250,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 2,
+      "description": "[일시불] 대금입금-지급수수료-결제수수료",
+      "amount": 8.8750,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 3,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 1.7750,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 4,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 0.0000,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 5,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 0.1420,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 4,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 0.4260,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    },
+    {
+      "lineNum": 6,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 30.7430,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "CREDIT"
+      }
+    }
+  ]
+}

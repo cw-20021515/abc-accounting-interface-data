@@ -1,0 +1,108 @@
+company_code,account_code,name,description,account_class,account_type,is_open_item_mgmt,is_active,qbo_account_type,qbo_account_subtype,system_source
+N200,4103010,Sales Goods-Retail,상품매출-일시불,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,ABC
+N200,4103020,Sales Goods-O-Lease,상품매출-운용리스,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,ABC
+N200,4103030,Sales Goods-F-Lease,상품매출-금융리스,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,ABC
+N200,4103040,Merchandise Sales - After-Sales Service,상품매출-A/S,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,ABC
+N200,4113010,Sales Goods-Rental,렌탈매출-렌탈료,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,ABC
+N200,4116010,Sales Service-Labor,용역매출-설치해체,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116020,Sales Service-Labor-O-Lease,용역매출-운용리스,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116030,Sales Service-Labor-F-Lease,용역매출-금융리스,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116040,Service Revenue - After-Sales Service,용역매출-A/S,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116041,Service Revenue-Parts,용역매출-A/S-부품,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116050,Sales Service-Membership,멤버십매출,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4116060,On-site Management Revenue,방문관리매출,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,ABC
+N200,4199010,Miscellaneous Income-Goods,기타매출-상품,REVENUE,SALES,N,Y,Income,OtherPrimaryIncome,ABC
+N200,4199020,Miscellaneous Income-Lease-RegistrationFee,기타매출-리스등록비,REVENUE,SALES,N,Y,Income,OtherPrimaryIncome,ABC
+N200,4199030,Miscellaneous Income-Filter,기타매출-필터,REVENUE,SALES,N,Y,Income,OtherPrimaryIncome,ABC
+N200,4199040,Miscellaneous Income-Parts,기타매출-부품,REVENUE,SALES,N,Y,Income,OtherPrimaryIncome,ABC
+N200,4201010,Interest Income-F Lease,이자수익-금융리스,REVENUE,GENERAL,N,Y,Other Income,InterestEarned,ABC
+N200,4237010,Penalty Income,위약금,REVENUE,GENERAL,N,Y,Other Income,OtherMiscellaneousIncome,ABC
+N200,4237020,Penalty Income - O Lease,위약금-운용리스,REVENUE,GENERAL,N,Y,Other Income,OtherMiscellaneousIncome,ABC
+N200,4237030,Penalty Income - F Lease,위약금-금융리스,REVENUE,GENERAL,N,Y,Other Income,OtherMiscellaneousIncome,ABC
+N200,4299010,Miscellaneous Income - Late Fee,잡이익-연체료,REVENUE,GENERAL,N,Y,Other Income,OtherMiscellaneousIncome,ABC
+N200,4299020,Miscellaneous Income - Lost Fee,잡이익-분실료,REVENUE,GENERAL,N,Y,Other Income,OtherMiscellaneousIncome,ABC
+N200,5103010,COGS-Retail,상품매출원가-일시불,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5103020,COGS-F-Lease,상품매출원가-금융리스,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5103030,COGS-AS,상품매출원가-A/S,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5103040,COGS-Disposal,상품매출원가-폐기,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5113010,COGS-O-Lease-Depreciation,운용리스매출원가-감가,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5113020,Cost of Rental Income - Parts,렌탈매출원가-부품,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116010,Cost of Self-management Revenue - Filter,자가관리매출원가-필터,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116020,Cost of On-site Management Revenue - Filter,방문관리매출원가-필터,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116030,Cost of Membership Revenue,멤버십매출원가,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116040,Cost of Membership Revenue - On-site Allowance,멤버십매출원가-방문수당,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116050,COGS-Membership-Parts,멤버십매출원가-부품,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5116060,COGS-Membership-Filters,멤버십매출원가-필터,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5199001,Cost of Other Sales,기타매출원가,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5199010,Cost of Other Sales-Filter,기타매출원가-필터,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5199020,Cost of Other Sales-Parts,기타매출원가-부품,EXPENSE,COGS,N,Y,Cost of Goods Sold,OtherCostsOfServiceCos,ABC
+N200,5199030,Price Variance-Goods,가격차이-상품,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5199031,Price Variance-Filters,가격차이-필터,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5199032,Price Variance-Trans,가격차이-부품,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5199033,Price Variance-Others,가격차이-운임,EXPENSE,COGS,N,Y,Cost of Goods Sold,ShippingFreightDeliveryCos,ABC
+N200,5199034,Price Variance-Other Additional Costs,가격차이-기타부대비용,EXPENSE,COGS,N,Y,Cost of Goods Sold,ShippingFreightDeliveryCos,ABC
+N200,5199035,Price Variance-Custom Duties,가격차이-관세,EXPENSE,COGS,N,Y,Cost of Goods Sold,ShippingFreightDeliveryCos,ABC
+N200,5199040,Price Difference Adjustment - Merchandise,가격차이정산-상품,EXPENSE,COGS,N,Y,Cost of Goods Sold,ShippingFreightDeliveryCos,ABC
+N200,5199050,PriceVariance-RentalAsset,렌탈자산-가액조정,EXPENSE,COGS,N,Y,Cost of Goods Sold,SuppliesMaterialsCogs,ABC
+N200,5301010,Salaries - After-Sales Service,급여-A/S,EXPENSE,GENERAL,N,Y,Expense,PayrollExpenses,ABC
+N200,5423010,ServiceFees-Payment-Fees,지급수수료-결제수수료,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,ABC
+N200,5423020,ServiceFees-CreditCard-Fees,지급수수료-카드수수료,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,ABC
+N200,5423030,ServiceFees-ACH-Fees,지급수수료-ACH 수수료,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,ABC
+N200,5437010,Promotion Costs - Other,판촉비-기타,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,ABC
+N200,5439010,Sales Commissions,판매수수료-판매인,EXPENSE,GENERAL,N,Y,Expense,LegalProfessionalFees,ABC
+N200,5439020,Sales Commissions - After-Sales Service,판매수수료-A/S,EXPENSE,GENERAL,N,Y,Expense,LegalProfessionalFees,ABC
+N200,5445010,Advertising Expenses - In-kind,광고선전비-현물,EXPENSE,GENERAL,N,Y,Expense,LegalProfessionalFees,ABC
+N200,5471010,LossesonSuspendedRentalAccount,렌탈자산폐기손실-가해약,EXPENSE,GENERAL,N,Y,Expense,OtherBusinessExpenses,ABC
+N200,5471020,Loss on Disposal of Rental Assets,렌탈자산폐기손실,EXPENSE,GENERAL,N,Y,Expense,OtherBusinessExpenses,ABC
+N200,5471030,Rentalassetdisposalandreplacement,렌탈자산폐기대체,EXPENSE,GENERAL,N,Y,Expense,OtherBusinessExpenses,ABC
+N200,5471040,Termination Loss - Penalty - Finance Lease,계약해지이익-위약금-금융리스,EXPENSE,GENERAL,N,Y,Expense,OtherBusinessExpenses,ABC
+N200,5471050,Termination Gain - Penalty - Finance Lease,계약해지손실-위약금-금융리스,EXPENSE,GENERAL,N,Y,Expense,OtherBusinessExpenses,ABC
+N200,5599010,MiscellaneousLosses-CustomerLossFire,잡손실-고객분실화재,EXPENSE,GENERAL,N,Y,Other Expense,OtherMiscellaneousExpense,ABC
+N200,1101010,Cash - Regular Deposits,현금-보통예금,ASSET,GENERAL,N,Y,Bank,Checking,ABC
+N200,1101020,Bank Transfers - Deposit Settlement,은행이체-입금정산,ASSET,GENERAL,N,Y,Bank,Checking,ABC
+N200,1117010,Accounts Receivable-Retail,외상매출금-일시불,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117011,Accounts Receivable-ReturnFee,외상매출금-회수비,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117012,Accounts Receivable - Filter,외상매출금-필터,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117013,Accounts Receivable - Parts,외상매출금-부품,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117014,Accounts Receivable - After-Sales Service,외상매출금-A/S,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117030,Accounts Receivable-Rental,렌탈미수금-렌탈료,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117040,Accounts Receivable-F Lease-Monthly,금융리스채권-월렌탈료,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117050,Accounts Receivable-F Lease-Registration,금융리스채권-등록비,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117060,Accounts Receivable-F Lease-Installment,금융리스채권-할부발생,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117070,Accounts Receivable-F Lease-Penalty,금융리스채권-위약금,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1117080,Accounts Receivable-Membership-Monthly,멤버십미수금-회비,ASSET,CUSTOMER,Y,Y,Accounts Receivable,AccountsReceivable,ABC
+N200,1136010,Other Receivables-CreditCard,카드미수금,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1136020,Other Receivables-CreditCard-Transfer,카드미수금-이체,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1136030,Other Receivables-CreditCard-Approval,카드미수금-승인,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1136040,Other Receivables-ACH,미수금-ACH,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1136050,Other Receivables-Late Fee,미수금-연체료,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1136060,Other Receivables-Lost Fee,미수금-분실료,ASSET,GENERAL,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1201010,Merchandise,상품,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1201020,Merchandise - Grade B,상품-B등급,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1201030,Filters,필터,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1201040,Parts,부품,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1230010,Goods in Transit-Merchandise,시송품-상품,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1230020,In transit Goods - Merchandise (Delivery),시송품-상품택배,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1230030,In transit Goods - Delivery,시송품-택배,ASSET,MATERIAL,N,Y,Other Current Asset,Inventory,ABC
+N200,1800010,GR/IR-Goods,GR/IR-상품,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1800011,GR/IR-Filters,GR/IR-필터,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1800012,GR/IR_Parts,GR/IR-부품,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1800020,GR/IR-Transit,GR/IR-운임,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1800030,GR/IR-OtherExpense,GR/IR-기타부대비용,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1800040,GR/IR-IncomeTax,GR/IR-관세,ASSET,ASSET,Y,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1900010,Temporary-Return,임시-반환입고,ASSET,ASSET,N,Y,Other Current Asset,OtherCurrentAssets,ABC
+N200,1428010,Rental Assets,렌탈자산,ASSET,ASSET,N,Y,Fixed Asset,OtherFixedAssets,ABC
+N200,1431010,Acc.Depreciation-RentalAsset,감가상각누계액-렌탈자산,ASSET,ASSET,N,Y,Fixed Asset,AccumulatedDepreciation,ABC
+N200,1431020,Acc.ImpairmentLosses-RentalAsset,손상차손누계액-렌탈자산,ASSET,ASSET,N,Y,Fixed Asset,AccumulatedDepreciation,ABC
+N200,2101010,AccountPayable,외상매입금,LIABILITY,GENERAL,N,Y,Accounts Payable,AccountsPayable,ABC
+N200,2107010,AccruedExpensesGroup,미지급금,LIABILITY,GENERAL,Y,Y,Accounts Payable,AccountsPayable,ABC
+N200,2107020,AccruedExpenses-Commision,미지급금-수수료,LIABILITY,GENERAL,Y,Y,Accounts Payable,AccountsPayable,ABC
+N200,2107030,AccruedExpenses-Payroll,미지급금-급여,LIABILITY,GENERAL,Y,Y,Accounts Payable,AccountsPayable,ABC
+N200,2111010,AdvancesfromCustomers,선수금,LIABILITY,GENERAL,Y,Y,Other Current Liability,OtherCurrentLiabilities,ABC
+N200,2115010,Deposits-SalesTaxGroup,예수금-판매세,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2115020,Deposits-SalesTax-State,예수금-판매세-State,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2115030,Deposits-SalesTax-County,예수금-판매세-County,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2115040,Deposits-SalesTax-City,예수금-판매세-City,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2115050,Deposits-SalesTax-Special,예수금-판매세-Special,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2115060,Deposits - Card - BC,예수금-카드-BC,LIABILITY,GENERAL,N,Y,Other Current Liability,SalesTaxPayable,ABC
+N200,2215010,UnearnedInterestIncome-F.Lease,현할차금-금융리스,LIABILITY,GENERAL,N,Y,Long Term Liability,OtherLongTermLiabilities,ABC

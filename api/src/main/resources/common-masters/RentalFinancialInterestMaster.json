@@ -1,0 +1,33 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalFinancialInterestMaster/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Financial Interest Master",
+  "description": "금융리스 이자율 정보",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "고유 식별자"
+      },
+      "target_month": {
+        "type": "string",
+        "description": "기준월 (예: 2024-07)"
+      },
+      "interest_rate": {
+        "type": "number",
+        "description": "이자율 (소수점 두 자리까지)"
+      },
+      "create_time": {
+        "type": "string",
+        "description": "등록일시"
+      }
+    },
+    "required": [
+      "target_month",
+      "interest_rate"
+    ],
+    "additionalProperties": false
+  }
+}

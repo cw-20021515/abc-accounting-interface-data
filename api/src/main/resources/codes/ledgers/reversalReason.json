@@ -1,0 +1,22 @@
+[
+  {
+    "code": "01",
+    "name": "Wrong posting"
+  },
+  {
+    "code": "02",
+    "name": "Wrong period"
+  },
+  {
+    "code": "03",
+    "name": "Wrong price and conditions"
+  },
+  {
+    "code": "04",
+    "name": "Return"
+  },
+  {
+    "code": "05",
+    "name": "Auto-reverse"
+  }
+]

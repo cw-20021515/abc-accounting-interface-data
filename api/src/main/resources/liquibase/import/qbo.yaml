@@ -1,0 +1,23 @@
+#COPY credential
+#    (realm_id,client_id,client_secret,company_code,email,given_name,sandbox_name,scope,sub,token_type,access_token,basic_token,id_token,refresh_token,access_token_expire_time,access_token_issued_time,create_time,refresh_token_expire_time,refresh_token_issued_time,update_time)
+#    FROM '/data/qbo/credential.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY company
+#    (code, name, description, country,currency,create_time, is_active)
+#    FROM '/data/qbo/company.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY item_create_template
+#    (template_id,asset_account_code,asset_account_name,expense_account_code,expense_account_name,income_account_code,income_account_name,associated_type,create_category,create_type,document_type,management_unit)
+#    FROM '/data/qbo/item_create_template.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#COPY association_map
+#    (association_id,associated_entity,associated_id,associated_name,associated_type,associated_value,company_code,create_time,is_active,realm_id,sandbox_name,sync_token,update_time)
+#    FROM '/data/qbo/association_map.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#

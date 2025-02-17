@@ -1,0 +1,4 @@
+id,company_code,name,description,warehouse_id,phone,time_zone,address_jsonb,is_active
+40fea0f2db2c2001,T300,Houston Branch,Houston Branch,1SSlmkCG5OV,2147476286,Asia/Seoul,"{""city"": ""Plano"", ""state"": ""TX"", ""zipCode"": ""75023"", ""address1"": ""6600 Chase Oaks Blvd"", ""latitude"": 33.0695824764, ""longitude"": -96.6958003814}",Y
+40fea14a0a949002,T300,Austin Branch,Austin Branch,1SSlmkCG5OW,2147476285,Asia/Seoul,"{""city"": ""Austin"", ""state"": ""TX"", ""zipCode"": ""78753"", ""address1"": ""1030 Norwood Park Blvd"", ""latitude"": 30.340689522, ""longitude"": -97.6913459455}",Y
+40fea1d28b3fa002,T300,Dallas Branch,Dallas Branch,1SSlmkCG5OU,2147476289,Asia/Seoul,"{""city"": ""Plano"", ""state"": ""TX"", ""zipCode"": ""75023"", ""address1"": ""6600 Chase Oaks Blvd"", ""latitude"": 33.0695824764, ""longitude"": -96.6958003814}",Y

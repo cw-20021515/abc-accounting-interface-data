@@ -1,0 +1,26 @@
+[
+  {
+    "code": "IN",
+    "name": "Initial"
+  },
+  {
+    "code": "NO",
+    "name": "Normal"
+  },
+  {
+    "code": "DR",
+    "name": "Draft"
+  },
+  {
+    "code": "RV",
+    "name": "Review"
+  },
+  {
+    "code": "RD",
+    "name": "Reversed"
+  },
+  {
+    "code": "RL",
+    "name": "Reversal"
+  }
+]

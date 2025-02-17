@@ -1,0 +1,44 @@
+code,name,description,account_class,account_type,is_open_item_mgmt,is_active,qbo_account_type,qbo_account_subtype,system_source
+6500001,Advertising,광고비,EXPENSE,GENERAL,N,Y,Expense,AdvertisingPromotional,QBO
+6500002,Bank Charges,은행 수수료,EXPENSE,GENERAL,N,Y,Expense,BankCharges,QBO
+6400003,Billable Expense Income,청구 가능 비용 수익,REVENUE,GENERAL,N,Y,Income,ServiceFeeIncome,QBO
+6500004,Commissions & fees,수수료,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,QBO
+6400005,Discounts,할인,REVENUE,SALES,N,Y,Income,DiscountsRefundsGiven,QBO
+6500006,Disposal Fees,처분 수수료,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,QBO
+6500007,Dues & Subscriptions,회비 및 구독료,EXPENSE,GENERAL,N,Y,Expense,DuesSubscriptions,QBO
+6400008,Gross Receipts,총 수입,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,QBO
+6500009,Insurance,보험,EXPENSE,GENERAL,N,Y,Expense,Insurance,QBO
+6500010,Insurance - Liability,책임보험,EXPENSE,GENERAL,N,Y,Expense,Insurance,QBO
+6400011,Interest Earned,이자수익,REVENUE,GENERAL,N,Y,Other Income,InterestEarned,QBO
+6500012,Legal & Professional Fees,법률 및 전문가 수수료,EXPENSE,GENERAL,N,Y,Expense,LegalProfessionalFees,QBO
+6500013,Meals and Entertainment,식대 및 접대비,EXPENSE,GENERAL,N,Y,Expense,EntertainmentMeals,QBO
+6500014,Miscellaneous,기타비용,EXPENSE,GENERAL,N,Y,Other Expense,OtherMiscellaneousExpense,QBO
+6500015,Office Expenses,사무실 비용,EXPENSE,GENERAL,N,Y,Expense,OfficeGeneralAdministrativeExpenses,QBO
+6400016,Other Portfolio Income,기타 포트폴리오 수익,REVENUE,SALES,N,Y,Other Income,OtherMiscellaneousIncome,QBO
+6500017,Penalties & Settlements,벌금 및 합의금,EXPENSE,GENERAL,N,Y,Other Expense,PenaltiesSettlements,QBO
+6100018,Prepaid Expenses,선급비용,ASSET,GENERAL,N,Y,Other Current Asset,PrepaidExpenses,QBO
+6500019,Promotional,판촉비,EXPENSE,GENERAL,N,Y,Expense,AdvertisingPromotional,QBO
+6400020,Refunds-Allowances,환불 및 수당,REVENUE,SALES,N,Y,Income,DiscountsRefundsGiven,QBO
+6500021,Rent or Lease,임대료,EXPENSE,GENERAL,N,Y,Expense,RentOrLeaseOfBuildings,QBO
+6500022,Repair & Maintenance,수리 및 유지보수,EXPENSE,GENERAL,N,Y,Expense,RepairMaintenance,QBO
+6300023,Retained Earnings,이익잉여금,EQUITY,GENERAL,N,Y,Equity,RetainedEarnings,QBO
+6400024,Sales,매출,REVENUE,SALES,N,Y,Income,SalesOfProductIncome,QBO
+6400025,Services,서비스,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,QBO
+6500026,Stationery & Printing,문구 및 인쇄,EXPENSE,GENERAL,N,Y,Expense,OfficeGeneralAdministrativeExpenses,QBO
+6500027,Supplies,소모품,EXPENSE,GENERAL,N,Y,Expense,SuppliesMaterials,QBO
+6500028,Taxes & Licenses,세금 및 면허,EXPENSE,GENERAL,N,Y,Expense,TaxesPaid,QBO
+6500029,Tools,공구,EXPENSE,GENERAL,N,Y,Expense,SuppliesMaterials,QBO
+6500030,Travel,여행경비,EXPENSE,GENERAL,N,Y,Expense,Travel,QBO
+6500031,Travel Meals,출장 식대,EXPENSE,GENERAL,N,Y,Expense,TravelMeals,QBO
+6100032,Uncategorized Asset,미분류 자산,ASSET,GENERAL,N,Y,Other Current Asset,OtherCurrentAssets,QBO
+6500033,Uncategorized Expense,미분류 비용,EXPENSE,GENERAL,N,Y,Expense,OtherMiscellaneousServiceCost,QBO
+6400034,Uncategorized Income,미분류 수익,REVENUE,SALES,N,Y,Income,ServiceFeeIncome,QBO
+6100035,Undeposited Funds,미예치금,ASSET,GENERAL,N,Y,Other Current Asset,UndepositedFunds,QBO
+6500036,Utilities,공과금,EXPENSE,GENERAL,N,Y,Expense,Utilities,QBO
+6100037,Inventory Asset,재고자산,ASSET,GENERAL,N,Y,Other Current Assets,Inventory,QBO
+6100038,Uncategorized Asset,미분류 자산,ASSET,GENERAL,N,Y,Other Current Assets,Other Current Assets,QBO
+6500039,Purchases,구매(매입),EXPENSE,VENDOR,N,Y,Expenses,Supplies & Materials,QBO
+6500040,Uncategorized Expense,미분류 비용,EXPENSE,GENERAL,N,Y,Expenses,Other Miscellaneous Service Cost,QBO
+6500041,Cost of Goods Sold,매출원가,EXPENSE,COGS,N,Y,Cost of Goods Sold,Supplies & Materials - COGS,QBO
+6400042,Sales of Product Income,제품 판매 수익,REVENUE,SALES,N,Y,Income,Sales of Product Income,QBO
+6400043,Uncategorized Income,미분류 수익,REVENUE,GENERAL,N,Y,Income,Service/Fee Income,QBO

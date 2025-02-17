@@ -1,0 +1,7 @@
+id,material_model_name_prefix,rental_distribution_type,onetime_price,membership_price,membership_dcprice_c24,free_service_duration,start_date
+1,CHP-1300L,SP02,1000.0,10.0,9.0,36,2024-01-01
+2,CHP-1200N,SP02,1000.0,10.0,9.0,36,2024-01-01
+3,CHPI-1500L,SP02,1900.0,10.0,9.0,36,2024-01-01
+4,HP-1100R,SP02,1000.0,10.0,9.0,36,2024-01-01
+5,CHP-1100R,SP02,1700.0,10.0,9.0,36,2024-01-01
+6,CHP-1110N,SP02,1000.0,10.0,9.0,36,2024-01-01

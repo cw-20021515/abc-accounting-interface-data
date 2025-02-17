@@ -1,0 +1,79 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalCodeMaster/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Code Master",
+  "description": "렌탈 코드 마스터",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "rental_code": {
+        "type": "string",
+        "description": "렌탈코드"
+      },
+      "rental_code_name": {
+        "type": "string",
+        "description": "렌탈코드명"
+      },
+      "rental_code_description": {
+        "type": "string",
+        "description": "렌탈코드 설명"
+      },
+      "current_term": {
+        "type": "integer",
+        "description": "계약회차"
+      },
+      "term1_period": {
+        "type": "integer",
+        "description": "1회차 계약"
+      },
+      "term2_period": {
+        "type": "integer",
+        "description": "2회차 계약"
+      },
+      "term3_period": {
+        "type": "integer",
+        "description": "3회차 계약"
+      },
+      "term4_period": {
+        "type": "integer",
+        "description": "4회차 계약"
+      },
+      "term5_period": {
+        "type": "integer",
+        "description": "5회차 계약"
+      },
+      "contract_pricing_type": {
+        "type": "string",
+        "description": "요금체계 (https://abc.necoa.dev/system/common-codes/common-code?id=ContractPricingType)"
+      },
+      "contract_duration": {
+        "type": "integer",
+        "description": "렌탈기간(개월)"
+      },
+      "commitment_duration": {
+        "type": "integer",
+        "description": "약정기간(개월)"
+      },
+      "lease_type": {
+        "type": "string",
+        "description": "리스유형 (https://abc.necoa.dev/system/common-codes/common-code?id=LeaseType)"
+      },
+      "remark": {
+        "type": "string",
+        "description": "비고"
+      },
+      "is_active": {
+        "type": "boolean",
+        "description": "사용여부"
+      }
+    },
+    "required": [
+      "contract_duration",
+      "rental_code",
+      "lease_type",
+      "current_term"
+    ],
+    "additionalProperties": false
+  }
+}

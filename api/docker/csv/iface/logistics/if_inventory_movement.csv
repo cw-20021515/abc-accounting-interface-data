@@ -1,0 +1,1 @@
+id,company_code,source_warehouse_id,destination_warehouse_id,warehouse_transfer_id,movement_category,movement_group,movement_type,service_flow_id,inbound_purchase_order_item_id,inbound_bl_no,material_id,grade,quantity,create_time

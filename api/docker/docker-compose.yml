@@ -1,0 +1,30 @@
+services:
+  redis: # container name
+    image: redis:6.2.6-alpine
+    command: redis-server --port 6379
+    ports:
+      - 16379:6379
+  postgres:
+    image: postgres:15.3
+    command: postgres -c log_destination=stderr -c log_statement=all -c pg_stat_statements.track=all -c 'max_connections=200' # -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all
+    environment:
+      - POSTGRES_USER=abc_accounting
+      - POSTGRES_PASSWORD=abc_accounting
+      - POSTGRES_DB=abc_accounting
+      - PGDATA=/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+    restart: always
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d  # 초기 스크립트 디렉터리 마운트
+      - ./csv:/data  # CSV 데이터 디렉터리 마운트
+#    networks:
+#      - abc_network
+volumes:
+  accounting-postgres-volume:
+    name: accounting-postgres-volume  # 볼륨의 이름 설정
+
+#networks:
+#  abc_network:
+#    external: true
+#    name: abc_network

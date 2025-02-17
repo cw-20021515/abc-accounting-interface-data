@@ -1,0 +1,40 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalAssetDepreciationMaster/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Asset Depreciation Master",
+  "description": "렌탈자산 상각 마스터",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "material_id": {
+        "type": "string",
+        "description": "자재ID"
+      },
+      "useful_life": {
+        "type": "integer",
+        "description": "내용연수"
+      },
+      "salvage_value": {
+        "type": "number",
+        "description": "잔존가치"
+      },
+      "currency": {
+        "type": "string",
+        "description": "통화"
+      },
+      "depreciation_method": {
+        "type": "string",
+        "description": "상각방법"
+      }
+    },
+    "required": [
+      "useful_life",
+      "material_id",
+      "currency",
+      "depreciation_method",
+      "salvage_value"
+    ],
+    "additionalProperties": false
+  }
+}

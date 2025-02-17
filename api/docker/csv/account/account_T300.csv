@@ -1,0 +1,130 @@
+company_code,account_code,name,description,account_class,account_type,is_open_item_mgmt,consolidation_account_code,qbo_parent_account_code,qbo_account_type,qbo_account_subtype,system_source,is_active
+T300,1101010,Cash,현금,ASSET,GENERAL,N,111111,,Bank,CashOnHand,ABC,Y
+T300,1101030,Cash on hand (Petty cash),소액현금,ASSET,GENERAL,N,111111,,Bank,CashOnHand,ABC,Y
+T300,1103001,Current Deposits (1),당좌예금(1),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T300,1103002,Current Deposits (2),당좌예금(2),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T300,1103003,Current Deposits (3),당좌예금(3),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T300,1105001,Deposits on Demand (1),보통예금(1),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T300,1105002,Deposits on Demand (2),보통예금(2),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T300,1105003,Deposits on Demand (3),보통예금(3),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T300,1105004,Deposits on Demand (4),보통예금(4),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T300,1105005,Outstanding check,미결제수표,ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T300,1117100,Accounts Receivable - Service,외상매출금-용역수입,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T300,1118030,Allowance for bad debt - AR,대손충당금(외상매출금),ASSET,GENERAL,N,111314,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T300,1126010,OTHER RECEIVABLES,미수금,ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T300,1127010,Allowance for bad debt - Other Receivable,대손충당금(미수금),ASSET,GENERAL,N,111322,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T300,1131010,Advance Payment,선급금,ASSET,GENERAL,N,111511,,Accounts Payable,AccountsPayable,ABC,Y
+T300,1134010,Prepaid expense,선급비용,ASSET,GENERAL,N,111513,,Other Current Asset,PrepaidExpenses,ABC,Y
+T300,1136010,Prepaid Goods and services tax (GST),부가세대급금,ASSET,GENERAL,N,111514,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T300,1138010,Prepaid taxes,선급법인세,ASSET,GENERAL,N,111411,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T300,1328010,(A) Security deposit,임차보증금,ASSET,GENERAL,N,121221,,Other Asset,SecurityDeposits,ABC,Y
+T300,1328020,(A) Security deposit - Present Value Discounts,현재가치할인차금-임차보증금,ASSET,GENERAL,N,121222,,Other Asset,OtherLongTermAssets,ABC,Y
+T300,1348010,Deferred tax assets,이연법인세자산(고정),ASSET,GENERAL,N,121611,,Other Asset,OtherLongTermAssets,ABC,Y
+T300,2101010,Trade accounts payable,외상매입금,LIABILITY,GENERAL,N,211211,,Accounts Payable,AccountsPayable,ABC,Y
+T300,2105010,Short-term loan,단기차입금,LIABILITY,GENERAL,N,211311,,Other Current Liability,LoanPayable,ABC,Y
+T300,2105011,Short-term loan (foreign),단기차입금(해외),LIABILITY,GENERAL,N,211312,,Other Current Liability,LoanPayable,ABC,Y
+T300,2107010,Other accounts payable,미지급금,LIABILITY,GENERAL,N,211212,,Accounts Payable,AccountsPayable,ABC,Y
+T300,2107020,Other accounts payable - Payroll,미지급금-급여,LIABILITY,GENERAL,N,211212,,Other Current Liability,PayrollClearing,ABC,Y
+T300,2109010,Accrued expenses,미지급비용,LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T300,2109012,Accrued expenses - annual allowance,미지급비용(연차-보상분),LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T300,2111010,Advances from customers,선수금,LIABILITY,GENERAL,Y,211811,,Accounts Receivable,AccountsReceivable,ABC,Y
+T300,2115100,Payroll tax payable - Federal,예수금-국민연금,LIABILITY,GENERAL,N,211815,,Other Current Liability,StateLocalIncomeTaxPayable,ABC,Y
+T300,2115200,Payroll tax payable - State,예수금-건강보험,LIABILITY,GENERAL,N,211815,,Other Current Liability,StateLocalIncomeTaxPayable,ABC,Y
+T300,2117010,Sales tax payable,부가세예수금,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T300,2117011,Tax payable - State,예수금-판매세-State,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T300,2117012,Tax payable - County,예수금-판매세-County,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T300,2117013,Tax payable - City,예수금-판매세-City,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T300,2117014,Tax payable - Special,예수금-판매세-Special,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T300,2125010,Accrued expenses-bonus,상여충당금,LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T300,2127010,Income tax payable,미지급법인세,LIABILITY,GENERAL,N,211611,,Other Current Liability,FederalIncomeTaxPayable,ABC,Y
+T300,2129010,Dividend payable,미지급배당금,LIABILITY,GENERAL,N,211813,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T300,2240010,Deferred tax liabilities,이연법인세부채(고정),LIABILITY,GENERAL,N,221611,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T300,2260010,Advance received - LT,장기선수금,LIABILITY,GENERAL,N,221815,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T300,3103010,Preferred stocks,우선주자본금,EQUITY,GENERAL,N,311020,,Equity,PreferredStock,ABC,Y
+T300,3201010,Additional Paid-in Capital,주식발행초과금,EQUITY,GENERAL,N,312020,,Equity,OwnersEquity,ABC,Y
+T300,4116010,Service Revenue - (Installation),용역수입(설치),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T300,4116020,Service Revenue - A/S,용역수입(A/S),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T300,4116021,Service Revenue - Installation and Dismantling,용역수입(이전설치및해체),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T300,4116030,Service Revenue - warehouse,용역수입(창고관리대행),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T300,4116040,Service Revenue - QC,용역수입(품질검수),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T300,4199010,Other Sales,기타매출,REVENUE,SALES,N,410600,,Income,OtherPrimaryIncome,ABC,Y
+T300,4201010,Interest Income,이자수익,REVENUE,GENERAL,N,610100,,Other Income,InterestEarned,ABC,Y
+T300,4201020,Interest income - Office Rent - Security Deposit,이자수익-보증금현할차,REVENUE,GENERAL,N,610100,,Other Income,InterestEarned,ABC,Y
+T300,4203010,Dividend Income,배당금수익,REVENUE,GENERAL,N,610200,,Other Income,DividendIncome,ABC,Y
+T300,4205010,Rental Income,임대료수입,REVENUE,GENERAL,N,520100,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T300,4207010,Commission Income,수수료수익,REVENUE,GENERAL,N,520200,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T300,4221010,Gains on disposition of tangible assets,유형자산처분이익,REVENUE,GENERAL,N,520500,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T300,4221020,Gains on disposition of intangible assets,무형자산처분이익,REVENUE,GENERAL,N,520700,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T300,4299010,Miscellaneous Income - Others,잡이익-기타,REVENUE,GENERAL,N,550300,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T300,5301010,Payroll expense - Employees,급여-사원급여,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5301020,Payroll expense - Bonus,급여-사원상여금,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5301030,Payroll expense - Overtime,급여-Overtime,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5301040,Payroll expense - Officers,급여-임원급여,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5301050,Payroll expense - Officers Bonus,급여-임원상여금,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5301060,Payroll expense - annual allowance,급여-연월차수당,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T300,5305010,Severance pay,퇴직급여,EXPENSE,GENERAL,N,510400,,Expense,PayrollExpenses,ABC,Y
+T300,5309010,Compensation Expenses Associated with Stock Option,주식보상비용,EXPENSE,GENERAL,N,514200,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5401010,Employee welfare - Worker's compensation,복리후생비-부서운영비,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5401020,Employee welfare - Overtime meals,복리후생비-야근(특근)식대,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5401030,Employee welfare - Health Insurance,복리후생비-건강보험,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5401040,Employee welfare - Others,복리후생비-기타,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5403010,Travel Expenses - Transportation,여비교통비-교통비,EXPENSE,GENERAL,N,510800,,Expense,Travel,ABC,Y
+T300,5403020,Travel Expenses - Accommodation,여비교통비-숙박,EXPENSE,GENERAL,N,510800,,Expense,Travel,ABC,Y
+T300,5403030,Travel Expenses - Meals,여비교통비-식대,EXPENSE,GENERAL,N,510800,,Expense,TravelMeals,ABC,Y
+T300,5405010,Meeting Expenses,회의비-업무협의비,EXPENSE,GENERAL,N,513300,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5407010,Telephone - Office,통신비-전화료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T300,5407020,Postage and stamp,통신비-우편료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T300,5407030,Internet fee,통신비-정보통신이용료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T300,5407040,Telephone - Others,통신비-기타,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T300,5409010,Dues and Subscription,도서인쇄비-정기간행물,EXPENSE,GENERAL,N,511700,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5409020,Printing and reproduction,도서인쇄비-도서구입,EXPENSE,GENERAL,N,511700,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5411010,Training and Employee Education - Employees,교육훈련비-정직원,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5411020,Training and Employee Education - Sales Dept.,교육훈련비-판매인,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5411990,Training and Employee Education - Other,교육훈련비-기타,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5413010,Utility bills,수도광열비,EXPENSE,GENERAL,N,513800,,Expense,Utilities,ABC,Y
+T300,5415010,Office supplies,소모품비-사무용품,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T300,5415020,Supplies - Installation parts,소모품비-소모성설치자재,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T300,5415030,CONSUMABLE TOOLS,소모품비-집기성소모품,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T300,5417010,Taxes and Licenses,세금과공과,EXPENSE,GENERAL,N,511100,,Expense,Utilities,ABC,Y
+T300,5419010,Rent - Office,지급임차료-사무실임차료,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T300,5419020,Equipment Rental,지급임차료-장비임차료,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T300,5419030,Rent - Others,지급임차료-기타,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T300,5423010,Bank Service Charge,지급수수료-금융거래수수료,EXPENSE,GENERAL,N,512600,,Expense,BankCharges,ABC,Y
+T300,5423020,Professional fees,지급수수료-전문가자문료,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T300,5423030,Professional fees - Other,지급수수료-대행용역수수료(기타),EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T300,5423040,Service Fees - IT System,지급수수료-IT유지보수료,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T300,5423050,Service Fees - Scrap,지급수수료-폐기물처리비,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T300,5429010,Repairs and Maintenance,수선비,EXPENSE,GENERAL,N,511500,,Expense,RepairMaintenance,ABC,Y
+T300,5431010,Auto Expenses,차량유지비,EXPENSE,GENERAL,N,510900,,Expense,Auto,ABC,Y
+T300,5433010,Insurances - Auto,보험료-차량보험,EXPENSE,GENERAL,N,512400,,Expense,Insurance,ABC,Y
+T300,5433020,Insurances - General Liability,보험료-PL보험료,EXPENSE,GENERAL,N,512400,,Expense,Insurance,ABC,Y
+T300,5437010,Sales promotion expenses - Head office,판매촉진비-영업본부,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5437020,Sales promotion expenses - Branches,판매촉진비-현장,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5437030,Sales promotion expenses - Events,판매촉진비-이벤트,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5439010,Commissions - Purchase Contract,판매수수료,EXPENSE,GENERAL,N,513000,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5441010,Entertainments,접대비-일반,EXPENSE,GENERAL,N,510700,,Expense,Entertainment,ABC,Y
+T300,5443010,Sample Expenses,견본비,EXPENSE,GENERAL,N,513600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5445010,Advertising and Promotions - TV,광고선전비-(TV),EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T300,5445020,Advertising and Promotions - Radio,광고선전비-(라디오),EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T300,5445030,Advertising and Promotions - Newspaper,광고선전비-신문인쇄광고,EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T300,5455010,Shipping and Delivery - Regular,운반비-제상품운송비,EXPENSE,GENERAL,N,512300,,Expense,ShippingFreightDelivery,ABC,Y
+T300,5455020,Shipping and Delivery - Other,운반비-운반비(기타),EXPENSE,GENERAL,N,512300,,Expense,ShippingFreightDelivery,ABC,Y
+T300,5459010,Depreciation - Building,감가상각비-건물,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T300,5459020,Depreciation - Vehicles,감가상각비-차량운반구,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T300,5459030,Depreciation - Equipments,감가상각비-비품,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T300,5459040,Depreciation - Amortization - Finance Lease Asset,감가상각비-사용권자산,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T300,5459050,Depreciation - Other tangible asset,감가상각비-기타유형자산,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T300,5461010,Depreciation - Amortization - Computer Software,무형자산상각비-컴퓨터소프트웨어,EXPENSE,GENERAL,N,511400,,Other Expense,Amortization,ABC,Y
+T300,5461020,Depreciation - Amortization - Other intangible asset,무형자산상각비-기타,EXPENSE,GENERAL,N,511400,,Other Expense,Amortization,ABC,Y
+T300,5467010,Consumer compensation,소비자보상비,EXPENSE,GENERAL,N,514600,,Expense,OtherBusinessExpenses,ABC,Y
+T300,5501010,Interest expenses,지급이자와할인료,EXPENSE,GENERAL,N,620100,,Expense,InterestPaid,ABC,Y
+T300,5501030,Interest expenses - Finance Lease,이자비용-리스부채,EXPENSE,GENERAL,N,620100,,Expense,InterestPaid,ABC,Y
+T300,5507010,EXCHANGE_GAIN_OR_LOSS,외환 이익or 손실,EXPENSE,GENERAL,N,560200,,Other Expense,ExchangeGainOrLoss,ABC,Y
+T300,5509010,Donation,기부금,EXPENSE,GENERAL,N,560400,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5537010,Other bad debt expenses,기타의 대손상각비,EXPENSE,GENERAL,N,532000,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5541010,Disposition losses on tangible asset,유형자산처분손실,EXPENSE,GENERAL,N,530300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5541020,Disposition losses on intangible asset,무형자산처분손실,EXPENSE,GENERAL,N,530500,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5549010,"Impairment Losses on Property, Plant, and Equipment",자산손상차손,EXPENSE,GENERAL,N,518010,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5599010,Miscellaneous Losses,잡손실,EXPENSE,GENERAL,N,560300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5599055,Guarantee Fees,금융보증비용,EXPENSE,GENERAL,N,621300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T300,5701010,Current Income Tax,법인세비용,EXPENSE,GENERAL,N,650100,,Expense,TaxesPaid,ABC,Y

@@ -1,0 +1,576 @@
+code,level,parent_code,name,eng_name,description,is_postable,is_active,system_source,created_by,updated_by
+100000,01,,자산,Assets,,N,Y,ABC,abc-accounting,abc-accounting
+110000,02,,유동자산,Current Assets,,N,Y,ABC,abc-accounting,abc-accounting
+111100,03,110000,현금및현금성자산,Cash and Cash Equivalents,,N,Y,ABC,abc-accounting,abc-accounting
+111111,04,111100,현금,Cash,,Y,Y,ABC,abc-accounting,abc-accounting
+111112,04,111100,당좌예금,Current Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+111113,04,111100,보통예금,Ordinary Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+111214,04,111100,위험회피파생상품자산,Hedging Derivative Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+111215,04,111100,매도가능금융자산,Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+111311,04,111100,금융기관예치금,Financial Institution Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+111312,04,111100,매출채권,Trade Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+111313,04,111100,(매출채권 현재가치할인차금),(Trade Receivables Present Value Discount),,Y,Y,ABC,abc-accounting,abc-accounting
+111314,04,111100,(매출채권 손상차손누계액),(Accumulated Impairment Loss on Trade Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111317,04,111100,단기대여금,Short-term Loans,,Y,Y,ABC,abc-accounting,abc-accounting
+111318,04,111100,(단기대여금 현재가치할인차금),(Short-term Loans Present Value Discount),,Y,Y,ABC,abc-accounting,abc-accounting
+111319,04,111100,(단기대여금 손상차손누계액),(Accumulated Impairment Loss on Short-term Loans),,Y,Y,ABC,abc-accounting,abc-accounting
+111320,04,111100,미수금,Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+111321,04,111100,(미수금 현재가치할인차금),(Other Receivables Present Value Discount),,Y,Y,ABC,abc-accounting,abc-accounting
+111322,04,111100,(미수금 손상차손누계액),(Accumulated Impairment Loss on Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111323,04,111100,미수수익,Accrued Income,,Y,Y,ABC,abc-accounting,abc-accounting
+111324,04,111100,(미수수익 손상차손누계액),(Accumulated Impairment Loss on Accrued Income),,Y,Y,ABC,abc-accounting,abc-accounting
+111325,04,111100,단기보증금,Short-term Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+111326,04,111100,(단기보증금 현재가치할인차금),(Short-term Deposits Present Value Discount),,Y,Y,ABC,abc-accounting,abc-accounting
+111327,04,111100,(단기보증금 손상차손누계액),(Accumulated Impairment Loss on Short-term Deposits),,Y,Y,ABC,abc-accounting,abc-accounting
+111328,04,111100,기타매출채권및기타채권,Other Trade and Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+111329,04,111100,(기타매출채권및기타채권 현재가치할인차금),(Present Value Discount on Other Trade and Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111330,04,111100,(기타매출채권및기타채권 손상차손누계액),(Accumulated Impairment Loss on Other Trade and Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111400,03,110000,미수법인세환급액,Income Tax Refund Receivables,,N,Y,ABC,abc-accounting,abc-accounting
+111411,04,111400,미수법인세환급액,Income Tax Refund Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+111500,03,110000,기타유동자산,Other Current Assets,,N,Y,ABC,abc-accounting,abc-accounting
+111511,04,111500,선급금,Advance Payments,,Y,Y,ABC,abc-accounting,abc-accounting
+111512,04,111500,(선급금 손상차손누계액),(Accumulated Impairment Loss on Advance Payments),,Y,Y,ABC,abc-accounting,abc-accounting
+111513,04,111500,선급비용,Prepaid Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+111514,04,111500,선급부가가치세,Prepaid VAT,,Y,Y,ABC,abc-accounting,abc-accounting
+111515,04,111500,기타의기타유동자산,Other Current Assets - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+111516,04,111500,현재가치할인차금_선급금,Present Value Discount on Advance Payments,,Y,Y,ABC,abc-accounting,abc-accounting
+111600,03,110000,유동성금융리스채권,Current Portion of Finance Lease Receivables,,N,Y,ABC,abc-accounting,abc-accounting
+111611,04,111600,(유동성)금융리스채권,Current Portion of Finance Lease Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+111612,04,111600,((유동성)금융리스채권 현재가치할인차금),(Present Value Discount on Current Portion of Finance Lease Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111613,04,111600,((유동성)금융리스채권 손상차손누계액),(Accumulated Impairment Loss on Current Portion of Finance Lease Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+111700,03,110000,재고자산,Inventories,,N,Y,ABC,abc-accounting,abc-accounting
+111711,04,111700,상품,Merchandise,,Y,Y,ABC,abc-accounting,abc-accounting
+111712,04,111700,(상품평가충당금),(Allowance for Valuation of Merchandise),,Y,Y,ABC,abc-accounting,abc-accounting
+111732,04,111700,미착재고자산,Goods in Transit,,Y,Y,ABC,abc-accounting,abc-accounting
+111733,04,111700,기타재고자산,Other Inventories,,Y,Y,ABC,abc-accounting,abc-accounting
+111734,04,111700,(기타재고자산평가충당금),(Allowance for Valuation of Other Inventories),,Y,Y,ABC,abc-accounting,abc-accounting
+111800,03,110000,매각예정자산,Assets Held for Sale,,N,Y,ABC,abc-accounting,abc-accounting
+111811,04,111800,매각예정자산,Assets Held for Sale,,Y,Y,ABC,abc-accounting,abc-accounting
+120000,02,,비유동자산,Non-current Assets,,N,Y,ABC,abc-accounting,abc-accounting
+121100,03,120000,기타비유동금융자산,Other Non-current Financial Assets,,N,Y,ABC,abc-accounting,abc-accounting
+121111,04,121100,당기손익인식지정금융자산-비유동,Financial Assets at Fair Value through Profit or Loss - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+121112,04,121100,매매목적파생상품자산-비유동,Trading Derivative Assets - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+121113,04,121100,위험회피파생상품자산-비유동,Hedging Derivative Assets - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+121114,04,121100,매도가능금융자산-비유동,Available-for-sale Financial Assets - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+121115,04,121100,(매도가능금융자산-비유동 손상차손누계액),(Accumulated Impairment Loss on Available-for-sale Financial Assets - Non-current),,Y,Y,ABC,abc-accounting,abc-accounting
+121116,04,121100,만기보유금융자산-비유동,Held-to-maturity Financial Assets - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+121117,04,121100,(만기보유금융자산-비유동 손상차손누계액),(Accumulated Impairment Loss on Held-to-maturity Financial Assets - Non-current),,Y,Y,ABC,abc-accounting,abc-accounting
+121118,04,121100,기타의기타비유동금융자산,Other Non-current Financial Assets - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+121200,03,120000,장기매출채권및기타채권,Long-term Trade and Other Receivables,,N,Y,ABC,abc-accounting,abc-accounting
+121211,04,121200,장기금융기관예치금,Long-term Financial Institution Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+121212,04,121200,장기매출채권,Long-term Trade Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+121213,04,121200,(장기매출채권 현재가치할인차금),(Present Value Discount on Long-term Trade Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121214,04,121200,(장기매출채권 손상차손누계액),(Accumulated Impairment Loss on Long-term Trade Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121215,04,121200,장기대여금,Long-term Loans,,Y,Y,ABC,abc-accounting,abc-accounting
+121216,04,121200,(장기대여금 현재가치할인차금),(Present Value Discount on Long-term Loans),,Y,Y,ABC,abc-accounting,abc-accounting
+121217,04,121200,(장기대여금 손상차손누계액),(Accumulated Impairment Loss on Long-term Loans),,Y,Y,ABC,abc-accounting,abc-accounting
+121218,04,121200,장기미수금,Long-term Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+121219,04,121200,(장기미수금 현재가치할인차금),(Present Value Discount on Long-term Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121220,04,121200,(장기미수금 손상차손누계액),(Accumulated Impairment Loss on Long-term Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121221,04,121200,장기보증금,Long-term Guarantee Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+121222,04,121200,(장기보증금 현재가치할인차금),(Present Value Discount on Long-term Guarantee Deposits),,Y,Y,ABC,abc-accounting,abc-accounting
+121223,04,121200,(장기보증금 손상차손누계액),(Accumulated Impairment Loss on Long-term Guarantee Deposits),,Y,Y,ABC,abc-accounting,abc-accounting
+121224,04,121200,장기미수수익,Long-term Accrued Income,,Y,Y,ABC,abc-accounting,abc-accounting
+121225,04,121200,(장기미수수익 현재가치할인차금),(Present Value Discount on Long-term Accrued Income),,Y,Y,ABC,abc-accounting,abc-accounting
+121226,04,121200,(장기미수수익 손상차손누계액),(Accumulated Impairment Loss on Long-term Accrued Income),,Y,Y,ABC,abc-accounting,abc-accounting
+121227,04,121200,기타장기매출채권및기타채권,Other Long-term Trade and Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+121228,04,121200,(기타장기매출채권및기타채권 현재가치할인차금),(Present Value Discount on Other Long-term Trade and Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121229,04,121200,(기타장기매출채권및기타채권 손상차손누계액),(Accumulated Impairment Loss on Other Long-term Trade and Other Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+121300,03,120000,종속기업주식,Investments in Subsidiaries,,N,Y,ABC,abc-accounting,abc-accounting
+121311,04,121300,종속기업주식,Investments in Subsidiaries,,Y,Y,ABC,abc-accounting,abc-accounting
+121400,03,120000,관계기업주식,Investments in Associates,,N,Y,ABC,abc-accounting,abc-accounting
+121411,04,121400,관계기업주식,Investments in Associates,,Y,Y,ABC,abc-accounting,abc-accounting
+121500,03,120000,조인트벤처주식,Investments in Joint Ventures,,N,Y,ABC,abc-accounting,abc-accounting
+121511,04,121500,조인트벤처주식,Investments in Joint Ventures,,Y,Y,ABC,abc-accounting,abc-accounting
+121600,03,120000,이연법인세자산,Deferred Tax Assets,,N,Y,ABC,abc-accounting,abc-accounting
+121611,04,121600,이연법인세자산,Deferred Tax Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+121700,03,120000,기타비유동자산,Deferred Tax Assets,,N,Y,ABC,abc-accounting,abc-accounting
+121711,04,121700,장기선급금,Other Non-current Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+121712,04,121700,(장기선급금 현재가치할인차금),Long-term Advance Payments,,Y,Y,ABC,abc-accounting,abc-accounting
+121713,04,121700,(장기선급금 손상차손누계액),(Present Value Discount on Long-term Advance Payments),,Y,Y,ABC,abc-accounting,abc-accounting
+121714,04,121700,장기선급비용,(Accumulated Impairment Loss on Long-term Advance Payments),,Y,Y,ABC,abc-accounting,abc-accounting
+121715,04,121700,퇴직연금운용자산,Long-term Prepaid Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+121716,04,121700,기타의기타비유동자산,Plan Assets for Retirement Benefits,,Y,Y,ABC,abc-accounting,abc-accounting
+121800,03,120000,금융리스채권,Other Non-current Assets - Others,,N,Y,ABC,abc-accounting,abc-accounting
+121811,04,121800,금융리스채권,Finance Lease Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+121812,04,121800,(금융리스채권 현재가치할인차금),Finance Lease Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+121813,04,121800,(금융리스채권 손상차손누계액),(Present Value Discount on Finance Lease Receivables),,Y,Y,ABC,abc-accounting,abc-accounting
+122000,03,120000,유형자산,(Accumulated Impairment Loss on Finance Lease Receivables),,N,Y,ABC,abc-accounting,abc-accounting
+122110,04,122000,토지,Land,,Y,Y,ABC,abc-accounting,abc-accounting
+122120,04,122000,(토지감가상각누계액),(Accumulated Depreciation on Land),,Y,Y,ABC,abc-accounting,abc-accounting
+122130,04,122000,(토지손상차손누계액),(Accumulated Impairment Loss on Land),,Y,Y,ABC,abc-accounting,abc-accounting
+122140,04,122000,(토지정부보조금등),(Government Grants and Others for Land),,Y,Y,ABC,abc-accounting,abc-accounting
+122150,04,122000,건물,Buildings,,Y,Y,ABC,abc-accounting,abc-accounting
+122160,04,122000,(건물감가상각누계액),(Accumulated Depreciation on Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+122170,04,122000,(건물손상차손누계액),(Accumulated Impairment Loss on Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+122180,04,122000,(건물정부보조금등),(Government Grants and Others for Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+122190,04,122000,구축물,Structures,,Y,Y,ABC,abc-accounting,abc-accounting
+122200,04,122000,(구축물감가상각누계액),(Accumulated Depreciation on Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+122210,04,122000,(구축물손상차손누계액),(Accumulated Impairment Loss on Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+122220,04,122000,(구축물정부보조금등),(Government Grants and Others for Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+122230,04,122000,기계장치,Machinery,,Y,Y,ABC,abc-accounting,abc-accounting
+122240,04,122000,(기계장치감가상각누계액),(Accumulated Depreciation on Machinery and Equipment),,Y,Y,ABC,abc-accounting,abc-accounting
+122250,04,122000,(기계장치손상차손누계액),(Accumulated Impairment Loss on Machinery and Equipment),,Y,Y,ABC,abc-accounting,abc-accounting
+122260,04,122000,(기계장치정부보조금등),(Government Grants and Others for Machinery and Equipment),,Y,Y,ABC,abc-accounting,abc-accounting
+122270,04,122000,차량운반구,Vehicles,,Y,Y,ABC,abc-accounting,abc-accounting
+122280,04,122000,(차량운반구감가상각누계액),(Accumulated Depreciation on Vehicles),,Y,Y,ABC,abc-accounting,abc-accounting
+122290,04,122000,(차량운반구손상차손누계액),(Accumulated Impairment Loss on Vehicles),,Y,Y,ABC,abc-accounting,abc-accounting
+122310,04,122000,공구기구비품,Tools and Equipment,,Y,Y,ABC,abc-accounting,abc-accounting
+122320,04,122000,(공구기구비품감가상각누계액),(Accumulated Depreciation on Tools and Equipment),,Y,Y,ABC,abc-accounting,abc-accounting
+122330,04,122000,(공구기구비품손상차손누계액),(Accumulated Impairment Loss on Tools and Equipment),,Y,Y,ABC,abc-accounting,abc-accounting
+122350,04,122000,비품,Fixtures,,Y,Y,ABC,abc-accounting,abc-accounting
+122360,04,122000,(비품감가상각누계액),(Accumulated Depreciation on Fixtures and Furniture),,Y,Y,ABC,abc-accounting,abc-accounting
+122370,04,122000,(비품손상차손누계액),(Accumulated Impairment Loss on Fixtures and Furniture),,Y,Y,ABC,abc-accounting,abc-accounting
+122390,04,122000,렌탈자산,Rental Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+122400,04,122000,(렌탈자산감가상각누계액),(Accumulated Depreciation on Rental Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+122410,04,122000,(렌탈자산손상차손누계액),(Accumulated Impairment Loss on Rental Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+122430,04,122000,건설중인유형자산,Construction in Progress,,Y,Y,ABC,abc-accounting,abc-accounting
+122440,04,122000,(건설중인유형자산손상차손누계액),(Accumulated Impairment Loss on Construction in Progress),,Y,Y,ABC,abc-accounting,abc-accounting
+122460,04,122000,미착유형자산,Tangible Assets in Transit,,Y,Y,ABC,abc-accounting,abc-accounting
+122470,04,122000,(미착유형자산손상차손누계액),(Accumulated Impairment Loss on Tangible Assets in Transit),,Y,Y,ABC,abc-accounting,abc-accounting
+122490,04,122000,기타유형자산,Other Tangible Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+122500,04,122000,(기타유형자산감가상각누계액),(Accumulated Depreciation on Other Tangible Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+122510,04,122000,(기타유형자산손상차손누계액),(Accumulated Impairment Loss on Other Tangible Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+122530,04,122000,입목,Standing Timber,,Y,Y,ABC,abc-accounting,abc-accounting
+122540,04,122000,(입목손상차손누계액),(Accumulated Impairment Loss on Standing Timber),,Y,Y,ABC,abc-accounting,abc-accounting
+122550,04,122000,(입목정부보조금등),(Government Grants and Others for Standing Timber),,Y,Y,ABC,abc-accounting,abc-accounting
+122560,04,122000,코스,Course,,Y,Y,ABC,abc-accounting,abc-accounting
+122570,04,122000,(코스손상차손누계액),(Accumulated Impairment Loss on Course),,Y,Y,ABC,abc-accounting,abc-accounting
+122580,04,122000,(코스정부보조금등),(Government Grants and Others for Course),,Y,Y,ABC,abc-accounting,abc-accounting
+122590,04,122000,사용권자산,Right-of-use Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+122600,04,122000,(사용권자산감가상각누계액),(Accumulated Depreciation on Right-of-use Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+123000,03,120000,투자부동산,Investment Property,,N,Y,ABC,abc-accounting,abc-accounting
+123110,04,123000,투자부동산-토지,Investment Property - Land,,Y,Y,ABC,abc-accounting,abc-accounting
+123120,04,123000,(투자부동산-토지:감가상각누계액),(Accumulated Depreciation on Investment Property - Land),,Y,Y,ABC,abc-accounting,abc-accounting
+123130,04,123000,(투자부동산-토지:손상차손누계액),(Accumulated Impairment Loss on Investment Property - Land),,Y,Y,ABC,abc-accounting,abc-accounting
+123140,04,123000,(투자부동산-토지:정부보조금등),(Government Grants and Others for Investment Property - Land),,Y,Y,ABC,abc-accounting,abc-accounting
+123150,04,123000,투자부동산-건물,Investment Property - Buildings,,Y,Y,ABC,abc-accounting,abc-accounting
+123160,04,123000,(투자부동산-건물:감가상각누계액),(Accumulated Depreciation on Investment Property - Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+123170,04,123000,(투자부동산-건물:손상차손누계액),(Accumulated Impairment Loss on Investment Property - Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+123180,04,123000,(투자부동산-건물:정부보조금등),(Government Grants and Others for Investment Property - Buildings),,Y,Y,ABC,abc-accounting,abc-accounting
+123190,04,123000,투자부동산-구축물,Investment Property - Structures,,Y,Y,ABC,abc-accounting,abc-accounting
+123200,04,123000,(투자부동산-구축물:감가상각누계액),(Accumulated Depreciation on Investment Property - Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+123210,04,123000,(투자부동산-구축물:손상차손누계액),(Accumulated Impairment Loss on Investment Property - Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+123220,04,123000,(투자부동산-구축물:정부보조금등),(Government Grants and Others for Investment Property - Structures),,Y,Y,ABC,abc-accounting,abc-accounting
+123230,04,123000,투자부동산-건설중인자산,Investment Property - Construction in Progress,,Y,Y,ABC,abc-accounting,abc-accounting
+123240,04,123000,(투자부동산-건설중인자산손상차손누계액),(Accumulated Impairment Loss on Investment Property - Construction in Progress),,Y,Y,ABC,abc-accounting,abc-accounting
+123250,04,123000,(투자부동산-건설중인자산정부보조금등),(Government Grants and Others for Investment Property - Construction in Progress),,Y,Y,ABC,abc-accounting,abc-accounting
+124000,03,120000,무형자산,Intangible Assets,,N,Y,ABC,abc-accounting,abc-accounting
+124110,04,124000,영업권,Goodwill,,Y,Y,ABC,abc-accounting,abc-accounting
+124120,04,124000,(영업권손상차손누계액),(Accumulated Impairment Loss on Goodwill),,Y,Y,ABC,abc-accounting,abc-accounting
+124130,04,124000,산업재산권,Industrial Property Rights,,Y,Y,ABC,abc-accounting,abc-accounting
+124140,04,124000,(산업재산권감가상각누계액),(Accumulated Amortization on Industrial Property Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124150,04,124000,(산업재산권손상차손누계액),(Accumulated Impairment Loss on Industrial Property Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124160,04,124000,(산업재산권정부보조금등),(Government Grants and Others for Industrial Property Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124170,04,124000,토지사용권,Land Use Rights,,Y,Y,ABC,abc-accounting,abc-accounting
+124180,04,124000,(토지사용권감가상각누계액),(Accumulated Amortization on Land Use Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124190,04,124000,(토지사용권손상차손누계액),(Accumulated Impairment Loss on Land Use Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124200,04,124000,(토지사용권정부보조금등),(Government Grants and Others for Land Use Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124210,04,124000,개발비,Development Costs,,Y,Y,ABC,abc-accounting,abc-accounting
+124220,04,124000,(개발비감가상각누계액),(Accumulated Amortization on Development Costs),,Y,Y,ABC,abc-accounting,abc-accounting
+124230,04,124000,(개발비손상차손누계액),(Accumulated Impairment Loss on Development Costs),,Y,Y,ABC,abc-accounting,abc-accounting
+124250,04,124000,소프트웨어,Software,,Y,Y,ABC,abc-accounting,abc-accounting
+124260,04,124000,(소프트웨어감가상각누계액),(Accumulated Amortization on Software),,Y,Y,ABC,abc-accounting,abc-accounting
+124270,04,124000,(소프트웨어손상차손누계액),(Accumulated Impairment Loss on Software),,Y,Y,ABC,abc-accounting,abc-accounting
+124290,04,124000,시설이용권,Facility Usage Rights,,Y,Y,ABC,abc-accounting,abc-accounting
+124300,04,124000,(시설이용권감가상각누계액),(Accumulated Amortization on Facility Usage Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124310,04,124000,(시설이용권손상차손누계액),(Accumulated Impairment Loss on Facility Usage Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124320,04,124000,(시설이용권정부보조금등),(Government Grants and Others for Facility Usage Rights),,Y,Y,ABC,abc-accounting,abc-accounting
+124330,04,124000,기타무형자산,Other Intangible Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+124340,04,124000,(기타무형자산감가상각누계액),(Accumulated Amortization on Other Intangible Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+124350,04,124000,(기타무형자산손상차손누계액),(Accumulated Impairment Loss on Other Intangible Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+124360,04,124000,(기타무형자산정부보조금등),(Government Grants and Others for Other Intangible Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+124370,04,124000,건설중인무형자산,Intangible Assets Under Construction,,Y,Y,ABC,abc-accounting,abc-accounting
+124380,04,124000,(건설중인무형자산손상차손누계액),(Accumulated Impairment Loss on Intangible Assets Under Construction),,Y,Y,ABC,abc-accounting,abc-accounting
+124390,04,124000,(건설중인무형자산-정부보조금등),(Government Grants and Others for Intangible Assets Under Construction),,Y,Y,ABC,abc-accounting,abc-accounting
+124400,04,124000,사용권자산,Right-of-use Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+124410,04,124000,(사용권자산감가상각누계액),(Accumulated Depreciation on Right-of-use Assets),,Y,Y,ABC,abc-accounting,abc-accounting
+200000,01,,부채,Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+210000,02,200000,유동부채,Current Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+211100,03,210000,기타유동금융부채,Other Current Financial Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+211110,04,211100,당기손익인식지정금융부채,Financial Liabilities Designated at Fair Value Through Profit or Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+211120,04,211100,매매목적파생상품부채,Trading Derivative Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211130,04,211100,위험회피파생상품부채,Hedging Derivative Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211140,04,211100,(유동성)금융보증계약부채,(Current Portion of) Financial Guarantee Contract Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211150,04,211100,((유동성)금융보증계약부채 현재가치할인차금),(Present Value Discount on Current Portion of Financial Guarantee Contract Liabilities),,Y,Y,ABC,abc-accounting,abc-accounting
+211160,04,211100,기타유동금융부채,Other Current Financial Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211200,03,210000,매입채무및기타채무,Trade and Other Payables,,N,Y,ABC,abc-accounting,abc-accounting
+211211,04,211200,매입채무,Trade Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+211212,04,211200,미지급금,Other Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+211213,04,211200,미지급비용,Accrued Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+211215,04,211200,단기예수보증금,Short-term Deposits Received,,Y,Y,ABC,abc-accounting,abc-accounting
+211216,04,211200,(유동성)장기매입채무,Current Portion of Long-term Trade Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+211217,04,211200,(유동성)장기매입채무 현재가치할인차금,(Present Value Discount on Current Portion of Long-term Trade Payables),,Y,Y,ABC,abc-accounting,abc-accounting
+211218,04,211200,(유동성)장기미지급금,Current Portion of Long-term Other Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+211219,04,211200,(유동성)장기미지급금 현재가치할인차금,(Present Value Discount on Current Portion of Long-term Other Payables),,Y,Y,ABC,abc-accounting,abc-accounting
+211220,04,211200,(유동성)장기미지급비용,Current Portion of Long-term Accrued Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+211221,04,211200,(유동성)장기미지급비용 현재가치할인차금,(Present Value Discount on Current Portion of Long-term Accrued Expenses),,Y,Y,ABC,abc-accounting,abc-accounting
+211222,04,211200,단기렌탈보증금,Short-term Rental Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+211223,04,211200,기타,Other,,Y,Y,ABC,abc-accounting,abc-accounting
+211300,03,210000,단기차입금,Short-term Borrowings,,N,Y,ABC,abc-accounting,abc-accounting
+211311,04,211300,단기차입금-일반,Short-term Borrowings - General,,Y,Y,ABC,abc-accounting,abc-accounting
+211312,04,211300,단기차입금-해외,Short-term Borrowings - Overseas,,Y,Y,ABC,abc-accounting,abc-accounting
+211400,03,210000,유동성사채,Current Portion of Bonds,,N,Y,ABC,abc-accounting,abc-accounting
+211411,04,211400,(유동성)사채,Current Portion of Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211412,04,211400,(유동성)사채 할인(증)발행차금,Discount (Premium) on Current Portion of Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211413,04,211400,(유동성)전환사채,Current Portion of Convertible Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211414,04,211400,(유동성)전환사채 할인(증)발행차금,Discount (Premium) on Current Portion of Convertible Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211415,04,211400,(유동성)전환사채 전환권조정,Conversion Rights Adjustment on Current Portion of Convertible Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211416,04,211400,(유동성)전환사채 상환할증금,Redemption Premium on Current Portion of Convertible Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211417,04,211400,(유동성)신주인수권부사채,Current Portion of Bonds with Warrants,,Y,Y,ABC,abc-accounting,abc-accounting
+211418,04,211400,(유동성)신주인수권부사채 할인(증)발행차금,Discount (Premium) on Current Portion of Bonds with Warrants,,Y,Y,ABC,abc-accounting,abc-accounting
+211419,04,211400,(유동성)신주인수권조정,Warrant Rights Adjustment,,Y,Y,ABC,abc-accounting,abc-accounting
+211420,04,211400,(유동성)신주인수권부사채 상환할증금,Redemption Premium on Current Portion of Bonds with Warrants,,Y,Y,ABC,abc-accounting,abc-accounting
+211421,04,211400,(유동성)교환사채,Current Portion of Exchangeable Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+211500,03,210000,유동성장기부채,Current Portion of Long-term Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+211511,04,211500,(유동성)장기차입금,Current Portion of Long-term Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+211512,04,211500,(유동성)장기차입금 현재가치할인차금,Present Value Discount on Current Portion of Long-term Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+211513,04,211500,(유동성)부채성우선주,Current Portion of Redeemable Preferred Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+211514,04,211500,(유동성)부채성우선주 현재가치할인차금,Present Value Discount on Current Portion of Redeemable Preferred Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+211600,03,210000,미지급법인세,Income Tax Payable,,N,Y,ABC,abc-accounting,abc-accounting
+211611,04,211600,미지급법인세,Income Tax Payable,,Y,Y,ABC,abc-accounting,abc-accounting
+211700,03,210000,유동성충당부채,Current Provisions,,N,Y,ABC,abc-accounting,abc-accounting
+211711,04,211700,(유동성)하자보수충당부채,Current Portion of Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211712,04,211700,(유동성)판매보증충당부채,Current Portion of Product Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211713,04,211700,(유동성)마일리지충당부채,Current Portion of Mileage Program Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211714,04,211700,(유동성)구조조정충당부채,Current Portion of Restructuring Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211715,04,211700,(유동성)반품충당부채,Current Portion of Sales Return Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211716,04,211700,(유동성)복구충당부채,Current Portion of Restoration Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211717,04,211700,(유동성)기타(손실)충당부채,Current Portion of Other Loss Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+211800,03,210000,기타유동부채,Other Current Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+211811,04,211800,선수금,Advances Received,,Y,Y,ABC,abc-accounting,abc-accounting
+211812,04,211800,(유동성)선수리스료,Current Portion of Unearned Lease Income,,Y,Y,ABC,abc-accounting,abc-accounting
+211813,04,211800,미지급배당금,Dividends Payable,,Y,Y,ABC,abc-accounting,abc-accounting
+211814,04,211800,예수부가가치세,VAT Payable,,Y,Y,ABC,abc-accounting,abc-accounting
+211815,04,211800,예수금,Withholdings,,Y,Y,ABC,abc-accounting,abc-accounting
+211816,04,211800,선수수익,Unearned Revenue,,Y,Y,ABC,abc-accounting,abc-accounting
+211817,04,211800,정부보조금관련부채,Government Grant Related Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211818,04,211800,(유동성)장기선수금,Current Portion of Long-term Advances Received,,Y,Y,ABC,abc-accounting,abc-accounting
+211819,04,211800,기타의기타유동부채,Other Current Liabilities - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+211900,03,210000,유동성금융리스부채,Current Portion of Finance Lease Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+211911,04,211900,(유동성)금융리스부채,Current Portion of Finance Lease Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+211912,04,211900,(유동성금융리스부채 현재가치할인차금),Present Value Discount on Current Portion of Finance Lease Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+212000,03,210000,매각예정자산관련부채,Liabilities Related to Assets Held for Sale,,N,Y,ABC,abc-accounting,abc-accounting
+212011,04,212000,매각예정자산관련부채,Liabilities Related to Assets Held for Sale,,Y,Y,ABC,abc-accounting,abc-accounting
+220000,02,200000,비유동부채,Non-current Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221100,03,220000,기타비유동금융부채,Other Non-current Financial Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221110,04,221100,당기손익인식지정금융부채-비유동,Financial Liabilities at FVTPL - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+221120,04,221100,매매목적파생상품부채-비유동,Trading Derivative Liabilities - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+221130,04,221100,위험회피파생상품부채-비유동,Hedging Derivative Liabilities - Non-current,,Y,Y,ABC,abc-accounting,abc-accounting
+221140,04,221100,장기금융보증계약부채,Long-term Financial Guarantee Contract Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221150,04,221100,(장기금융보증계약부채 현재가치할인차금),Present Value Discount on Long-term Financial Guarantee Contract Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221160,04,221100,기타의기타비유동부채,Other Non-current Liabilities - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+221200,03,220000,장기매입채무및기타장기채무,Long-term Trade and Other Payables,,N,Y,ABC,abc-accounting,abc-accounting
+221211,04,221200,장기매입채무,Long-term Trade Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+221212,04,221200,(장기매입채무 현재가치할인차금),Present Value Discount on Long-term Trade Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+221213,04,221200,장기미지급금,Long-term Other Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+221214,04,221200,(장기미지급금 현재가치할인차금),Present Value Discount on Long-term Other Payables,,Y,Y,ABC,abc-accounting,abc-accounting
+221215,04,221200,예수보증금,Deposits Received,,Y,Y,ABC,abc-accounting,abc-accounting
+221216,04,221200,(예수보증금 현재가치할인차금),Present Value Discount on Deposits Received,,Y,Y,ABC,abc-accounting,abc-accounting
+221217,04,221200,렌탈보증금,Rental Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+221218,04,221200,(렌탈보증금 현재가치할인차금),Present Value Discount on Rental Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+221219,04,221200,장기미지급비용,Long-term Accrued Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+221220,04,221200,(장기미지급비용 현재가치할인차금),Present Value Discount on Long-term Accrued Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+221221,04,221200,기타,Other,,Y,Y,ABC,abc-accounting,abc-accounting
+221300,03,220000,장기차입금,Long-term Borrowings,,N,Y,ABC,abc-accounting,abc-accounting
+221311,04,221300,장기차입금,Long-term Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+221312,04,221300,(장기차입금 현재가치할인차금),Present Value Discount on Long-term Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+221313,04,221300,부채성우선주,Redeemable Preferred Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+221314,04,221300,(부채성우선주 현재가치할인차금),Present Value Discount on Redeemable Preferred Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+221400,03,220000,사채,Bonds,,N,Y,ABC,abc-accounting,abc-accounting
+221411,04,221400,사채,Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+221412,04,221400,(사채할인(증)발행차금),Bond Discount (Premium),,Y,Y,ABC,abc-accounting,abc-accounting
+221413,04,221400,사채상환할증금,Bond Redemption Premium,,Y,Y,ABC,abc-accounting,abc-accounting
+221414,04,221400,사채_해외,Bonds - Overseas,,Y,Y,ABC,abc-accounting,abc-accounting
+221415,04,221400,(사채할인(증)발행차금)_해외,Bond Discount (Premium) - Overseas,,Y,Y,ABC,abc-accounting,abc-accounting
+221416,04,221400,사채상환할증금_해외,Bond Redemption Premium - Overseas,,Y,Y,ABC,abc-accounting,abc-accounting
+221417,04,221400,전환사채,Convertible Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+221418,04,221400,(전환사채 할인(증)발행차금),Convertible Bond Discount (Premium),,Y,Y,ABC,abc-accounting,abc-accounting
+221419,04,221400,(전환사채 전환권조정),Conversion Rights Adjustment,,Y,Y,ABC,abc-accounting,abc-accounting
+221420,04,221400,전환사채 상환할증금,Convertible Bond Redemption Premium,,Y,Y,ABC,abc-accounting,abc-accounting
+221421,04,221400,신주인수권부사채,Bonds with Warrants,,Y,Y,ABC,abc-accounting,abc-accounting
+221422,04,221400,(신주인수권 할인(증)발행차금),Warrant Bond Discount (Premium),,Y,Y,ABC,abc-accounting,abc-accounting
+221423,04,221400,(신주인수권조정),Warrant Rights Adjustment,,Y,Y,ABC,abc-accounting,abc-accounting
+221424,04,221400,신주인수권상환할증금,Warrant Bond Redemption Premium,,Y,Y,ABC,abc-accounting,abc-accounting
+221425,04,221400,교환사채,Exchangeable Bonds,,Y,Y,ABC,abc-accounting,abc-accounting
+221426,04,221400,(교환사채 할인(증)발행차금),Exchangeable Bond Discount (Premium),,Y,Y,ABC,abc-accounting,abc-accounting
+221500,03,220000,확정급여부채,Defined Benefit Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221511,04,221500,확정급여채무,Defined Benefit Obligations,,Y,Y,ABC,abc-accounting,abc-accounting
+221512,04,221500,사외적립자산-국민연금전환금,Plan Assets - National Pension Fund,,Y,Y,ABC,abc-accounting,abc-accounting
+221513,04,221500,사외적립자산-퇴직보험연금예치금,Plan Assets - Retirement Insurance Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+221514,04,221500,사외적립자산-퇴직연금예치금,Plan Assets - Retirement Pension Deposits,,Y,Y,ABC,abc-accounting,abc-accounting
+221600,03,220000,이연법인세부채,Deferred Tax Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221611,04,221600,이연법인세부채,Deferred Tax Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221700,03,220000,충당부채,Provisions,,N,Y,ABC,abc-accounting,abc-accounting
+221711,04,221700,하자보수충당부채,Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221712,04,221700,판매보증충당부채,Product Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221713,04,221700,구조조정충당부채,Restructuring Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221714,04,221700,복구충당부채,Restoration Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221715,04,221700,반품충당부채,Sales Return Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221716,04,221700,마일리지충당부채,Mileage Program Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221717,04,221700,기타(손실)충당부채,Other Loss Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+221800,03,220000,기타비유동부채,Other Non-current Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221811,04,221800,기타장기종업원급여부채,Other Long-term Employee Benefit Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221812,04,221800,책임이행적립금,Performance Guarantee Reserves,,Y,Y,ABC,abc-accounting,abc-accounting
+221813,04,221800,장기선수수익,Long-term Unearned Revenue,,Y,Y,ABC,abc-accounting,abc-accounting
+221814,04,221800,장기정부보조금관련부채,Long-term Government Grant Related Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221815,04,221800,장기선수금,Long-term Advances Received,,Y,Y,ABC,abc-accounting,abc-accounting
+221816,04,221800,장기예수금,Long-term Withholdings,,Y,Y,ABC,abc-accounting,abc-accounting
+221817,04,221800,선수리스료,Unearned Lease Income,,Y,Y,ABC,abc-accounting,abc-accounting
+221818,04,221800,장기미지급배당금,Long-term Dividends Payable,,Y,Y,ABC,abc-accounting,abc-accounting
+221819,04,221800,기타의기타비유동부채,Other Non-current Liabilities - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+221900,03,220000,금융리스부채,Finance Lease Liabilities,,N,Y,ABC,abc-accounting,abc-accounting
+221911,04,221900,금융리스부채,Finance Lease Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+221912,04,221900,(금융리스부채 현재가치할인차금),Present Value Discount on Finance Lease Liabilities,,Y,Y,ABC,abc-accounting,abc-accounting
+300000,01,,자본,Equity,,N,Y,ABC,abc-accounting,abc-accounting
+310000,02,300000,지배기업주주지분,Controlling Interest,,N,Y,ABC,abc-accounting,abc-accounting
+311000,03,310000,자본금,Capital Stock,,N,Y,ABC,abc-accounting,abc-accounting
+311010,04,311000,보통주,Common Stock,,Y,Y,ABC,abc-accounting,abc-accounting
+311020,04,311000,우선주,Preferred Stock,,Y,Y,ABC,abc-accounting,abc-accounting
+312000,03,310000,자본잉여금,Capital Surplus,,N,Y,ABC,abc-accounting,abc-accounting
+312010,04,312000,재평가적립금,Revaluation Reserve,,Y,Y,ABC,abc-accounting,abc-accounting
+312020,04,312000,주식발행초과금,Share Premium,,Y,Y,ABC,abc-accounting,abc-accounting
+312030,04,312000,감자차익,Capital Reduction Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+312040,04,312000,합병차익,Merger Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+312050,04,312000,자기주식처분이익,Gain on Disposal of Treasury Stock,,Y,Y,ABC,abc-accounting,abc-accounting
+312060,04,312000,전환권대가,Conversion Rights Consideration,,Y,Y,ABC,abc-accounting,abc-accounting
+312070,04,312000,신주인수권대가,Stock Warrant Consideration,,Y,Y,ABC,abc-accounting,abc-accounting
+312080,04,312000,연결자본잉여금,Consolidated Capital Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+312090,04,312000,기타자본잉여금,Other Capital Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+313000,03,310000,이익잉여금,Retained Earnings,,N,Y,ABC,abc-accounting,abc-accounting
+313010,04,313000,이익준비금,Legal Reserve,,Y,Y,ABC,abc-accounting,abc-accounting
+313020,04,313000,기업합리화적립금,Business Rationalization Reserve,,Y,Y,ABC,abc-accounting,abc-accounting
+313030,04,313000,재무구조개선적립금,Financial Structure Improvement Reserve,,Y,Y,ABC,abc-accounting,abc-accounting
+313040,04,313000,임의적립금,Voluntary Reserve,,Y,Y,ABC,abc-accounting,abc-accounting
+313050,04,313000,전기이월이익잉여금,Retained Earnings Carried Forward,,Y,Y,ABC,abc-accounting,abc-accounting
+313060,04,313000,지배주주지분순이익(손실)_BS,Controlling Interest Net Income (Loss)_BS,,Y,Y,ABC,abc-accounting,abc-accounting
+313070,04,313000,보험수리적손익_이익잉여금변동,Actuarial Gains (Losses)_Changes in Retained Earnings,,Y,Y,ABC,abc-accounting,abc-accounting
+314000,03,310000,기타포괄손익누계액,Accumulated Other Comprehensive Income,,N,Y,ABC,abc-accounting,abc-accounting
+314010,04,314000,지분법자본변동,Capital Changes in Equity Method,,Y,Y,ABC,abc-accounting,abc-accounting
+314020,04,314000,부의지분법자본변동,Negative Capital Changes in Equity Method,,Y,Y,ABC,abc-accounting,abc-accounting
+314030,04,314000,매도가능금융자산평가이익,Gain on Valuation of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+314040,04,314000,매도가능금융자산평가손실,Loss on Valuation of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+314050,04,314000,해외사업환산손익,Foreign Currency Translation Gain (Loss),,Y,Y,ABC,abc-accounting,abc-accounting
+314060,04,314000,파생상품평가이익,Gain on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+314070,04,314000,파생상품평가손실,Loss on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+314080,04,314000,기타의기타포괄손익누계액,Other Accumulated Other Comprehensive Income,,Y,Y,ABC,abc-accounting,abc-accounting
+314090,04,314000,해외사업장환산외환차이,Foreign Operation Translation Differences,,Y,Y,ABC,abc-accounting,abc-accounting
+314100,04,314000,자산재평가차익,Asset Revaluation Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+314110,04,314000,확정급여보험수리적손익,Actuarial Gains (Losses) on Defined Benefit Plans,,Y,Y,ABC,abc-accounting,abc-accounting
+315000,03,310000,기타자본구성요소,Other Components of Equity,,N,Y,ABC,abc-accounting,abc-accounting
+315010,04,315000,자기주식,Treasury Stock,,Y,Y,ABC,abc-accounting,abc-accounting
+315020,04,315000,주식할인발행차금,Stock Issuance Discount,,Y,Y,ABC,abc-accounting,abc-accounting
+315030,04,315000,감자차손,Capital Reduction Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+315040,04,315000,자기주식처분손실,Loss on Disposal of Treasury Stock,,Y,Y,ABC,abc-accounting,abc-accounting
+315050,04,315000,주식선택권,Stock Options,,Y,Y,ABC,abc-accounting,abc-accounting
+315090,04,315000,기타의기타자본항목,Other Capital Items,,Y,Y,ABC,abc-accounting,abc-accounting
+316000,03,310000,매각예정자산관련자본,Equity Related to Assets Held for Sale,,N,Y,ABC,abc-accounting,abc-accounting
+316100,04,316000,매각예정자산관련자본,Equity Related to Assets Held for Sale,,Y,Y,ABC,abc-accounting,abc-accounting
+320000,02,300000,비지배주주지분,Non-controlling Interests,,N,Y,ABC,abc-accounting,abc-accounting
+321000,03,320000,비지배주주지분_투자/자본상계,Non-controlling Interests_Investment/Capital Offset,,Y,Y,ABC,abc-accounting,abc-accounting
+322000,03,320000,비지배주주지분_자본증가,Non-controlling Interests_Capital Increase,,Y,Y,ABC,abc-accounting,abc-accounting
+323000,03,320000,비지배주주지분순이익(손실)_BS,Non-controlling Interests Net Income (Loss)_BS,,Y,Y,ABC,abc-accounting,abc-accounting
+410000,01,,매출,Sales,,N,Y,ABC,abc-accounting,abc-accounting
+410100,02,410000,제품매출,Sales of Finished Goods,,Y,Y,ABC,abc-accounting,abc-accounting
+410200,02,410000,상품매출,Merchandise Sales,,Y,Y,ABC,abc-accounting,abc-accounting
+410300,02,410000,렌탈매출,Rental Income,,Y,Y,ABC,abc-accounting,abc-accounting
+410600,02,410000,기타매출,Other Sales,,Y,Y,ABC,abc-accounting,abc-accounting
+410700,02,410000,지주회사관계기업주식등배당금수익,Dividend Income from Associates of Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+410800,02,410000,임대수입,Rental Revenue,,Y,Y,ABC,abc-accounting,abc-accounting
+410900,02,410000,매출차감,Sales Deductions,,Y,Y,ABC,abc-accounting,abc-accounting
+420000,01,,매출원가,Cost of Sales,,N,Y,ABC,abc-accounting,abc-accounting
+420100,02,420000,제품매출원가,Cost of Finished Goods Sold,,Y,Y,ABC,abc-accounting,abc-accounting
+420200,02,420000,상품매출원가,Cost of Merchandise Sold,,Y,Y,ABC,abc-accounting,abc-accounting
+420300,02,420000,렌탈매출원가,Cost of Rental Services,,Y,Y,ABC,abc-accounting,abc-accounting
+420500,02,420000,건설형매출원가,Construction Contract Costs,,Y,Y,ABC,abc-accounting,abc-accounting
+420600,02,420000,용역매출원가,Service Revenue Costs,,Y,Y,ABC,abc-accounting,abc-accounting
+420700,02,420000,기타매출원가,Other Cost of Sales,,Y,Y,ABC,abc-accounting,abc-accounting
+420800,02,420000,임대수입매출원가,Cost of Rental Revenue,,Y,Y,ABC,abc-accounting,abc-accounting
+430000,01,,매출총이익,Gross Profit,,N,Y,ABC,abc-accounting,abc-accounting
+510000,01,,판매비와 일반관리비,Selling and Administrative Expenses,,N,Y,ABC,abc-accounting,abc-accounting
+510100,02,510000,급여 및 상여,Salaries and Bonuses,,Y,Y,ABC,abc-accounting,abc-accounting
+510400,02,510000,퇴직급여,Retirement Benefits,,Y,Y,ABC,abc-accounting,abc-accounting
+510500,02,510000,해고급여,Termination Benefits,,Y,Y,ABC,abc-accounting,abc-accounting
+510600,02,510000,복리후생비,Employee Benefits,,Y,Y,ABC,abc-accounting,abc-accounting
+510700,02,510000,접대비,Entertainment Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+510800,02,510000,여비교통비,Travel Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+510900,02,510000,차량유지비,Vehicle Maintenance Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511000,02,510000,통신비,Communication Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511100,02,510000,세금과공과,Taxes and Dues,,Y,Y,ABC,abc-accounting,abc-accounting
+511200,02,510000,임차료,Rent Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511300,02,510000,감가상각비,Depreciation,,Y,Y,ABC,abc-accounting,abc-accounting
+511400,02,510000,무형자산상각비,Amortization,,Y,Y,ABC,abc-accounting,abc-accounting
+511500,02,510000,수선비,Repair Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511600,02,510000,소모품비,Supplies Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511700,02,510000,도서인쇄비,Books and Printing Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511800,02,510000,교제비,Social Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+511900,02,510000,광고선전비,Advertising Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512000,02,510000,판촉비,Sales Promotion Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512100,02,510000,해외시장개척비,Overseas Market Development Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512200,02,510000,조사연구비,Research Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512300,02,510000,운반비,Transportation Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512400,02,510000,보험료,Insurance Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512500,02,510000,용역비,Service Fees,,Y,Y,ABC,abc-accounting,abc-accounting
+512600,02,510000,지급수수료,Commission Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512700,02,510000,교육훈련비,Training Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512800,02,510000,연구비 및 경상개발비,Research and Development Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+512900,02,510000,경상개발비,Current Development Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513000,02,510000,판매수수료,Sales Commission,,Y,Y,ABC,abc-accounting,abc-accounting
+513100,02,510000,A/S비용,After-sales Service Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513200,02,510000,행사비,Event Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513300,02,510000,회의비,Meeting Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513400,02,510000,판매보증비,Warranty Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513500,02,510000,판매보증충당부채환입,Reversal of Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+513600,02,510000,견본비,Sample Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513700,02,510000,포장비,Packaging Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513800,02,510000,수도광열비,Utilities Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+513900,02,510000,하자보수비,Repair Service Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514000,02,510000,하자보수충당부채환입,Reversal of Repair Service Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+514100,02,510000,안전공해비,Safety and Pollution Control Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514200,02,510000,주식보상비용,Share-based Payment Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514300,02,510000,주식보상비용환입,Reversal of Share-based Payment Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514400,02,510000,잡비,Miscellaneous Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514500,02,510000,프로젝트비,Project Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514600,02,510000,소비자보상비,Consumer Compensation Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514700,02,510000,기타의판매비와관리비,Other Selling and Administrative Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+514900,02,510000,인세,Royalty Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+517000,01,,구조조정비용,Restructuring Costs,,N,Y,ABC,abc-accounting,abc-accounting
+517010,02,517000,인건비_구조조정관련,Restructuring-related Personnel Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+517020,02,517000,기타비용_구조조정관련,Other Restructuring-related Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+517030,02,517000,구조조정비용환입,Reversal of Restructuring Costs,,Y,Y,ABC,abc-accounting,abc-accounting
+518010,02,517000,유형자산손상차손,Impairment Loss on Property Plant and Equipment,,Y,Y,ABC,abc-accounting,abc-accounting
+518040,02,517000,무형자산손상차손 환입,Reversal of Impairment Loss on Intangible Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+518070,02,517000,기타 비금융자산 손상차손,Impairment Loss on Other Non-financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+518080,02,517000,기타 비금융자산 손상차손 환입,Reversal of Impairment Loss on Other Non-financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+518090,02,517000,지주회사관계기업주식등손상차손,Impairment Loss on Associates Shares - Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+518100,02,517000,지주회사관계기업주식등손상차손환입,Reversal of Impairment Loss on Associates Shares - Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+520100,02,517000,수입임대료,Rental Income,,Y,Y,ABC,abc-accounting,abc-accounting
+520200,02,517000,수수료수익,Commission Income,,Y,Y,ABC,abc-accounting,abc-accounting
+520300,02,517000,외환차익,Foreign Exchange Gain,,Y,Y,ABC,abc-accounting,abc-accounting
+520400,02,517000,외화환산이익,Foreign Currency Translation Gain,,Y,Y,ABC,abc-accounting,abc-accounting
+520500,02,517000,유형자산처분이익,Gain on Disposal of Property Plant and Equipment,,Y,Y,ABC,abc-accounting,abc-accounting
+520600,02,517000,투자부동산처분이익,Gain on Disposal of Investment Property,,Y,Y,ABC,abc-accounting,abc-accounting
+520700,02,517000,무형자산처분이익,Gain on Disposal of Intangible Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+520800,02,517000,기타비금융자산처분이익,Gain on Disposal of Other Non-financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+520900,02,517000,잡이익,Miscellaneous Income,,Y,Y,ABC,abc-accounting,abc-accounting
+521000,02,517000,자산수증이익,Gain on Assets Contributed,,Y,Y,ABC,abc-accounting,abc-accounting
+521100,02,517000,채무면제이익,Gain on Debt Forgiveness,,Y,Y,ABC,abc-accounting,abc-accounting
+521200,02,517000,보험차익,Insurance Claims Income,,Y,Y,ABC,abc-accounting,abc-accounting
+521300,02,517000,매출채권손상차손환입,Reversal of Impairment Loss on Trade Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+521400,02,517000,전기오류수정이익,Prior Period Error Correction Gain,,Y,Y,ABC,abc-accounting,abc-accounting
+521500,02,517000,판매보증충당부채환입,Reversal of Warranty Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+521600,02,517000,하자보수충당부채환입,Reversal of Repair Service Provisions,,Y,Y,ABC,abc-accounting,abc-accounting
+521700,02,517000,주식보상비용환입,Reversal of Share-based Payment Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+521800,02,517000,매각예정자산부채처분이익,Gain on Disposal of Assets Held for Sale,,Y,Y,ABC,abc-accounting,abc-accounting
+521900,02,517000,사용손료수익,Usage Fee Income,,Y,Y,ABC,abc-accounting,abc-accounting
+522000,02,517000,렌탈해지위약금수익,Income from Rental Contract Cancellation Penalties,,Y,Y,ABC,abc-accounting,abc-accounting
+522100,02,517000,기타의기타영업수익,Other Operating Income - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+522200,02,517000,지주회사지분법이익,Equity Method Gain of Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+522300,02,517000,지주회사관계기업주식등처분이익,Gain on Disposal of Associates Shares - Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+522400,02,517000,기타채권손상차손환입,Reversal of Impairment Loss on Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+530100,02,517000,외환차손,Foreign Exchange Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+530200,02,517000,외화환산손실,Foreign Currency Translation Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+530300,02,517000,유형자산처분손실,Loss on Disposal of Property Plant and Equipment,,Y,Y,ABC,abc-accounting,abc-accounting
+530400,02,517000,투자부동산처분손실,Loss on Disposal of Investment Property,,Y,Y,ABC,abc-accounting,abc-accounting
+530500,02,517000,무형자산처분손실,Loss on Disposal of Intangible Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+530600,02,517000,기타비금융자산처분손실,Loss on Disposal of Other Non-financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+530700,02,517000,재고자산폐기손실,Loss on Disposal of Inventories,,Y,Y,ABC,abc-accounting,abc-accounting
+530800,02,517000,운휴자산감가상각비,Depreciation of Idle Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+530900,02,517000,잡손실,Miscellaneous Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+531000,02,517000,기부금,Donations,,Y,Y,ABC,abc-accounting,abc-accounting
+531100,02,517000,재해손실,Disaster Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+531200,02,517000,매출채권손상차손,Impairment Loss on Trade Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+531300,02,517000,전기오류수정손실,Prior Period Error Correction Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+531400,02,517000,매각예정자산부채처분손실,Loss on Disposal of Assets Held for Sale,,Y,Y,ABC,abc-accounting,abc-accounting
+531500,02,517000,계약해지손실,Loss on Contract Cancellation,,Y,Y,ABC,abc-accounting,abc-accounting
+531600,02,517000,렌탈자산폐기손실,Loss on Disposal of Rental Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+531700,02,517000,기타의기타영업비용,Other Operating Expenses - Others,,Y,Y,ABC,abc-accounting,abc-accounting
+531800,02,517000,지주회사지분법손실,Equity Method Loss of Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+531900,02,517000,지주회사관계기업주식등처분손실,Loss on Disposal of Associates Shares - Holding Company,,Y,Y,ABC,abc-accounting,abc-accounting
+532000,02,517000,기타채권손상차손,Impairment Loss on Other Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+540000,01,,영업이익(손실),Operating Income (Loss),,N,Y,ABC,abc-accounting,abc-accounting
+550000,01,,기타이익,Other Income,,N,Y,ABC,abc-accounting,abc-accounting
+550100,02,550000,외환차익(영업외),Foreign Exchange Gain (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+550200,02,550000,외화환산이익(영업외),Foreign Currency Translation Gain (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+550300,02,550000,잡이익(영업외),Miscellaneous Income (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+550400,02,550000,파생상품평가이익(영업외),Gain on Valuation of Derivatives (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+560000,01,,기타손실,Other Losses,,N,Y,ABC,abc-accounting,abc-accounting
+560100,02,560000,외환차손(영업외),Foreign Exchange Loss (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+560200,02,560000,외화환산손실(영업외),Foreign Currency Translation Loss (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+560300,02,560000,잡손실(영업외),Miscellaneous Loss (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+560400,02,560000,기부금(영업외),Donations (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+560500,02,560000,파생상품평가손실(영업외),Loss on Valuation of Derivatives (Non-operating),,Y,Y,ABC,abc-accounting,abc-accounting
+610000,01,,금융수익,Financial Income,,N,Y,ABC,abc-accounting,abc-accounting
+610100,02,610000,이자수익,Interest Income,,Y,Y,ABC,abc-accounting,abc-accounting
+610200,02,610000,배당금수익,Dividend Income,,Y,Y,ABC,abc-accounting,abc-accounting
+610300,02,610000,당기손익인식지정금융자산처분이익,Gain on Disposal of Financial Assets at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+610400,02,610000,당기손익인식지정금융자산평가이익,Gain on Valuation of Financial Assets at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+610500,02,610000,단기매매비파생금융자산처분이익,Gain on Disposal of Trading Non-derivative Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+610600,02,610000,단기매매비파생금융자산평가이익,Gain on Valuation of Trading Non-derivative Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+610700,02,610000,매도가능금융자산처분이익,Gain on Disposal of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+610800,02,610000,매도가능금융자산손상차손환입,Reversal of Impairment Loss on Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+610900,02,610000,만기보유금융자산처분이익,Gain on Disposal of Held-to-maturity Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+611000,02,610000,만기보유금융자산손상차손환입,Reversal of Impairment Loss on Held-to-maturity Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+611100,02,610000,당기손익인식지정금융부채처분이익,Gain on Disposal of Financial Liabilities at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+611200,02,610000,당기손익인식지정금융부채평가이익,Gain on Valuation of Financial Liabilities at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+611300,02,610000,금융보증수수료이익,Financial Guarantee Fee Income,,Y,Y,ABC,abc-accounting,abc-accounting
+611400,02,610000,파생상품거래이익,Gain on Trading of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+611500,02,610000,파생상품평가이익,Gain on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+611600,02,610000,기타금융상품처분이익,Gain on Disposal of Other Financial Instruments,,Y,Y,ABC,abc-accounting,abc-accounting
+611700,02,610000,기타금융상품손상차손환입,Reversal of Impairment Loss on Other Financial Instruments,,Y,Y,ABC,abc-accounting,abc-accounting
+611800,02,610000,기타금융수익,Other Financial Income,,Y,Y,ABC,abc-accounting,abc-accounting
+611900,02,610000,차입금상환이익,Gain on Redemption of Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+620000,01,,금융비용,Financial Costs,,N,Y,ABC,abc-accounting,abc-accounting
+620100,02,620000,이자비용,Interest Expense,,Y,Y,ABC,abc-accounting,abc-accounting
+620110,02,620000,이자비용(할인발행차금 등 상각),Interest Expense (Amortization of Discount on Issuance etc.),,Y,Y,ABC,abc-accounting,abc-accounting
+620200,02,620000,당기손익인식지정금융자산처분손실,Loss on Disposal of Financial Assets at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+620300,02,620000,당기손익인식지정금융자산평가손실,Loss on Valuation of Financial Assets at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+620400,02,620000,단기매매비파생상품자산처분손실,Loss on Disposal of Trading Non-derivative Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+620500,02,620000,단기매매비파생상품자산평가손실,Loss on Valuation of Trading Non-derivative Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+620600,02,620000,매도가능금융자산처분손실,Loss on Disposal of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+620700,02,620000,매도가능금융자산손상차손,Impairment Loss on Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+620800,02,620000,만기보유금융자산처분손실,Loss on Disposal of Held-to-maturity Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+620900,02,620000,만기보유금융자산손상차손,Impairment Loss on Held-to-maturity Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+621000,02,620000,매출채권처분손실,Loss on Disposal of Trade Receivables,,Y,Y,ABC,abc-accounting,abc-accounting
+621100,02,620000,당기손익인식지정금융부채처분손실,Loss on Disposal of Financial Liabilities at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+621200,02,620000,당기손익인식지정금융부채평가손실,Loss on Valuation of Financial Liabilities at FVTPL,,Y,Y,ABC,abc-accounting,abc-accounting
+621300,02,620000,금융보증비용,Financial Guarantee Expenses,,Y,Y,ABC,abc-accounting,abc-accounting
+621400,02,620000,파생상품거래손실,Loss on Trading of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+621500,02,620000,파생상품평가손실,Loss on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+621600,02,620000,기타금융상품처분손실,Loss on Disposal of Other Financial Instruments,,Y,Y,ABC,abc-accounting,abc-accounting
+621700,02,620000,기타금융상품손상차손,Impairment Loss on Other Financial Instruments,,Y,Y,ABC,abc-accounting,abc-accounting
+621800,02,620000,기타금융비용,Other Financial Costs,,Y,Y,ABC,abc-accounting,abc-accounting
+621900,02,620000,차입금상환손실,Loss on Redemption of Borrowings,,Y,Y,ABC,abc-accounting,abc-accounting
+630000,01,,관계기업투자손익,Share of Profit (Loss) of Associates,,N,Y,ABC,abc-accounting,abc-accounting
+630100,02,630000,지분법이익,Equity Method Gain,,Y,Y,ABC,abc-accounting,abc-accounting
+630200,02,630000,관계기업주식등처분이익,Gain on Disposal of Associates Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+630300,02,630000,관계기업주식등배당금수익,Dividend Income from Associates,,Y,Y,ABC,abc-accounting,abc-accounting
+630400,02,630000,관계기업주식등손상차손환입,Reversal of Impairment Loss on Associates Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+630500,02,630000,지분법손실,Equity Method Loss,,Y,Y,ABC,abc-accounting,abc-accounting
+630600,02,630000,관계기업주식등처분손실,Loss on Disposal of Associates Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+630700,02,630000,관계기업주식등손상차손,Impairment Loss on Associates Shares,,Y,Y,ABC,abc-accounting,abc-accounting
+640000,01,,법인세비용차감전순이익(손실),Profit (Loss) Before Income Tax,,N,Y,ABC,abc-accounting,abc-accounting
+650000,01,,법인세비용,Income Tax Expense,,N,Y,ABC,abc-accounting,abc-accounting
+650100,02,650000,당기법인세비용,Current Tax Expense,,Y,Y,ABC,abc-accounting,abc-accounting
+650200,02,650000,법인세환급액,Income Tax Refund,,Y,Y,ABC,abc-accounting,abc-accounting
+650300,02,650000,법인세추납액,Additional Income Tax Payment,,Y,Y,ABC,abc-accounting,abc-accounting
+660000,01,,중단사업이익(손실),Profit (Loss) from Discontinued Operations,,Y,Y,ABC,abc-accounting,abc-accounting
+670000,01,,당기순이익(손실),Net Income (Loss),,N,Y,ABC,abc-accounting,abc-accounting
+680000,01,,지배주주지분순이익(손실)_PL,Net Income (Loss) Attributable to Owners of the Parent,,Y,Y,ABC,abc-accounting,abc-accounting
+690000,01,,비지배주주지분순이익(손실)_PL,Net Income (Loss) Attributable to Non-controlling Interests,,Y,Y,ABC,abc-accounting,abc-accounting
+695000,01,,연결손익효과,Effect of Consolidation on Income,,Y,Y,ABC,abc-accounting,abc-accounting
+700000,01,,기타포괄손익누계액,Accumulated Other Comprehensive Income,,N,Y,ABC,abc-accounting,abc-accounting
+700100,02,700000,지분법자본변동,Capital Changes in Equity Method,,Y,Y,ABC,abc-accounting,abc-accounting
+700200,02,700000,부의지분법자본변동,Negative Capital Changes in Equity Method,,Y,Y,ABC,abc-accounting,abc-accounting
+700300,02,700000,매도가능금융자산평가이익,Gain on Valuation of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+700400,02,700000,매도가능금융자산평가손실,Loss on Valuation of Available-for-sale Financial Assets,,Y,Y,ABC,abc-accounting,abc-accounting
+700500,02,700000,해외사업환산손익,Foreign Operations Translation Gain (Loss),,Y,Y,ABC,abc-accounting,abc-accounting
+700600,02,700000,파생상품평가이익,Gain on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+700700,02,700000,파생상품평가손실,Loss on Valuation of Derivatives,,Y,Y,ABC,abc-accounting,abc-accounting
+700800,02,700000,기타의기타포괄손익누계액,Other Accumulated Other Comprehensive Income,,Y,Y,ABC,abc-accounting,abc-accounting
+700900,02,700000,보험수리적손익,Actuarial Gains (Losses),,Y,Y,ABC,abc-accounting,abc-accounting
+701000,02,700000,해외사업장환산외환차이,Foreign Currency Translation Differences,,Y,Y,ABC,abc-accounting,abc-accounting
+701100,02,700000,자산재평가차익,Asset Revaluation Surplus,,Y,Y,ABC,abc-accounting,abc-accounting
+800000,01,,총포괄이익,Total Comprehensive Income,,N,Y,ABC,abc-accounting,abc-accounting
+800100,02,800000,지배지분포괄이익,Comprehensive Income Attributable to Owners of the Parent,,Y,Y,ABC,abc-accounting,abc-accounting
+800200,02,800000,비지배지분포괄이익,Comprehensive Income Attributable to Non-controlling Interests,,Y,Y,ABC,abc-accounting,abc-accounting

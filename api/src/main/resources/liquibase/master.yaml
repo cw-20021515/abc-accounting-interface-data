@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - objectQuotingStrategy: QUOTE_ALL_OBJECTS
+  - changeSet:
+      id: create-account-table
+      author: tongtler@coway.com
+      sqlFile:
+        path: /liquibase/schema/01.schema-accounts.sql
+        endDelimiter: ";"
+        splitStatements: true
+        stripComments: false
+  - include:
+      file: /liquibase/schema/01.schema-accounts.sql
+  - include:
+      file: /liquibase/schema/02.schema-audit.sql
+  - include:
+      file: /liquibase/schema/03.schema-collects.sql
+  - include:
+      file: /liquibase/schema/04.schema-documents.sql
+  - include:
+      file: /liquibase/schema/05.schema-payout.sql
+  - include:
+      file: /liquibase/schema/06.schema-qbo.sql
+  - include:
+      file: /liquibase/schema/07.schema-rentals.sql
+  - include:
+      file: /liquibase/schema/08.schema-submitted.sql
+#  - include:
+#      file: /liquibase/import/audit.yaml
+#  - include:
+#      file: /liquibase/import/rentals.yaml
+#  - include:
+#      file: /liquibase/import/accounts.yaml
+#  - include:
+#      file: /liquibase/import/qbo.yaml

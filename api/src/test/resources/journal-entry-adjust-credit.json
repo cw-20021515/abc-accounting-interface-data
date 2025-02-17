@@ -1,0 +1,35 @@
+{
+  "docNumber": "SA2500701156",
+  "txnDate": "2024-11-29T00:00:00.000+00:00",
+  "privateNote": "[일시불] 대금입금",
+  "linkedTxn": [],
+  "line": [
+    {
+      "lineNum": 1,
+      "description": "[일시불] 대금입금-현금-보통예금",
+      "amount": 1424.8406,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "CREDIT"
+      }
+    },
+    {
+      "lineNum": 2,
+      "description": "[일시불] 대금입금-지급수수료-결제수수료",
+      "amount": 36.5344,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "CREDIT"
+      }
+    },
+    {
+      "lineNum": 1,
+      "description": "[일시불] 대금입금-카드미수금",
+      "amount": 1461.3750,
+      "detailType": "JOURNAL_ENTRY_LINE_DETAIL",
+      "journalEntryLineDetail": {
+        "postingType": "DEBIT"
+      }
+    }
+  ]
+}

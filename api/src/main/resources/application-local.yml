@@ -1,0 +1,51 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  liquibase:
+    enabled: false
+  application:
+    name: abc-accounting-local
+  docker: # 로컬 실행시 docker-compose 실행 옵션
+    compose:
+      enabled: true
+#  jpa:
+#    show-sql: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            url: https://apis.abc.necoa.blue
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: FULL
+          oms:
+            url: https://apis.abc.necoa.blue
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: BASIC
+scheduling:
+  credentials:
+    enabled: false
+    refresh:
+      time-unit: MINUTES
+      fixed-delay: 10    # 10분
+      initial-delay: 1 # 1분
+credential:
+  playground: SANDBOX
+  profile : local
+  redirectUri: http://localhost:9090/accounting/v1/qbo/oauth2/redirect
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /accounting/v1/payouts/api-docs
+  swagger-ui:
+    enabled: true
+    path: /accounting/v1/payouts/swagger-ui
+#logging:
+#  level:
+#    com.zaxxer.hikari: DEBUG
+#    com.zaxxer.hikari.HikariConfig: DEBUG       ## hikari connection pool 설정 정보
+#    com.zaxxer.hikari.metrics: DEBUG            ## 메트릭 정보

@@ -1,0 +1,4 @@
+id,purchase_order_id,purchase_order_item_id,material_id,quantity,unit_price,currency,create_time
+1,1ZAvs10lbnx,1ZAvs11Ko46,WPP_1237278,1,100.00,USD,2024-12-09 01:06:08.261873 +00:00
+2,1ZOHGbVqHli,1ZOHGbW7stn,WP_765004,1,1.00,USD,2024-12-17 02:04:25.647997 +00:00
+3,1ZAuqJrcTvF,1ZAuqJru53K,WPP_1237716,1,1.00,USD,2024-12-09 00:51:45.678167 +00:00

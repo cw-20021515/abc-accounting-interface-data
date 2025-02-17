@@ -1,0 +1,27 @@
+id,company_code,department_id,role_code,role_name,grade_code,grade_name,status,first_name,middle_name,last_name,family_name,name_suffix,phone,mobile,fax,email,address,create_time,update_time,is_active
+AS0001,N100,A001,0001,CEO,PR,President,,장원,,서,,,,,,jwseo@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+BS0001,N200,B001,0001,CEO,MD,Managing Director,,병희,,심,,,,,,manishim@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00001,N200,C001,0001,CEO,MD,Managing Director,,재정,,심,,,,213)700-8576,,kevinshim@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00003,N200,B010,0002,CFO,DI,Director,,현재,,박,,,,,,jaypark@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00007,N200,B010,0013,Part Leader,MA,Manager,,NEW1,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00008,N200,B020,0012,Team Leader,DI,Director,,NEW2,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00006,N200,B020,0014,Team Member,AM,Assistant Manager,,Kiana,,Murray,,,,210)838-6262,,kianamurray@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00009,N200,B020,0014,Team Member,,Associate,,NEW3,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00002,N200,B030,0012,Team Leader,DI,Director,,기준,,석,,,,213)729-8852,,kjseok@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00005,N200,B030,0013,Part Leader,MA,Manager,,Paul,,Smith,,,,856)426-3083,,paulsmith@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00010,N200,B030,0014,Team Member,AS,Associate,,NEW4,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00011,N200,B030,0014,Team Member,AS,Associate,,NEW5,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00004,N200,B040,0012,Team Leader,MA,Manager,,원호,,이,,,,323)212-7888,,wonlee@NECOA.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+B00012,N200,B041,0013,Part Leader,MA,Manager,,NEW6,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00013,N200,B041,0014,Team Member,AS,Associate,,NEW7,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00014,N200,B041,0014,Team Member,AS,Associate,,NEW8,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+B00015,N200,B050,0014,Team Member,AS,Associate,,NEW9,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+C00001,N300,C001,0001,CEO,DI,Director,,승용,,이,,,,945)289-7360,,edmundlee@NECOATECH.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+C00004,N300,C010,0014,Team Member,AS,Associate,,NEW11,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+CT0001,N300,C010,0023,Technical Crew,PT,Pro Technician,,NEW12,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+CT0002,N300,C010,0023,Technical Crew,TE,Technician,,NEW13,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+CT0003,N300,C010,0023,Technical Crew,TE,Technician,,NEW14,,,,,,,,,,2025-01-02 0:00:00,2025-01-02 0:00:00,N
+C00002,N300,C030,0012,Team Leader,DI,Director,,병혁,,이,,,,949)283-0408,,davidlee@NECOATECH.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+C00002,N300,C020,0012,Team Leader,DI,Director,,병혁,,이,,,,949)283-0408,,davidlee@NECOATECH.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+CS0001,N300,C021,0099,Technical Specialist,MA,Manager,,동엽,,이,,,,,,dylee@NECOATECH.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y
+CS0002,N300,C021,0099,Technical Specialist,MA,Manager,,두진,,양,,,,,,doojin24@NECOATECH.COM,,2025-01-02 0:00:00,2025-01-02 0:00:00,Y

@@ -1,0 +1,71 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        use_sql_comments: false
+  main:
+    allow-bean-definition-overriding: true
+  liquibase:
+    enabled: false
+  application:
+    name: abc-accounting-api-test
+  docker: # 로컬 실행시 docker-compose 실행 옵션
+    compose:
+      enabled: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            url: https://apis.abc.necoa.dev
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: FULL
+          oms:
+            url: https://apis.abc.necoa.dev
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: BASIC
+scheduling:
+  credentials:
+    enabled: false
+    refresh:
+      time-unit: MINUTES
+      fixed-delay: 10    # 10분
+      initial-delay: 1 # 1분
+credential:
+  playground: SANDBOX
+  profile : dev
+  redirectUri: http://localhost:9090/accounting/v1/qbo/oauth2/redirect
+abc-sdk:
+  api-key: ${ABC_SDK_API_KEY:dR7aUtnD7IgTlDwg0PYvWmjauCtw0Wtz}
+  authorizer:
+    enabled: true
+    repository:
+      type: caffeine
+
+
+#logging:
+#  level:
+#    org.hibernate.SQL: DEBUG  # SQL 쿼리 로그
+#    org.hibernate.type.descriptor.sql: TRACE  # 쿼리 파라미터 값 로그
+
+# ABC 설정
+abc:
+  accounting:
+    account-balance:
+      enable: true
+    rentals:
+      onetime:
+        enable_taxline: true
+
+logging:
+  level:
+    com.zaxxer.hikari: DEBUG
+    com.zaxxer.hikari.HikariConfig: DEBUG       ## hikari connection pool 설정 정보
+    com.zaxxer.hikari.metrics: DEBUG            ## 메트릭 정보

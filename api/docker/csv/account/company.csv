@@ -1,0 +1,7 @@
+code,name,description,country,currency,timezone,fiscal_start_month,is_active
+N100,NECOA Holdings,네코아 지주회사,US,USD,America/Chicago,1,Y
+N200,NECOA,미신사 판매법인,US,USD,America/Chicago,1,Y
+N300,NECOA Tech,미신사 사업법인,US,USD,America/Chicago,1,Y
+T100,[Test] NECOA Holdings,[테스트] 네코아 지주회사,US,USD,America/Chicago,1,Y
+T200,[Test] NECOA,[테스트] 미신사 판매법인,US,USD,America/Chicago,1,Y
+T300,[Test] NECOA Tech,[테스트] 미신사 사업법인,US,USD,America/Chicago,1,Y

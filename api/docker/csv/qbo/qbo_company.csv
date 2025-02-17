@@ -1,0 +1,7 @@
+code,name,description,country,currency,eng_name,kor_name,fiscal_year,fiscal_month,create_time,update_time,is_active
+N100,NECOA Holdings,네코아 지주회사,US,USD,NECOA Holdings,네코아 지주회사,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y
+N200,NECOA,미신사 판매법인,US,USD,NECOA,네코아,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y
+N300,NECOA Tech,미신사 사업법인,US,USD,NECOA Tech,네코아 테크,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y
+T100,[TEST]NECOA Holdings,[테스트]네코아 지주회사,US,USD,[TEST]NECOA Holdings,[테스트]네코아 지주회사,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y
+T200,[TEST]NECOA,[테스트]미신사 판매법인,US,USD,[TEST]NECOA,[테스트]네코아,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y
+T300,[TEST]NECOA Tech,[테스트]미신사 사업법인,US,USD,[TEST]NECOA Tech,[테스트]네코아 테크,2024,1,2024-11-13 05:13:34.000000 +00:00,,Y

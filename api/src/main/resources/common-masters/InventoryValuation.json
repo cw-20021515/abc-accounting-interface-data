@@ -1,0 +1,74 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/InventoryValuation/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inventory Valuation",
+  "description": "렌탈 재고 원가 마스터",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "base_time": {
+        "type": "string",
+        "description": "기준 시간"
+      },
+      "issued_time": {
+        "type": "string",
+        "description": "수불부 발생 시간"
+      },
+      "record_time": {
+        "type": "string",
+        "description": "원가 기록 시간"
+      },
+      "material_id": {
+        "type": "string",
+        "description": "자재ID"
+      },
+      "currency": {
+        "type": "string",
+        "description": "통화"
+      },
+      "material_name": {
+        "type": "string",
+        "description": "자재이름"
+      },
+      "model_name": {
+        "type": "string",
+        "description": "자재이름"
+      },
+      "movement_type": {
+        "type": "string",
+        "description": "수불유형"
+      },
+      "material_product_type": {
+        "type": "string",
+        "description": "자재의 구분(https,://abc.necoa.dev/system/common-codes/common-code?id=MaterialProductType)"
+      },
+      "grade_type": {
+        "type": "string",
+        "description": "자재등급(https://abc.necoa.dev/system/common-codes/common-code?id=MaterialGrade)"
+      },
+      "stock_avg_unit_price": {
+        "type": "number",
+        "description": "재고 단가"
+      },
+      "moving_avg_method": {
+        "type": "string",
+        "description": "재고 원가 계산 방법"
+      },
+      "remark": {
+        "type": "string",
+        "description": "적요"
+      }
+    },
+    "required": [
+      "base_time",
+      "issued_time",
+      "record_time",
+      "material_id",
+      "currency",
+      "moving_avg_method",
+      "stock_avg_unit_price"
+    ],
+    "additionalProperties": false
+  }
+}

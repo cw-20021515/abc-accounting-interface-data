@@ -1,0 +1,315 @@
+// Warn) date, date-time을 쓸때는 timezone을 잘 고려해서 진행해라.
+// 물류에서 IF 테이블에 시간 값 입력시 UTC 로 입력하게 됨
+Project project_name {
+  database_type: 'postgresql'
+  Note: 'Inventory Valuation Schemas'
+}
+
+TableGroup "Logistics interface table" [color: #EB801B] {
+  if_purchase_order
+  if_purchase_order_item
+  if_inventory_movement
+  if_warehouse
+  if_warehouse_inventory_age_snapshot
+  if_aging_range
+}
+
+// Q) PO의 자재가 나눠서 들어올 경우에는 inbound_delivery_id가 여러개 들어올 수 있다. Enum
+// 나눠서 들어올때의 대사를 할 수 있는 방안도 필요
+Table if_purchase_order {
+  id bigint [pk, increment, note: "고유 식별자"]
+  purchase_order_id varchar [not null, note: "발주 ID"]
+  purchase_order_status varchar [not null, note: "구매 주문 상태"]  // complete 상태 필요해보임.
+  vendor_id varchar [null, note: "자재 공급자"]  // 공통마스터로 관리. 등록전까지는 nullable
+  customer_id varchar [null, note: "자재 수급자"]  // 공통마스터로 관리. 등록전까지는 nullable
+  create_time timestamp [not null, note: "원본 레코드가 최초생성시 create_time, 수정시 update_time 입력"]
+  Indexes {
+    create_time [name: 'ix_purchase_order_create_time']
+  }
+  Note: "발주 정보(History)"
+}
+
+Table if_purchase_order_item {
+  id bigint [pk, increment, note: "고유 식별자"]
+  purchase_order_id varchar [not null, note: "발주 ID"]
+  purchase_order_item_id varchar [not null, note: "발주 품목 ID"]
+  material_id varchar [note: "자재 ID"]
+  quantity int [not null, note: "발주 수량"]
+  unit_price NUMERIC(38,2) [not null, note: "발주 단가"]
+  currency char(3) [not null, note: "통화 코드"]
+  create_time timestamp [not null, note:"원본 레코드가 최초생성시 create_time, 수정시 update_time 입력"]
+  Indexes {
+    create_time [name: 'ix_purchase_order_item_create_time']
+  }
+  Note: "발주 품목 정보(History)"
+}
+
+// 물류 수불부 기록 테이블
+Table if_inventory_movement {
+  id varchar [pk, note: "고유 식별자"]  
+  company_code varchar [null, note:"수불 발생 회사 코드"] // 공통코드 CompanyCode. 창고 자재의 소유회사관리회사를 보고 입력.
+  source_warehouse_id varchar [not null, note:"입고 창고, 출고 출발지 창고 ID"]
+  destination_warehouse_id varchar [note:"출고 목적지 창고 ID(창고간 이동시)"]
+  warehouse_transfer_id varchar [note: "창고간 이동 ID"]
+  movement_category varchar [not null, note: '수불 분류(MovementCategory)']
+  movement_group varchar [not null, note: '수불 그룹(MovementGroup)']
+  movement_type varchar [not null, note: '수불 유형(MovementType)']
+  inbound_purchase_order_item_id varchar [null, note: "입고 시 발주 품목 ID"]
+  inbound_bl_no varchar [null, note: "입고 시 B/L 번호(SAP Invoice의 순단가 확인용)"]
+  material_id varchar [note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"]
+  quantity int [not null, note: "수불 발생 수량"]
+  create_time timestamp [not null, note: "수불 발생 일시"]
+  Indexes {
+    create_time [name: 'ix_inventory_movement_create_time']
+  }
+}
+
+// 가능
+Table if_aging_range {
+  id bigint [pk, increment, note: "고유 식별자"]
+  range_id varchar [not null, note: "범위 고유 ID"]
+  label varchar [not null, note: "에이징 범위를 나타내는 레이블"]
+  min_aging_days integer [not null, note: "에이징 범위 시작 일자"]
+  max_aging_days integer [note: "에이징 범위 종료 일자"]
+  is_active boolean [not null, note: "에이징 범위 사용 여부 (true/false)"]
+  create_time timestamp [not null, note: "원본 레코드가 최초생성시 create_time, 수정시 update_time 입력"]
+  Indexes {
+    create_time [name: 'ix_aging_range_create_time']
+  }
+  Note: "에이징 범위 정보(History)"
+}
+
+// Aging은 물류에서 계산해서 온다. 
+// 범위도 물류에서 관리해줘야함. 
+// 두곤님, 박현재님이 기준을 잡을 예정.
+// if_aging_range 와 필드 이름을 통일성 있게 맞출 필요가 있습니다
+// 고려해봄
+Table if_warehouse_inventory_age_snapshot {
+  id bigint [pk, increment, note: "고유 식별자"]
+  warehouse_id varchar [not null, note: "창고 ID"]
+  material_id varchar [not null, note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"]
+  min_aging_days int [not null, note: "보유기간 범위 최소값"]
+  max_aging_days int [null, note: "보유기간 범위 최대값"]
+  quantity int [not null, note: "자재 수량"]
+  create_time timestamp [not null, note: "측정 기준 일시(스냅샷 일시)"]
+  Indexes {
+    create_time [name: 'ix_warehouse_inventory_age_snapshot_create_time']
+  }
+  Note: "창고의 자재별 재고 보유 기간 정보"
+}
+
+// 가능
+Table if_warehouse {
+  id bigint [pk, increment, note: "고유 식별자"]
+  warehouse_id varchar [not null, note: "창고 ID"]
+  parent_warehouse_id varchar [note: "상위 창고 ID"]
+  name varchar [not null, note: "창고 이름"]
+  warehouse_type varchar [not null, note: "창고 유형"]
+  time_zone varchar [not null, note: "Time Zone Id"]
+  is_active boolean [not null, note: "레코드 활성화 여부"]
+  create_time timestamp [not null, note:"원본 레코드가 최초생성시 create_time, 수정시 update_time 입력"]
+  Indexes {
+    create_time [name: 'ix_warehouse_create_time']
+  }
+  Note: "창고 정보(History)"
+}
+
+TableGroup "SAP interface table" [color: #E4A62E] {
+  if_purchase_order_invoice
+  if_purchase_order_invoice_item
+} 
+
+// ESB매핑정의서_ABC_SAP_수출_Invoice 조회
+// https://docs.google.com/spreadsheets/d/10tVFhDzE0UdvDxLXFiE0oLD7WXTj6Ymo/edit?gid=2070545545#gid=2070545545
+Table if_purchase_order_invoice {
+  id bigint [pk, increment, note: "고유 식별자"]
+  purchase_order_id varchar [not null, note: "발주 ID(SAP BSTKD)"]
+  invoice_no varchar [not null, unique, note: "Invoice 번호(SAP CINO)"]
+  bl_no varchar [note: "B/L 번호(SAP BLNO)"]
+  incoterms char(3) [note: "국제상업거래조건(SAP INCO1)"]
+  // Consignee 정보
+  consignee_name varchar [not null, note: "수취 회사명(SAP CNAME)"]
+  consignee_address varchar [note: "수취인 상세 주소(SAP CSTREET)"]
+  consignee_city varchar [note: "수취인 도시(SAP CCITY1)"]
+  consignee_postal_code varchar [note: "수취인 우편번호(SAP CPSTLZ)"]
+  consignee_manager varchar [not null, note: "수취 회사 담당자 이름(SAP CPNAME)"]
+  consignee_phone varchar [note: "수취인 연락처(SAP CPHONE)"]
+  consignee_email varchar [note: "수취인 이메일(SAP CEMAIL)"]
+  // Shipper 정보
+  shipper_name varchar [not null, note: "발송 회사명(SAP NAME2)"]
+  shipper_address varchar [note: "발송인 상세 주소(SAP STREET)"]
+  shipper_city varchar [note: "발송인 도시(SAP CITY1)"]
+  shipper_postal_code varchar [note: "발송인 우편번호(SAP PSTLZ)"]
+  shipper_manager varchar [not null, note: "발송 회사 담당자(SAP NAME2)"]
+  shipper_phone varchar [note: "발송인 연락처(SAP PHONE)"]
+  shipper_email varchar [note: "발송인 이메일(SAP EMAIL)"]
+  // Forwarder 혹은 Consignee 정보
+  notify_party_name varchar [note: "화물 도착 시 통지 회사명(SAP NNAME)"]
+  notify_party_address varchar [note: "화물 도착 시 통지 회사 상세 주소(SAP NSTREET)"]
+  notify_party_city varchar [note: "화물 도착 시 통지 회사 도시(SAP NCITY1)"]
+  notify_party_postal_code varchar [note: "화물 도착 시 통지 회사 우편번호(SAP NPSTLZ)"]
+  notify_party_manager varchar [note: "화물 도착 시 통지 회사 담당자(SAP NPNAME)"]
+  notify_party_email varchar [note: "화물 도착 시 통지 회사 이메일(SAP NEMAIL)"]
+  notify_party_phone varchar [note: "화물 도착 시 통지 회사 전화번호(SAP NPHONE)"]
+  // 기타 정보
+  port_of_loading varchar [not null, note: "출발 항구(SAP KNATX)"]
+  port_of_discharge varchar [not null, note: "도착 항구(SAP KNETX)"]
+  ocean_vessel varchar [note: "선박 이름(SAP VESLI)"]
+  voyage_no varchar [note: "항해 번호(SAP VOYNO)"]
+  onboard_date date [note: "출항일(SAP ONBDT)"]
+  invoice_date date [not null, note: "Invoice 발행일(SAP IVDAT)"]
+  remark text [note: "비고(SAP REMARK)"]
+  // 요약 정보
+  total_quantity int [not null, note: "총수량(SAP TOTCNT)"]
+  total_amount NUMERIC(38,2) [not null, note: "총 금액(SAP TOTAMT)"]
+  currency char(3) [not null, note: "통화 코드(SAP WAERK)"]
+  create_time timestamp [default: `now()`, note: "SAP 조회 일시"]
+  Indexes {
+    create_time [name: 'ix_purchase_order_invoice_create_time']
+  }
+  Note: "발주 Invoice Header 정보"
+}
+
+Table if_purchase_order_invoice_item {
+  id bigint [pk, increment, note: "고유 식별자"]
+  invoice_no varchar(25) [not null, note: "Invoice 번호(SAP CINO)"] // CW(700010_CO)20231026_001
+  invoice_item_id varchar(6) [not null, note: "Invoice Item ID(SAP POSNR)"] // 000020
+  description varchar(40) [not null, note: "자재 설명(SAP BEZEI)"]  // Water Filtration Device
+  manufacturer_code varchar(18) [not null, note:"제조사 생산코드(SAP MATNR)"] // 113149
+  model_name varchar(100) [not null, note: "자재 모델명(SAP MAKTX)"]  // CHP-264L(MY-700010)
+  sales_unit varchar(3) [not null, note: "판매 단위(SAP VRKME)"] // UN
+  quantity int [not null, note: "발주 수량(SAP LFIMG)"] // 756.0
+  unit_price NUMERIC(38,2) [not null, note: "발주 단가(SAP NETPR)"]  // 270.0
+  total_amount NUMERIC(38,2) [not null, note: "총 금액(SAP NETWR)"] // 204120.0
+  currency char(3) [not null, note: "통화 코드(SAP WAERK)"] // USD
+  create_time timestamp [default: `now()`, note: "SAP 조회 일시"]
+  Indexes {
+    create_time [name: 'ix_purchase_order_invoice_item_create_time']
+  }
+  Note: "발주 Invoice Item 정보"
+}
+
+//-------------------구분선--------------------------
+// Accounting 레이어 테이블
+
+TableGroup "Accounting Layer table" [color: #1E69FD] {
+  inventory_costing
+  inventory_closing_stock
+  inventory_valuation
+  inventory_aging_loss_rule
+  inventory_aging_loss_rule_history
+  inventory_aging_loss_snapshot
+}
+
+// CDC에서 outbound로 이송중(IN TRANSIT)일 경우에는 원창고인 CDC 소속이다
+Table inventory_closing_stock {
+  id bigint [pk, increment, note: "고유 식별자"]
+  closing_time timestamp [not null, note: "기말 마감 일시"] // 월단위의 마감을 의미하고 있음
+  warehouse_id varchar [not null, note: "창고 ID"]
+  material_id varchar [not null, note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"]
+  quantity int [default: 0, note: "기말 재고 수량"]
+  Indexes {
+    (warehouse_id, closing_time) [name: 'ix_inventory_closing_stock_warehouse_id_closing_time']
+  }
+  Note: "기말 재고 수량"
+}
+
+// 발주단가 : 송장 정보 존재시 invoice > po 순으로 사용
+// 부대비용 : Accounting.account_payable에 등록된 invoice별 지불 정보 사용
+Table inventory_costing { 
+  id bigint [pk, increment, note: "재고원가계산 ID"]
+  costing_time timestamp [not null, note: "원가 계산 일시"]
+  method varchar [not null, note: "재고 원가 결정 방법"]  // MovingAverage Monthly 등의 enum 정의
+  start_time datetime [not null, note: "재고원가계산 시작 기간일시"]
+  end_time datetime [not null, note: "재고원가계산 종료 기준일시"]
+  warehouse_id varchar [not null, note: "CDC 창고 ID"]
+  material_id varchar [not null, note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"] // enum으로 관리
+  currency char(3) [not null, note: "통화 코드 (예: USD)"]
+  unit_cost NUMERIC(38,2) [not null, note: "자재 원가"]
+  is_active boolean [not null, note:"레코드 활성화 여부"]
+  Indexes {
+    costing_time [name: 'ix_inventory_costing_costing_time']
+  }
+  Note: "자재별 재고 원가 계산"
+}
+
+Table inventory_valuation {
+  id bigint [pk, increment, note: "재고자산평가 ID"]
+  costing_id bigint [Ref: > inventory_costing.id, note: "재고원가계산 ID"]
+  closing_time timestamp [not null, note: "기말 평가 일시"]
+  warehouse_id varchar [not null, note: "CDC 창고 ID"]
+  material_id varchar [not null, note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"]
+  currency char(3) [not null, note: "통화 코드 (예: USD)"]
+  unit_cost NUMERIC(38,2) [not null, note: "자재 원가"]
+  quantity int [not null, default: 0, note: "자재 수량"]
+  total_value NUMERIC(38,2) [not null, note: "자산 평가액"]
+  is_active boolean [not null, note:"레코드 활성화 여부"]
+  Indexes {
+    closing_time [name: 'ix_inventory_valuation_closing_time']
+  }
+  Note: "기말 자재별 전체 재고자산가치평가"
+}
+
+// Admin으로 규칙을 관리할 것으로 보임
+Table inventory_aging_loss_rule {
+  id bigint [pk, increment, note: "고유 식별자"]
+  material_id varchar [not null, note: "자재 ID"]
+  rule_name varcahr [null, note: "규칙 이름"]
+  grade varchar [not null, note: "자재 등급"]
+  min_aging_days int [not null, note: "보유기간 범위 최소값"]
+  max_aging_days int [null, note: "보유기간 범위 최대값"]
+  adjustment_method varchar [not null, note: "조정 방식 (예: Percentage, Fixed)"]
+  adjustment_value NUMERIC(38,2) [not null, note: "가격 조정 값 (정률 또는 정액)"]
+  currency char(3) [not null, note: "통화 코드"]
+  is_active boolean [not null, note: "레코드 활성화 여부"]
+  create_user varchar(32) [not null, note: "생성 사용자"]
+  create_time timestamp [default: "now()", note: "생성 일시"]
+  update_user varchar(32) [not null, note: "수정 사용자"]
+  update_time timestamp [not null, default: "now()", note: "수정 일시"]
+  Note: "보유 기간에 따른 재고자산가치평가 규칙"
+}
+
+Table inventory_aging_loss_rule_history {
+  audit_key int [pk, increment, note: '변경 이력 레코드 식별자']
+  rule_id bigint [Ref: > inventory_aging_loss_rule.id, note: "변경 전 Aging 규칙 ID (고유 식별자)"]
+  material_id varchar [not null, note: "변경 전 자재 ID"]
+  grade varchar [not null, note: "변경 전 자재 등급"]
+  min_aging_days int [not null, note: "변경 전 보유기간 범위 최소값"]
+  max_aging_days int [null, note: "변경 전 보유기간 범위 최대값"]
+  adjustment_method varchar [not null, note: "변경 전 조정 방식 (예: Percentage, Fixed)"]
+  adjustment_value NUMERIC(38,2) [not null, note: "변경 전 가격 조정 값 (정률 또는 정액)"]
+  currency char(3) [not null, note: "변경전 통화 코드"]
+  is_active boolean [not null, note: "변경 전 레코드 활성화 여부"]
+  update_user varchar(32) [not null, note: "변경 전 수정 사용자"]
+  update_time timestamp [not null, default: "now()", note: "변경 전 수정 일시"]
+  Note: "보유 기간에 따른 재고자산가치평가 규칙 변경(History)"
+}
+
+Table inventory_aging_loss_snapshot {
+  id bigint [pk, increment, note: "고유 식별자"]
+  rule_id bigint [Ref: > inventory_aging_loss_rule.id , note: "Aging 규칙 ID"]
+  closing_time timestamp [not null, note: "기말 평가 일시"]
+  warehouse_id varchar [not null, note: "창고 ID"]
+  material_id varchar [not null, note: "자재 ID"]
+  grade varchar [not null, note: "자재 등급"]
+  min_aging_days int [not null, note: "보유기간 범위 최소값"]
+  max_aging_days int [null, note: "보유기간 범위 최대값"]
+  currency char(3) [not null, note: "통화 코드"]
+  original_price NUMERIC(38,2) [not null, note: "기존 자재 원가(inventory_costing)"]
+  adjustment_method varchar [not null, note: "조정 방식 (예: Percentage, Fixed)"]
+  adjustment_value NUMERIC(38,2) [not null, note: "가격 조정 값 (정률 또는 정액)"]
+  adjusted_price NUMERIC(38,2) [not null, note: "감가된 원가"]
+  quantity int [not null, note: "자재 수량"]
+  total_original_value NUMERIC(38,2) [not null, note: "감가전 자산 평가액"]
+  total_adjusted_value NUMERIC(38,2) [not null, note: "감가된 자산 평가액"]
+  is_active boolean [not null, note: "레코드 활성화 여부"]
+  Indexes {
+    closing_time [name: 'ix_inventory_aging_loss_snapshot_closing_time']
+  }
+  Note: "보유 기간에 따른 기말 재고자산가치평가 결과"
+}

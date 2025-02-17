@@ -1,0 +1,275 @@
+id,code,level,description,name,parent_id,start_account_code,end_account_code,is_active
+10001,1000,1,자산,Assets,,1000000,1999999,Y
+11002,1100,2,유동자산,Current Assets,10001,1100000,1299999,Y
+11003,1100,3,당좌좌산,Quick assets,11002,1100000,1129999,Y
+11014,1101,4,현금 및 현금등가물,Cash and cash equivalents,11003,1101000,1114999,Y
+11094,1109,4,단기금융상품,Short-term financial Instruments,11003,1109000,1109999,Y
+11114,1111,4,단기매매증권,Trading Securities,11003,1111000,1111999,Y
+11174,1117,4,매출채권,Account Receivables,11003,1117000,1117999,Y
+11184,1118,4,대손충당금(매출채권),"Allowance for doubtful accounts, Trade Receivables",11003,1118000,1118999,Y
+11204,1120,4,받을어음,Notes Receivables,11003,1120000,1120999,Y
+11214,1121,4,대손총당금(받을어음),"Allowance for doubtful accounts, Note Receivables",11003,1121000,1121999,Y
+11234,1123,4,단기대여금,Short-Term Loans,11003,1123000,1123999,Y
+11244,1124,4,대손충당금(단기대여금),"Allowance for doubtful accounts, Short-Term Loans",11003,1124000,1124999,Y
+11264,1126,4,미수금,Non-Trade Receivables,11003,1126000,1126999,Y
+11274,1127,4,대손충당금-미수금,"Allowance for doubtful accounts, Non-Trade Receivables",11003,1127000,1127999,Y
+11294,1129,4,미수수익,Accrued Revenues,11003,1129000,1129999,Y
+11304,1130,4,대손충당금-미수수익,"Allowance for doubtful accounts, Accured Receivables",11003,1130000,1130999,Y
+11314,1131,4,선급금,Prepaid Payments,11003,1131000,1131999,Y
+11324,1132,4,대손충당금(선급금),"Allowance for doubtful accounts, Prepaid Payments",11003,1132000,1132999,Y
+11344,1134,4,선급비용,Advanced Expenses,11003,1134000,1134999,Y
+11364,1136,4,부가세대급금,Prepaid Value Added Tax,11003,1136000,1136999,Y
+11384,1138,4,선급제세,Prepaid Taxes,11003,1138000,1138999,Y
+11484,1148,4,이연법인세자산(유동),Deferred Tax Assets,11003,1148000,1148999,Y
+12003,1200,3,재고자산,Inventories,11002,1200000,1299999,Y
+12014,1201,4,상품,Marchandise,11003,1201000,1201999,Y
+12024,1202,4,평가충당금(상품),"Accumulated Impairment Loss, Merchandise",11003,1202000,1202999,Y
+12034,1203,4,제품,Finished Goods,11003,1203000,1203999,Y
+12044,1204,4,평가충당금(제품),"Accumulated Impairment Loss, Finished Goods",11003,1204000,1204999,Y
+12054,1205,4,반제품,Semi-finished Goods,11003,1205000,1205999,Y
+12064,1206,4,평가충당금(반제품),"Accumulated Impairment Loss, Semi-finished Goods",11003,1206000,1206999,Y
+12074,1207,4,제공품,Work-in Progress,11003,1207000,1207999,Y
+12084,1208,4,원재료,Raw Materials,11003,1208000,1208999,Y
+12094,1209,4,평가충당금(원재로),"Accumulated Impairment Loss, Raw Materials",11003,1209000,1209999,Y
+12134,1213,4,저장품,Supplies,11003,1213000,1213999,Y
+12154,1215,4,미착품,Goods in Transit,11003,1215000,1215999,Y
+12164,1216,4,이동중재고(차용),"Goods in Transit, Borrowing inventory",11003,1216000,1216999,Y
+12304,1230,4,시송품,Goods in Approval,11003,1230000,1230999,Y
+12994,1299,4,기타재고자산,Other Inventories,11003,1299000,1299999,Y
+13002,1300,2,고정자산,Fixed Assets,10001,1300000,1499999,Y
+13103,1310,3,투자자산,Investments,11002,1310000,1399999,Y
+13114,1311,4,장기금융상품,Long-term Financial Instruments,11003,1311000,1311999,Y
+13134,1313,4,매도가능증권(고정),Available For Sale Securities,11003,1313000,1313999,Y
+13154,1315,4,만기보유증권(고정),Held-to-maturity Securities,11003,1315000,1315999,Y
+13174,1317,4,지분법적용투자주식,Equity Method Securities,11003,1317000,1317999,Y
+13194,1319,4,장기대여금,Long-term Loans,11003,1319000,1319999,Y
+13214,1321,4,대손충당금(장기대여금),"Allowance for doubtful accounts, Long-term Loans",11003,1321000,1321999,Y
+13234,1323,4,장기성매출채권,Long-term Trade Receivables,11003,1323000,1323999,Y
+13244,1324,4,현재가치할인차금,Present value discounts,11003,1324000,1324999,Y
+13254,1325,4,대손충당금(장기성매출채권),"Allowance for doubtful accounts, Long-term Trade Receivables",11003,1325000,1325999,Y
+13314,1331,4,투자부동산,Investment Property,11003,1331000,1331999,Y
+13364,1336,4,전신전화가입권,Telecommunications Rights,11003,1336000,1336999,Y
+13384,1338,4,임차보증금,Security Deposits,11003,1338000,1338999,Y
+13414,1341,4,제보증금,Other Deposits,11003,1341000,1341999,Y
+13424,1342,4,대손충당금-제보증금,"Allowance for Doubtful Accounts, Other Deposits",11003,1342000,1342999,Y
+13444,1344,4,회원권,Membership Rights,11003,1344000,1344999,Y
+13474,1347,4,부도어음,Bad Notes Receivable,11003,1347000,1347999,Y
+13484,1348,4,대손충당금-부도어음,"Allowance for Doubtful Accounts, Bad Notes Receivable",11003,1348000,1348999,Y
+13584,1358,4,이연법인세자산(고정),Deferred Tax Assets - Non-current,11003,1358000,1358999,Y
+13604,1360,4,장기선급비용,Long-term Prepaid Expenses,11003,1360000,1360999,Y
+13994,1399,4,기타투자자산,Other Investment Assets,11003,1399000,1399999,Y
+14003,1400,3,유형자산,Tangible Assets,11002,1400000,1409999,Y
+14014,1401,4,토지,Land,11003,1401000,1401999,Y
+14044,1404,4,건물,Buildings,11003,1404000,1404999,Y
+14074,1407,4,감가상각누계약(건물),"Accumulated Depreciation, Buildings",11003,1407000,1407999,Y
+14084,1408,4,구축물,Structures,11003,1408000,1408999,Y
+14114,1411,4,감가상각누계액(구축물),"Accumulated Depreciation, Structures",11003,1411000,1411999,Y
+14124,1412,4,기계장치,Machinery,11003,1412000,1412999,Y
+14154,1415,4,감가상각누계액(기계장치),"Accumulated Depreciation, Machinery",11003,1415000,1415999,Y
+14164,1416,4,차량운반구,Vehicles,11003,1416000,1416999,Y
+14194,1419,4,감가상각누계액(차량운반구),"Accumulated Depreciation, Vehicles",11003,1419000,1419999,Y
+14204,1420,4,공구기구,Tools and Equipment,11003,1420000,1420999,Y
+14214,1421,4,국고보조금(공구기구),"Government Grants, Tools and Equipment",11003,1421000,1421999,Y
+14234,1423,4,감가상각누계액(공구기구),"Accumulated Depreciation, Tools and Equipment",11003,1423000,1423999,Y
+14244,1424,4,집기비품,Furniture and Fixtures,11003,1424000,1424999,Y
+14274,1427,4,감가상각누계액(집기비품),"Accumulated Depreciation, Furniture and Fixtures",11003,1427000,1427999,Y
+14284,1428,4,렌탈자산,Rental Assets,11003,1428000,1428999,Y
+14314,1431,4,감가상각누계액(렌탈자산),"Accumulated Depreciation, Rental Assets",11003,1431000,1431999,Y
+14324,1432,4,감액손실누계액,Accumulated Impairment Losses,11003,1432000,1432999,Y
+14934,1493,4,건설중인자산(유형),"Construction in Progress, Tangible",11003,1493000,1493999,Y
+14964,1496,4,기타유형자산,Other Tangible Assets,11003,1496000,1496999,Y
+14974,1497,4,국고보조금(기타유형),"Government Grants, Other Tangible",11003,1497000,1497999,Y
+14994,1499,4,감가상각누계액(기타유형),"Accumulated Depreciation, Other Tangible",11003,1499000,1499999,Y
+15003,1500,3,무형자산,Intangible Assets,11002,1500000,1509999,Y
+15014,1501,4,영업권,Goodwill,11003,1501000,1501999,Y
+15054,1505,4,산업재산권,Industrial Property Rights,11003,1505000,1505999,Y
+15074,1507,4,라이선스와 프랜차이즈,Licenses and Franchises,11003,1507000,1507999,Y
+15114,1511,4,컴퓨터소프트웨어,Computer Software,11003,1511000,1511999,Y
+15134,1513,4,개발비,Development Costs,11003,1513000,1513999,Y
+15154,1515,4,부채와 자본부채 및 자본,Liabilities and Equity,11003,1515000,1515999,Y
+18003,1800,3,GR/IR,GR/IR,11002,1800000,1809999,Y
+19003,1900,3,자산-임시,Temporary Assets,11002,1900000,1909999,Y
+20001,2000,1,부채,Liabilities,,2000000,2999999,Y
+21002,2100,2,유동부채,Current Liabilities,10001,2100000,2199999,Y
+21013,2101,3,외상매입금,Accounts Payable,11002,2101000,2102999,Y
+21033,2103,3,지급어음(매입채무),"Notes Payable, Accounts Payable",11002,2103000,2104999,Y
+21053,2105,3,단기차입금,Short-term Loans Payable,11002,2105000,2106999,Y
+21073,2107,3,미지급금,Accrued Expenses,11002,2107000,2108999,Y
+21093,2109,3,미지급비용,Accrued Costs,11002,2109000,2109999,Y
+21113,2111,3,선수금,Advance Payments,11002,2110000,2119999,Y
+21133,2113,3,선수수익,Unearned Revenue,11002,2110000,2119999,Y
+21153,2115,3,예수금,Deposits Payable,11002,2110000,2129999,Y
+21173,2117,3,부가세예수금,VAT Payable,11002,2110000,2119999,Y
+21193,2119,3,수입보증금(유동),Short-term Deposits,11002,2110000,2119999,Y
+21213,2121,3,반품추정부채,Refund Payables,11002,2120000,2129999,Y
+21233,2123,3,판매보증충당금(유동),"Sales Warranty Provisions, Current",11002,2120000,2129999,Y
+21253,2125,3,상여충당금,Bonus Provisions,11002,2120000,2129999,Y
+21273,2127,3,미지급법인세,Accrued Corporate Taxes,11002,2120000,2129999,Y
+21293,2129,3,미지급배당금,Accrued Dividends,11002,2120000,2129999,Y
+21313,2131,3,유동성장기부채,Current Portion of Long-term Liabilities,11002,2130000,2139999,Y
+21333,2133,3,유동성사채,Current Bonds Payable,11002,2130000,2139999,Y
+21343,2134,3,사채할인발행차금(유동성사채),Bond Discount - Current,11002,2130000,2139999,Y
+21353,2135,3,이연법인세부채,Deferred Tax Liabilities,11002,2130000,2139999,Y
+21973,2197,3,가수금,Unearned Revenue,11002,2190000,2199999,Y
+21993,2199,3,임시계정,Temporary Accounts,11002,2190000,2199999,Y
+22002,2200,2,고정부채,Long-term Liabilities,10001,2200000,2299999,Y
+22013,2201,3,사채,Bonds Payable,11002,2200000,2209999,Y
+22023,2202,3,사채할인발행차금(일반),Bond Discount - General,11002,2200000,2209999,Y
+22123,2212,3,장기차입금,Long-term Loans Payable,11002,2210000,2219999,Y
+22143,2214,3,장기성매입채무,Long-term Accounts Payable,11002,2210000,2219999,Y
+22153,2215,3,현재가치할인차금,Present Value Discount,11002,2210000,2219999,Y
+22163,2216,3,장기미지급금,Long-term Accrued Expenses,11002,2210000,2219999,Y
+22203,2220,3,퇴직급여충당금,Retirement Benefit Provisions,11002,2220000,2229999,Y
+22213,2221,3,국민연금전환금,National Pension Transfer Fund,11002,2220000,2229999,Y
+22223,2222,3,퇴직보험예치금,Retirement Insurance Deposits,11002,2220000,2229999,Y
+22243,2224,3,수입보증금(고정),Long-term Deposits,11002,2220000,2229999,Y
+22263,2226,3,책임이행적립금,Provision for Liability,11002,2220000,2229999,Y
+22303,2230,3,판매보증충당금(고정),Sales Warranty Provisions - Non-current,11002,2230000,2239999,Y
+22403,2240,3,하자보수충당부채,Repair Provisions,11002,2240000,2249999,Y
+22503,2250,3,임대보증금,Rental Deposits,11002,2250000,2259999,Y
+30001,3000,1,자본,Equity,,3000000,3999999,Y
+31002,3100,2,자본금,Capital Stock,10001,3100000,3199999,Y
+31013,3101,3,보통주자본금,Common Stock,11002,3100000,3109999,Y
+31033,3103,3,우선주자본금,Preferred Stock,11002,3100000,3109999,Y
+31053,3105,3,신주청약증거금,Share Subscription Receipts,11002,3100000,3109999,Y
+32002,3200,2,자본잉여금,Additional Paid-in Capital,10001,3200000,3299999,Y
+32013,3201,3,주식발행초과금,Share Premium,11002,3200000,3209999,Y
+32023,3202,3,지분법자본잉여금,Equity Method Capital Surplus,11002,3200000,3209999,Y
+32033,3203,3,감자차익,Capital Reduction Surplus,11002,3200000,3209999,Y
+32993,3299,3,기타자본잉여금,Other Capital Surplus,11002,3290000,3299999,Y
+33002,3300,2,이익잉여금,Retained Earnings,10001,3300000,3399999,Y
+33013,3301,3,이익준비금,Legal Reserve,11002,3300000,3309999,Y
+33033,3303,3,기업합리화적립금,Corporate Rationalization Reserve,11002,3300000,3309999,Y
+33053,3305,3,재무구조개선적립금,Financial Structure Improvement Reserve,11002,3300000,3309999,Y
+33073,3307,3,기업발전적립금,Business Development Reserve,11002,3300000,3309999,Y
+33093,3309,3,사업손실준비금,Business Loss Reserve,11002,3300000,3309999,Y
+33383,3338,3,임의적립금,Voluntary Reserves,11002,3330000,3339999,Y
+33393,3339,3,이월이익잉여금,Retained Earnings - Appropriated,11002,3330000,3339999,Y
+33413,3341,3,차기이월이익잉여금,Retained Earnings - Carried Forward,11002,3340000,3349999,Y
+33433,3343,3,미처분이익잉여금,Unappropriated Retained Earnings,11002,3340000,3349999,Y
+34002,3400,2,자본조정,Capital Adjustment,10001,3400000,3499999,Y
+34013,3401,3,주식할인발행차금,Discount on Stock Issuance,11002,3400000,3409999,Y
+34033,3403,3,배당건설이자,Dividend Construction Interest,11002,3400000,3409999,Y
+34053,3405,3,자기주식,Treasury Stock,11002,3400000,3409999,Y
+34073,3407,3,감자차손,Capital Reduction Loss,11002,3400000,3409999,Y
+34093,3409,3,미교부주식배당금,Unpaid Stock Dividends,11002,3400000,3409999,Y
+34113,3411,3,미교부주식배당금,Unpaid Stock Dividends,11002,3410000,3419999,Y
+34133,3413,3,매도가능증권평가이익,Unrealized Gains on Available-for-Sale Securities,11002,3410000,3419999,Y
+34153,3415,3,매도가능증권평가손실,Unrealized Losses on Available-for-Sale Securities,11002,3410000,3419999,Y
+34173,3417,3,지분법자본변동,Equity Method Capital Changes,11002,3410000,3419999,Y
+34193,3419,3,부의지분법자본변동,Negative Equity Method Capital Changes,11002,3410000,3419999,Y
+34213,3421,3,주식매입선택권,Stock Options,11002,3420000,3429999,Y
+34233,3423,3,해외사업환산차,Foreign Currency Translation Adjustment - Assets,11002,3420000,3429999,Y
+34253,3425,3,해외사업환산대,Foreign Currency Translation Adjustment - Liabilities,11002,3420000,3429999,Y
+34273,3427,3,선도평가이익(자본조정),Forward Contract Valuation Gains - Capital Adjustment,11002,3420000,3429999,Y
+34293,3429,3,선도평가손실(자본조정),Forward Contract Valuation Losses - Capital Adjustment,11002,3420000,3429999,Y
+34313,3431,3,선물평가이익(자본조정),Futures Contract Valuation Gains - Capital Adjustment,11002,3430000,3439999,Y
+34333,3433,3,선물평가손실(자본조정),Futures Contract Valuation Losses - Capital Adjustment,11002,3430000,3439999,Y
+34353,3435,3,옵션평가이익(자본조정),Options Valuation Gains - Capital Adjustment,11002,3430000,3439999,Y
+34373,3437,3,옵션평가손실(자본조정),Options Valuation Losses - Capital Adjustment,11002,3430000,3439999,Y
+34393,3439,3,스왑평가이익(자본조정),Swap Valuation Gains - Capital Adjustment,11002,3430000,3439999,Y
+34413,3441,3,스왑평가손실(자본조정),Swap Valuation Losses - Capital Adjustment,11002,3440000,3449999,Y
+35003,3500,3,외부주주지분,Non-controlling Interest,11002,3500000,3509999,Y
+40001,4000,1,수익,Revenue,,4000000,4999999,Y
+41002,4100,2,매출액,Sales,10001,4100000,4199999,Y
+41013,4101,3,제품국내매출,Domestic Sales - Products,11002,4100000,4102999,Y
+41033,4103,3,상품국내매출,Domestic Sales - Merchandise,11002,4100000,4109999,Y
+41093,4109,3,제품수출,Export Sales - Products,11002,4100000,4112999,Y
+41113,4111,3,상품수출,Export Sales - Merchandise,11002,4110000,4119999,Y
+41133,4113,3,렌탈매출,Rental Income,11002,4110000,4119999,Y
+41163,4116,3,용역매출,Service Income,11002,4110000,4125999,Y
+41993,4199,3,기타매출,Other Sales,11002,4190000,4199999,Y
+42002,4200,2,영업외수익,Non-operating Income,10001,4200000,4299999,Y
+42013,4201,3,이자수익,Interest Income,11002,4200000,4209999,Y
+42033,4203,3,배당금수익,Dividend Income,11002,4200000,4209999,Y
+42053,4205,3,임대료수익,Rental Income,11002,4200000,4209999,Y
+42073,4207,3,수수료수익,Commission Income,11002,4200000,4209999,Y
+42093,4209,3,외환차익,Foreign Exchange Gains,11002,4200000,4209999,Y
+42113,4211,3,외환환산이익,Foreign Currency Translation Gains,11002,4210000,4219999,Y
+42173,4217,3,지분법이익,Equity Method Income,11002,4210000,4219999,Y
+42193,4219,3,투자자산처분이익,Gains on Disposal of Investment Assets,11002,4210000,4219999,Y
+42213,4221,3,유형자산처분이익,Gains on Disposal of Tangible Assets,11002,4220000,4229999,Y
+42233,4223,3,매도가능증권감액손실환입,Reversal of Impairment Loss on Available-for-Sale Securities,11002,4220000,4229999,Y
+42293,4229,3,대손충당금환입,Reversal of Allowance for Doubtful Accounts,11002,4220000,4229999,Y
+42333,4233,3,판매보증충당금환입,Reversal of Sales Warranty Provisions,11002,4230000,4239999,Y
+42353,4235,3,매상변경차익,Gains on Sales Changes,11002,4230000,4239999,Y
+42373,4237,3,계약해지이익,Gains on Contract Termination,11002,4230000,4239999,Y
+42973,4297,3,전기오류수정이익,Correction of Previous Period Errors - Income,11002,4290000,4299999,Y
+42993,4299,3,잡이익,Miscellaneous Income,11002,4290000,4299999,Y
+43013,4301,3,자산수증이익,Asset Enhancement Gains,11002,4300000,4309999,Y
+43033,4303,3,채무면제이익,Debt Forgiveness Income,11002,4300000,4309999,Y
+43053,4305,3,보험차익,Insurance Proceeds,11002,4300000,4309999,Y
+42503,4250,3,사업부양도이익,Business Divestment Gains,11002,4250000,4259999,Y
+42403,4240,3,법인세환급,Corporate Tax Refund,11002,4240000,4249999,Y
+50001,5000,1,비용,Expenses,,5000000,5999999,Y
+51002,5100,2,매출원가,Cost of Goods Sold,10001,5100000,5199999,Y
+51013,5101,3,제품국내매출원가,Cost of Domestic Sales - Products,11002,5100000,5102999,Y
+51033,5103,3,상품국내매출원가,Cost of Domestic Sales - Merchandise,11002,5100000,5104999,Y
+51093,5109,3,제품수출원가,Cost of Export Sales - Products,11002,5100000,5109999,Y
+51113,5111,3,상품수출원가,Cost of Export Sales - Merchandise,11002,5110000,5112999,Y
+51133,5113,3,렌탈매출원가,Cost of Rental Income,11002,5110000,5115999,Y
+51163,5116,3,용역매출원가,Cost of Service Income,11002,5110000,5119999,Y
+51993,5199,3,기타매출원가,Cost of Other Sales,11002,5190000,5199999,Y
+52013,5201,3,제조,Manufacturing Costs,11002,5200000,5299999,Y
+53002,5300,2,판매비와관리비,Selling and Administrative Expenses,10001,5300000,5499999,Y
+53013,5301,3,급여및수당,Salaries and Allowances,11002,5300000,5304999,Y
+53053,5305,3,퇴직급여,Retirement Benefits,11002,5300000,5306999,Y
+53073,5307,3,잡급,Miscellaneous Salaries,11002,5300000,5308999,Y
+53093,5309,3,주식보상비용,Stock Compensation Expenses,11002,5300000,5309999,Y
+54013,5401,3,복리후생비,Employee Benefits,11002,5400000,5402999,Y
+54033,5403,3,여비교통비,Travel Expenses,11002,5400000,5404999,Y
+54053,5405,3,회의비,Meeting Expenses,11002,5400000,5406999,Y
+54073,5407,3,통신비,Communication Expenses,11002,5400000,5408999,Y
+54093,5409,3,도서인쇄비,Books and Printing Costs,11002,5400000,5409999,Y
+54113,5411,3,교육훈련비,Training and Education Costs,11002,5410000,5412999,Y
+54133,5413,3,수도광열비,Utilities,11002,5410000,5414999,Y
+54153,5415,3,소모품비,Supplies,11002,5410000,5416999,Y
+54173,5417,3,세금과공과,Taxes and Public Dues,11002,5410000,5418999,Y
+54193,5419,3,지급임차료,Rent Expense,11002,5410000,5419999,Y
+54213,5421,3,지급리스료,Lease Expense,11002,5420000,5422999,Y
+54233,5423,3,지급수수료(경비),Commission Expense,11002,5420000,5426999,Y
+54273,5427,3,용역비,Service Fees,11002,5420000,5428999,Y
+54293,5429,3,수선비,Repair Costs,11002,5420000,5429999,Y
+54313,5431,3,차량유지비,Vehicle Maintenance Costs,11002,5430000,5432999,Y
+54333,5433,3,보험료,Insurance Premiums,11002,5430000,5436999,Y
+54373,5437,3,판매촉진비,Sales Promotion Costs,11002,5430000,5438999,Y
+54393,5439,3,판매수수료,Sales Commissions,11002,5430000,5440999,Y
+54413,5441,3,접대비,Entertainment Expenses,11002,5440000,5442999,Y
+54433,5443,3,견본비,Sample Costs,11002,5440000,5444999,Y
+54453,5445,3,광고선전비,Advertising Expenses,11002,5440000,5446999,Y
+54473,5447,3,인세,Royalties,11002,5440000,5448999,Y
+54533,5453,3,포장비,Packaging Costs,11002,5450000,5459999,Y
+54553,5455,3,운반비,Transportation Costs,11002,5450000,5459999,Y
+54573,5457,3,대손상각비,Bad Debt Expense,11002,5450000,5459999,Y
+54593,5459,3,감가상각비,Depreciation Expense,11002,5450000,5459999,Y
+54613,5461,3,무형자산상각비,Amortization Expense,11002,5460000,5462999,Y
+54653,5465,3,경상개발비,Regular Development Costs,11002,5460000,5469999,Y
+54673,5467,3,소비자보상비,Consumer Compensation Costs,11002,5460000,5468999,Y
+54693,5469,3,상품부품반환손실,Loss on Return of Merchandise Parts,11002,5460000,5469999,Y
+54713,5471,3,렌탈자산폐기손실,Loss on Disposal of Rental Assets,11002,5470000,5472999,Y
+54733,5473,3,판매보증충당금전입액,Provision for Sales Warranty Costs,11002,5470000,5479999,Y
+54743,5474,3,하자보수비,Repair and Maintenance Costs,11002,5470000,5479999,Y
+54993,5499,3,잡비,Miscellaneous Expenses,11002,5490000,5499999,Y
+55002,5500,2,영업외비용,Non-operating Expenses,10001,5500000,5599999,Y
+55013,5501,3,이자비용,Interest Expense,11002,5500000,5509999,Y
+55033,5503,3,매출채권처분손실,Loss on Disposal of Receivables,11002,5500000,5509999,Y
+55053,5505,3,외환차손,Foreign Exchange Losses,11002,5500000,5509999,Y
+55073,5507,3,외환환산손실,Foreign Currency Translation Losses,11002,5500000,5509999,Y
+55093,5509,3,기부금,Donations,11002,5500000,5509999,Y
+55133,5513,3,단기매매증권평가손실,Short-term Trading Securities Valuation Loss,11002,5510000,5519999,Y
+55173,5517,3,지분법손실,Equity Method Loss,11002,5510000,5519999,Y
+55193,5519,3,매도가능증권감액손실,Impairment Loss on Available-for-Sale Securities,11002,5510000,5519999,Y
+55213,5521,3,만기보유증권감액손실,Impairment Loss on Held-to-Maturity Securities,11002,5520000,5529999,Y
+55253,5525,3,재고자산평가손실,Inventory Valuation Loss,11002,5520000,5529999,Y
+55273,5527,3,재고자산폐기손실,Inventory Disposal Loss,11002,5520000,5529999,Y
+55313,5531,3,투자자산감액손실,Impairment Loss on Investment Assets,11002,5530000,5539999,Y
+55333,5533,3,유형자산감액손실,Impairment Loss on Tangible Assets,11002,5530000,5539999,Y
+55353,5535,3,무형자산감액손실,Impairment Loss on Intangible Assets,11002,5530000,5539999,Y
+55373,5537,3,기타의대손상각비,Other Bad Debt Expense,11002,5530000,5539999,Y
+55393,5539,3,투자자산처분손실,Loss on Disposal of Investment Assets,11002,5530000,5539999,Y
+55413,5541,3,유형자산처분손실,Loss on Disposal of Tangible Assets,11002,5540000,5549999,Y
+55453,5545,3,사채상환손실,Loss on Redemption of Bonds,11002,5540000,5549999,Y
+55473,5547,3,법인세추납액,Corporate Tax Payable,11002,5540000,5549999,Y
+55593,5559,3,전기오류수정손실,Correction of Previous Period Errors - Loss,11002,5550000,5559999,Y
+55993,5599,3,잡손실,Miscellaneous Losses,11002,5590000,5599999,Y
+56013,5601,3,재해손실,Disaster Losses,11002,5600000,5609999,Y

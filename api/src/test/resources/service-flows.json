@@ -1,0 +1,179 @@
+{
+  "code": "SUCCESS",
+  "message": "Success.",
+  "data": {
+    "page": {
+      "current": 1,
+      "total": 1,
+      "size": 100,
+      "totalItems": 5
+    },
+    "items": [
+      {
+        "serviceType": "INSTALL",
+        "orderId": "0105433800009",
+        "orderItemId": "0105433800009-0201",
+        "serviceStatus": "SERVICE_SCHEDULED",
+        "serviceFlowId": "1Z1MGUMCbAz",
+        "serviceCreateTime": "2024-12-03T06:39:26.386Z",
+        "bookingId": "202412033123b3e624d04435b6ce44b724e28a21",
+        "outboundDeliveryId": "1Z1TjdI4uU5",
+        "workId": "20241203fb24a6cd79884e4a8ada9f6300ef13f6",
+        "serviceLocation": {
+          "firstName": "T*u",
+          "lastName": "T**y",
+          "email": "thu*********@ntq-solution.com.vn",
+          "phone": "+84362677240",
+          "state": "TX",
+          "city": "Houston",
+          "address1": "3333 Raleigh Street",
+          "address2": "***************************",
+          "zipcode": "77021",
+          "branchId": "10fea0f2db2c2001",
+          "warehouseId": "1SSlmkCG5OV",
+          "latitude": 29.70204734802246,
+          "longitude": -95.3733139038086,
+          "additionalInfos": []
+        },
+        "serviceSlot": {
+          "bookingDate": "2024-12-04",
+          "slotType": "AFTERNOON"
+        },
+        "servicePayments": [],
+        "serviceUpdateTime": "2024-12-04T13:12:52.676Z"
+      },
+      {
+        "serviceType": "INSTALL",
+        "orderId": "0105433800009",
+        "orderItemId": "0105433800009-0101",
+        "serviceStatus": "SERVICE_SCHEDULED",
+        "serviceFlowId": "1Z1MGM30e4d",
+        "serviceCreateTime": "2024-12-03T06:39:24.579Z",
+        "bookingId": "202412039b18de75e4bd4de0a7257b94c3cf7d68",
+        "outboundDeliveryId": "1Z1TjSeyKSA",
+        "workId": "20241203fffa993e3bd74967bab249013542069e",
+        "serviceLocation": {
+          "firstName": "T*u",
+          "lastName": "T**y",
+          "email": "thu*********@ntq-solution.com.vn",
+          "phone": "+84362677240",
+          "state": "TX",
+          "city": "Houston",
+          "address1": "3333 Raleigh Street",
+          "address2": "***************************",
+          "zipcode": "77021",
+          "branchId": "10fea0f2db2c2001",
+          "warehouseId": "1SSlmkCG5OV",
+          "latitude": 29.70204734802246,
+          "longitude": -95.3733139038086,
+          "additionalInfos": []
+        },
+        "serviceSlot": {
+          "bookingDate": "2024-12-04",
+          "slotType": "AFTERNOON"
+        },
+        "servicePayments": [],
+        "serviceUpdateTime": "2024-12-04T13:12:43.482Z"
+      },
+      {
+        "serviceType": "INSTALL",
+        "orderId": "0105433700057",
+        "orderItemId": "0105433700057-0402",
+        "serviceStatus": "SERVICE_SCHEDULED",
+        "serviceFlowId": "1YzsjLhRFAh",
+        "serviceCreateTime": "2024-12-02T09:18:32.338Z",
+        "bookingId": "20241203a2212602da0745808b777b2da97efec1",
+        "outboundDeliveryId": "1YzsjMSOReK",
+        "workId": "20241203b3acbd3ba2164799af5a72b030807696",
+        "serviceLocation": {
+          "firstName": "N*Q",
+          "lastName": "T**t",
+          "email": "han************@ntq-solution.com.vn",
+          "phone": "+16029876543",
+          "state": "TX",
+          "city": "Houston",
+          "address1": "3333 Raleigh St",
+          "address2": "**********************",
+          "zipcode": "77021",
+          "branchId": "10fea0f2db2c2001",
+          "warehouseId": "1SSlmkCG5OV",
+          "latitude": 29.70204734802246,
+          "longitude": -95.3733139038086,
+          "additionalInfos": []
+        },
+        "serviceSlot": {
+          "bookingDate": "2024-12-04",
+          "slotType": "MORNING"
+        },
+        "servicePayments": [],
+        "serviceUpdateTime": "2024-12-03T13:10:11.096Z"
+      },
+      {
+        "serviceType": "INSTALL",
+        "orderId": "0105433700057",
+        "orderItemId": "0105433700057-0102",
+        "serviceStatus": "SERVICE_SCHEDULED",
+        "serviceFlowId": "1Yzsj2DMRTl",
+        "serviceCreateTime": "2024-12-02T09:18:28.085Z",
+        "bookingId": "20241203c19e73acebcb4f31946f46ec32da6de5",
+        "outboundDeliveryId": "1Z17Ndo55iC",
+        "workId": "202412037ee2305535244c34b25afa77da41cf0d",
+        "serviceLocation": {
+          "firstName": "N*Q",
+          "lastName": "T**t",
+          "email": "han************@ntq-solution.com.vn",
+          "phone": "+16029876543",
+          "state": "TX",
+          "city": "Houston",
+          "address1": "3333 Raleigh St",
+          "address2": "**********************",
+          "zipcode": "77021",
+          "branchId": "10fea0f2db2c2001",
+          "warehouseId": "1SSlmkCG5OV",
+          "latitude": 29.70204734802246,
+          "longitude": -95.3733139038086,
+          "additionalInfos": []
+        },
+        "serviceSlot": {
+          "bookingDate": "2024-12-04",
+          "slotType": "MORNING"
+        },
+        "servicePayments": [],
+        "serviceUpdateTime": "2024-12-03T13:09:35.101Z"
+      },
+      {
+        "serviceType": "INSTALL",
+        "orderId": "0105433700009",
+        "orderItemId": "0105433700009-0102",
+        "serviceStatus": "SERVICE_SCHEDULED",
+        "serviceFlowId": "1YzRmD4BwKy",
+        "serviceCreateTime": "2024-12-02T03:01:21.38Z",
+        "bookingId": "2024120267b4b52cb14f4835bc10abf064e1ca88",
+        "outboundDeliveryId": "1YzRmDpbgjl",
+        "workId": "20241202c40945a2d59a4bdb968f57d7f8de4896",
+        "serviceLocation": {
+          "firstName": "N***g",
+          "lastName": "T*",
+          "email": "nhu*****@ntq-solution.com.vn",
+          "phone": "+12312322334",
+          "state": "TX",
+          "city": "Houston",
+          "address1": "address",
+          "address2": "***",
+          "zipcode": "77069",
+          "branchId": "10fea0f2db2c2001",
+          "warehouseId": "1SSlmkCG5OV",
+          "latitude": 29.7020479,
+          "longitude": -95.3733134,
+          "additionalInfos": []
+        },
+        "serviceSlot": {
+          "bookingDate": "2024-12-05",
+          "slotType": "AFTERNOON"
+        },
+        "servicePayments": [],
+        "serviceUpdateTime": "2024-12-05T03:57:19.372Z"
+      }
+    ]
+  }
+}

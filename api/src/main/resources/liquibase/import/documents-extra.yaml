@@ -1,0 +1,41 @@
+databaseChangeLog:
+#  - changeSet:
+#      id: exchange_rate-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "exchange_rate"
+#            file: classpath:/liquibase/csv/documents/config/exchange_rate.csv
+#            separator: ","
+#            encoding: "UTF-8"
+#  - changeSet:
+#      id: document_item_attribute_master-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "document_item_attribute_master"
+#            file: classpath:/liquibase/csv/documents/config/document_item_attribute_master.csv
+#            separator: ","
+#            encoding: "UTF-8"
+#  - changeSet:
+#      id: document_template-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "document_template"
+#            file: classpath:/liquibase/csv/documents/config/document_template.csv
+#            separator: ","
+#            encoding: "UTF-8"
+
+#--------------------------------------------------------------------------
+#   오류 발생 --> Caused by: java.io.FileNotFoundException: The file liquibase/import/[일시불] 주문접수 was not found in the configured search path:
+#   csv 파일데이터 형식이 좀 안맞는듯
+#  - changeSet:
+#      id: document_template_item-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "document_template_item"
+#            file: classpath:/liquibase/csv/documents/config/document_template_item.csv
+#            separator: ","
+#            encoding: "UTF-8"

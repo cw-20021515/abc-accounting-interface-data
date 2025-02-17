@@ -1,0 +1,58 @@
+spring:
+  config:
+    activate:
+      on-profile: stg
+  application:
+    name: abc-accounting-api-stg
+  data:
+    redis:
+      ssl:
+        enabled: true
+  datasource:
+    hikari:
+      pool-name: accounting-hikari-connection-pool
+      maximum-pool-size: 50
+      minimum-idle: 5             # 최소 유지 연결 수
+      idle-timeout: 30000         # idle 상태 최대 유지 시간 (ms)
+      max-lifetime: 7200000       # 120분
+      connection-timeout: 10000   # 연결 타임아웃 (ms)
+      leak-detection-threshold: 30000   #30초, 커넥션 누수감지
+      connection-init-sql: SELECT 1
+      validation-timeout: 2000
+  docker:
+    compose:
+      enabled: false
+  liquibase:
+    enabled: false
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            url: https://apis.abc.necoa.blue
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: FULL
+          oms:
+            url: https://apis.abc.necoa.blue
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: BASIC
+scheduling:
+  credentials:
+    enabled: true
+    refresh:
+      time-unit: MINUTES
+      fixed-delay: 1    # 10분
+      initial-delay: 1 # 1분
+credential:
+  playground: SANDBOX
+  profile : stg
+  redirectUri: https://apis.abc.necoa.blue/accounting/v1/qbo/oauth2/redirect
+#  redirectUri: http://localhost:9090/accounting/v1/qbo/oauth2/redirect
+
+#logging:
+#  level:
+#    com.zaxxer.hikari: DEBUG
+#    com.zaxxer.hikari.HikariConfig: DEBUG       ## hikari connection pool 설정 정보
+#    com.zaxxer.hikari.metrics: DEBUG            ## 메트릭 정보

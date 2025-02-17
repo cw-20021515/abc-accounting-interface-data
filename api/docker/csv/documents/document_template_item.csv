@@ -1,0 +1,210 @@
+company_code,doc_template_code,line_order,account_code,ref_doc_template_code,account_side,requirement_type,cost_center,profit_center,segment,project,item_text_kor,item_text_eng
+N200,ONETIME_PAYMENT_RECEIVED,1,1136010,,DEBIT,REQUIRED,C0001,,,,[일시불:결제] 수납-카드미수금,[ONETIME:Payment] Payment Received-Other Receivables-CreditCard
+N200,ONETIME_PAYMENT_RECEIVED,2,2111010,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 수납-선수금,[ONETIME:Payment] Payment Received-AdvancesfromCustomers
+N200,ONETIME_PAYMENT_RECEIVED,3,2115020,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 수납-예수금-판매세-State,[ONETIME:Payment] Payment Received-Deposits-SalesTax-State
+N200,ONETIME_PAYMENT_RECEIVED,4,2115030,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 수납-예수금-판매세-County,[ONETIME:Payment] Payment Received-Deposits-SalesTax-County
+N200,ONETIME_PAYMENT_RECEIVED,5,2115040,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 수납-예수금-판매세-City,[ONETIME:Payment] Payment Received-Deposits-SalesTax-City
+N200,ONETIME_PAYMENT_RECEIVED,6,2115050,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 수납-예수금-판매세-Special,[ONETIME:Payment] Payment Received-Deposits-SalesTax-Special
+N200,ONETIME_PAYMENT_DEPOSIT,1,1101010,,DEBIT,REQUIRED,C0001,,,,[일시불] 대금입금-현금-보통예금,[ONETIME:Deposit] Deposit Received-Cash - Regular Deposits
+N200,ONETIME_PAYMENT_DEPOSIT,2,5423010,,DEBIT,REQUIRED,C0001,,,,[일시불] 대금입금-지급수수료-결제수수료,[ONETIME:Deposit] Deposit Received-ServiceFees-Payment-Fees
+N200,ONETIME_PAYMENT_DEPOSIT,3,1136010,ONETIME_PAYMENT_RECEIVED,CREDIT,REQUIRED,C0001,,,,[일시불] 대금입금-카드미수금,[ONETIME:Deposit] Deposit Received-Other Receivables-CreditCard
+N200,ONETIME_PAYMENT_VOID,1,2111010,,DEBIT,REQUIRED,C0001,,,,[일시불:결제] 결제 취소(승인취소)-선수금,[ONETIME:Payment] Approval Cancellation-AdvancesfromCustomers
+N200,ONETIME_PAYMENT_VOID,2,1136010,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 결제 취소(승인취소)-카드미수금,[ONETIME:Payment] Approval Cancellation-Other Receivables-CreditCard
+N200,ONETIME_PAYMENT_REFUND,1,2111010,,DEBIT,REQUIRED,C0001,,,,[일시불:결제] 결제 환불(매입취소)-선수금,[ONETIME:Payment] Refund-AdvancesfromCustomers
+N200,ONETIME_PAYMENT_REFUND,2,2107010,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 결제 환불(매입취소)-미지급금,[ONETIME:Payment] Refund-AccruedExpensesGroup
+N200,ONETIME_PAYMENT_REFUND,3,5423020,,CREDIT,REQUIRED,C0001,,,,[일시불:결제] 결제 환불(매입취소)-지급수수료-카드수수료,[ONETIME:Payment] Refund-ServiceFees-CreditCard-Fees
+N200,ONETIME_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0001,,,,[일시불:출고] 제품출고-시송품-상품,[ONETIME] Product Shipment-Goods in Transit-Merchandise
+N200,ONETIME_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0001,,,,[일시불:출고] 제품출고-상품,[ONETIME] Product Shipment-Merchandise
+N200,ONETIME_SALES_RECOGNITION,1,1117010,,DEBIT,REQUIRED,C0001,,,,[일시불] 설치완료-매출인식-외상매출금-일시불,[ONETIME] Installation Complete - Sales Recognition-Accounts Receivable-Retail
+N200,ONETIME_SALES_RECOGNITION,2,4103010,,CREDIT,REQUIRED,C0001,,,,[일시불] 설치완료-매출인식-상품매출-일시불,[ONETIME] Installation Complete - Sales Recognition-Sales Goods-Retail
+N200,ONETIME_COGS_RECOGNITION,1,5103010,,DEBIT,REQUIRED,C0001,,,,[일시불] 설치완료-매출원가 인식-상품매출원가-일시불,[ONETIME] Installation Complete - Cost Recognition-COGS-Retail
+N200,ONETIME_COGS_RECOGNITION,2,1230010,,CREDIT,REQUIRED,C0001,,,,[일시불] 설치완료-매출원가 인식-시송품-상품,[ONETIME] Installation Complete - Cost Recognition-Goods in Transit-Merchandise
+N200,ONETIME_ADVANCE_PAYMENT_OFFSET,1,2111010,ONETIME_PAYMENT_RECEIVED,DEBIT,REQUIRED,C0001,,,,[일시불] 설치완료-선수금 대체-선수금,[ONETIME] Installation Complete - Advance Payment Transfer-AdvancesfromCustomers
+N200,ONETIME_ADVANCE_PAYMENT_OFFSET,2,1117010,ONETIME_SALES_RECOGNITION,CREDIT,REQUIRED,C0001,,,,[일시불] 설치완료-선수금 대체-외상매출금-일시불,[ONETIME] Installation Complete - Advance Payment Transfer-Accounts Receivable-Retail
+N200,ONETIME_PRICE_DIFFERENCE,1,5103010,,DEBIT,OPTIONAL,C0001,,,,[일시불] 설치완료-재고가액 확정-상품매출원가-일시불,[ONETIME] Installation Complete - Inventory Value Confirmation-COGS-Retail
+N200,ONETIME_PRICE_DIFFERENCE,2,5199030,,CREDIT,OPTIONAL,C0001,,,,[일시불] 설치완료-재고가액 확정-가격차이-상품,[ONETIME] Installation Complete - Inventory Value Confirmation-Price Variance-Goods
+N200,ONETIME_RETURN_SALES_CANCELLED,1,4103010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-상품매출-일시불,[ONETIME:Return] Sales Cancellation-Sales Goods-Retail
+N200,ONETIME_RETURN_SALES_CANCELLED,2,2115020,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-예수금-판매세-State,[ONETIME:Return] Sales Cancellation-Deposits-SalesTax-State
+N200,ONETIME_RETURN_SALES_CANCELLED,3,2115030,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-예수금-판매세-County,[ONETIME:Return] Sales Cancellation-Deposits-SalesTax-County
+N200,ONETIME_RETURN_SALES_CANCELLED,4,2115040,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-예수금-판매세-City,[ONETIME:Return] Sales Cancellation-Deposits-SalesTax-City
+N200,ONETIME_RETURN_SALES_CANCELLED,5,2115050,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-예수금-판매세-Special,[ONETIME:Return] Sales Cancellation-Deposits-SalesTax-Special
+N200,ONETIME_RETURN_SALES_CANCELLED,6,1117010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-외상매출금-일시불,[ONETIME:Return] Sales Cancellation-Accounts Receivable-Retail
+N200,ONETIME_RETURN_SALES_CANCELLED,1,1201010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-상품,[ONETIME:Return] Sales Cancellation-Merchandise
+N200,ONETIME_RETURN_SALES_CANCELLED,2,5103010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 매출취소-상품매출원가-일시불,[ONETIME:Return] Sales Cancellation-COGS-Retail
+N200,ONETIME_RETURN_PAYMENT_REFUND,1,1117010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 환불-외상매출금-일시불,[ONETIME:Return] Refund-Accounts Receivable-Retail
+N200,ONETIME_RETURN_PAYMENT_REFUND,2,2111010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 환불-선수금,[ONETIME:Return] Refund-AdvancesfromCustomers
+N200,ONETIME_RETURN_PAYMENT_REFUND,3,2111010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 환불-선수금,[ONETIME:Return] Refund-AdvancesfromCustomers
+N200,ONETIME_RETURN_PAYMENT_REFUND,4,2107010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 환불-미지급금,[ONETIME:Return] Refund-AccruedExpensesGroup
+N200,ONETIME_PRODUCT_RECEIVED_GRADE_A,1,1201010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 반품입고-A급-상품,[ONETIME:Return] Return Received - Grade A-Merchandise
+N200,ONETIME_PRODUCT_RECEIVED_GRADE_A,2,1230010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 반품입고-A급-시송품-상품,[ONETIME:Return] Return Received - Grade A-Goods in Transit-Merchandise
+N200,ONETIME_PRODUCT_RECEIVED_GRADE_B,1,1900010,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 반품입고-B급-임시-반환입고,[ONETIME:Return] Return Received - Grade B-Temporary-Return
+N200,ONETIME_PRODUCT_RECEIVED_GRADE_B,2,1201020,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 반품입고-B급-상품-B등급,[ONETIME:Return] Return Received - Grade B-Merchandise - Grade B
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,1,1117011,,DEBIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-외상매출금-회수비,[ONETIME:Return] On-site Collection-Accounts Receivable-ReturnFee
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,2,4116010,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-용역매출-설치해체,[ONETIME:Return] On-site Collection-Sales Service-Labor
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,3,2115020,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-예수금-판매세-State,[ONETIME:Return] On-site Collection-Deposits-SalesTax-State
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,4,2115030,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-예수금-판매세-County,[ONETIME:Return] On-site Collection-Deposits-SalesTax-County
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,5,2115040,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-예수금-판매세-City,[ONETIME:Return] On-site Collection-Deposits-SalesTax-City
+N200,ONETIME_RETURN_PAYMENT_RECEIVED,6,2115050,,CREDIT,REQUIRED,C0001,,,,[일시불:반품] 현장수납-예수금-판매세-Special,[ONETIME:Return] On-site Collection-Deposits-SalesTax-Special
+N200,ONETIME_INVENTORY_DISPOSED_GRADE_B,1,1900010,,DEBIT,REQUIRED,C0001,,,,[일시불:폐기] B급자산 폐기-임시-반환입고,[ONETIME:Return] Grade B Asset Disposal-Temporary-Return
+N200,ONETIME_INVENTORY_DISPOSED_GRADE_B,2,1201020,,CREDIT,REQUIRED,C0001,,,,[일시불:폐기] B급자산 폐기-상품-B등급,[ONETIME:Return] Grade B Asset Disposal-Merchandise - Grade B
+N200,ONETIME_REPLACEMENT_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0001,,,,[일시불:교환] 제품출고-시송품-상품,[ONETIME:Replacement] Product Shipment-Goods in Transit-Merchandise
+N200,ONETIME_REPLACEMENT_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0001,,,,[일시불:교환] 제품출고-상품,[ONETIME:Replacement] Product Shipment-Merchandise
+N200,ONETIME_REPLACEMENT_INSTALLATION_COMPLETED,1,5103010,,DEBIT,REQUIRED,C0001,,,,[일시불:교환] 설치완료-상품매출원가-일시불,[ONETIME:Replacement] Installation Completed-COGS-Retail
+N200,ONETIME_REPLACEMENT_INSTALLATION_COMPLETED,2,1230010,,CREDIT,REQUIRED,C0001,,,,[일시불:교환] 설치완료-시송품-상품,[ONETIME:Replacement] Installation Completed-Goods in Transit-Merchandise
+N200,ONETIME_AS_REPAIR,1,5113020,,DEBIT,REQUIRED,C0001,,,,[일시불:AS] 수리-렌탈매출원가-부품,[ONETIME:AS] Repair-Cost of Rental Income - Parts
+N200,ONETIME_AS_REPAIR,2,1201040,,CREDIT,REQUIRED,C0001,,,,[일시불:AS] 수리-부품,[ONETIME:AS] Repair-Parts
+N200,OLEASE_PRICE_DIFFERENCE,1,1428010,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 설치완료-재고가액 확정-렌탈자산,[Operating Lease] Installation Complete - Inventory Value Confirmation-Rental Assets
+N200,OLEASE_PRICE_DIFFERENCE,2,5199030,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 설치완료-재고가액 확정-가격차이-상품,[Operating Lease] Installation Complete - Inventory Value Confirmation-Price Variance-Goods
+N200,OLEASE_PAYMENT_BILLING,1,1117030,,DEBIT,REQUIRED,C0002,,,,[운용리스] 청구-렌탈미수금-렌탈료,[Operating Lease] Billing-Accounts Receivable-Rental
+N200,OLEASE_PAYMENT_BILLING,2,4103020,,CREDIT,REQUIRED,C0002,,,,[운용리스] 청구-상품매출-운용리스,[Operating Lease] Billing-Sales Goods-O-Lease
+N200,OLEASE_PAYMENT_BILLING,3,2111010,,CREDIT,REQUIRED,C0002,,,,[운용리스] 청구-선수금,[Operating Lease] Billing-AdvancesfromCustomers
+N200,OLEASE_PAYMENT_BILLING,4,1117014,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 청구-외상매출금-A/S,[Operating Lease] Billing-Accounts Receivable - After-Sales Service
+N200,OLEASE_PAYMENT_BILLING,5,4116040,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 청구-용역매출-A/S,[Operating Lease] Billing-Service Revenue - After-Sales Service
+N200,OLEASE_PAYMENT_BILLING,6,1117013,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 청구-외상매출금-부품,[Operating Lease] Billing-Accounts Receivable - Parts
+N200,OLEASE_PAYMENT_BILLING,7,4199040,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 청구-기타매출-부품,[Operating Lease] Billing-Miscellaneous Income-Parts
+N200,OLEASE_PAYMENT_BILLING,8,4116010,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 청구-용역매출-설치해체,[Operating Lease] Billing-Sales Service-Labor
+N200,OLEASE_PAYMENT_BILLING,9,1117011,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 청구-외상매출금-회수비,[Operating Lease] Billing-Accounts Receivable-ReturnFee
+N200,OLEASE_PAYMENT_BILLING,10,1136060,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 청구-미수금-분실료,[Operating Lease] Billing-Other Receivables-Lost Fee
+N200,OLEASE_PAYMENT_BILLING,11,4299020,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 청구-잡이익-분실료,[Operating Lease] Billing-Miscellaneous Income - Lost Fee
+N200,OLEASE_PAYMENT_BILLING,12,1136050,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 청구-미수금-연체료,[Operating Lease] Billing-Other Receivables-Late Fee
+N200,OLEASE_PAYMENT_BILLING,13,4299010,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 청구-잡이익-연체료,[Operating Lease] Billing-Miscellaneous Income - Late Fee
+N200,OLEASE_PAYMENT_RECEIVED,1,1136010,,DEBIT,REQUIRED,C0002,,,,[운용리스] 수납-카드미수금,[Operating Lease] Collection-Other Receivables-CreditCard
+N200,OLEASE_PAYMENT_RECEIVED,2,1117030,OLEASE_PAYMENT_BILLING,CREDIT,REQUIRED,C0002,,,,[운용리스] 수납-렌탈미수금-렌탈료,[Operating Lease] Collection-Accounts Receivable-Rental
+N200,OLEASE_PAYMENT_RECEIVED,3,2115020,,CREDIT,REQUIRED,C0002,,,,[운용리스] 수납-예수금-판매세-State,[Operating Lease] Collection-Deposits-SalesTax-State
+N200,OLEASE_PAYMENT_RECEIVED,4,2115030,,CREDIT,REQUIRED,C0002,,,,[운용리스] 수납-예수금-판매세-County,[Operating Lease] Collection-Deposits-SalesTax-County
+N200,OLEASE_PAYMENT_RECEIVED,5,2115040,,CREDIT,REQUIRED,C0002,,,,[운용리스] 수납-예수금-판매세-City,[Operating Lease] Collection-Deposits-SalesTax-City
+N200,OLEASE_PAYMENT_RECEIVED,6,2115050,,CREDIT,REQUIRED,C0002,,,,[운용리스] 수납-예수금-판매세-Special,[Operating Lease] Collection-Deposits-SalesTax-Special
+N200,OLEASE_PAYMENT_RECEIVED,7,1117014,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 수납-외상매출금-A/S,[Operating Lease] Collection-Accounts Receivable - After-Sales Service
+N200,OLEASE_PAYMENT_RECEIVED,8,4116040,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-용역매출-A/S,[Operating Lease] Collection-Service Revenue - After-Sales Service
+N200,OLEASE_PAYMENT_RECEIVED,9,1117013,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 수납-외상매출금-부품,[Operating Lease] Collection-Accounts Receivable - Parts
+N200,OLEASE_PAYMENT_RECEIVED,10,4199040,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-기타매출-부품,[Operating Lease] Collection-Miscellaneous Income-Parts
+N200,OLEASE_PAYMENT_RECEIVED,11,4116010,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-용역매출-설치해체,[Operating Lease] Collection-Sales Service-Labor
+N200,OLEASE_PAYMENT_RECEIVED,12,1117011,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 수납-외상매출금-회수비,[Operating Lease] Collection-Accounts Receivable-ReturnFee
+N200,OLEASE_PAYMENT_RECEIVED,13,1136060,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 수납-미수금-분실료,[Operating Lease] Collection-Other Receivables-Lost Fee
+N200,OLEASE_PAYMENT_RECEIVED,14,4299020,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-잡이익-분실료,[Operating Lease] Collection-Miscellaneous Income - Lost Fee
+N200,OLEASE_PAYMENT_RECEIVED,15,1117070,,DEBIT,OPTIONAL,C0002,,,,[운용리스] 수납-금융리스채권-위약금,[Operating Lease] Collection-Accounts Receivable-F Lease-Penalty
+N200,OLEASE_PAYMENT_RECEIVED,16,5471040,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-계약해지이익-위약금-금융리스,[Operating Lease] Collection-Termination Loss - Penalty - Finance Lease
+N200,OLEASE_PAYMENT_RECEIVED,17,1136050,,CREDIT,OPTIONAL,C0002,,,,[운용리스] 수납-미수금-연체료,[Operating Lease] Collection-Other Receivables-Late Fee
+N200,OLEASE_PAYMENT_DEPOSIT,1,1101010,,DEBIT,REQUIRED,C0002,,,,[운용리스] 입금-현금-보통예금,[Operating Lease] Payment Received-Cash - Regular Deposits
+N200,OLEASE_PAYMENT_DEPOSIT,2,5423020,,DEBIT,REQUIRED,C0002,,,,[운용리스] 입금-지급수수료-카드수수료,[Operating Lease] Payment Received-ServiceFees-CreditCard-Fees
+N200,OLEASE_PAYMENT_DEPOSIT,3,1136010,OLEASE_PAYMENT_RECEIVED,CREDIT,REQUIRED,C0002,,,,[운용리스] 입금-카드미수금,[Operating Lease] Payment Received-Other Receivables-CreditCard
+N200,OLEASE_FILTER_SHIPPED,1,2111010,,DEBIT,REQUIRED,C0002,,,,[운용리스:서비스매출] 필터배송-선수금,[Operating Lease:Service] Filter Delivery-AdvancesfromCustomers
+N200,OLEASE_FILTER_SHIPPED,2,4116020,,CREDIT,REQUIRED,C0002,,,,[운용리스:서비스매출] 필터배송-용역매출-운용리스,[Operating Lease:Service] Filter Delivery-Sales Service-Labor-O-Lease
+N200,OLEASE_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0002,,,,[운용리스] 제품출고-시송품-상품,[Operating Lease] Product Shipment-Goods in Transit-Merchandise
+N200,OLEASE_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0002,,,,[운용리스] 제품출고-상품,[Operating Lease] Product Shipment-Merchandise
+N200,OLEASE_PRODUCT_RECEIVED_GRADE_A,1,1201010,,DEBIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 A급-상품,[Operating Lease:Return] Product Received - Grade A-Merchandise
+N200,OLEASE_PRODUCT_RECEIVED_GRADE_A,2,1230010,,CREDIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 A급-시송품-상품,[Operating Lease:Return] Product Received - Grade A-Goods in Transit-Merchandise
+N200,OLEASE_PRODUCT_RECEIVED_GRADE_B,1,1201020,,DEBIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-상품-B등급,[Operating Lease:Return] Product Received - Grade B-Merchandise - Grade B
+N200,OLEASE_PRODUCT_RECEIVED_GRADE_B,2,1900010,,CREDIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-임시-반환입고,[Operating Lease:Return] Product Received - Grade B-Temporary-Return
+N200,OLEASE_INVENTORY_DISPOSED_GRADE_B,1,1900010,,DEBIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-임시-반환입고,[Operating Lease:Return] Grade B Inventory Disposal-Temporary-Return
+N200,OLEASE_INVENTORY_DISPOSED_GRADE_B,2,5471020,,DEBIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-렌탈자산폐기손실,[Operating Lease:Return] Grade B Inventory Disposal-Loss on Disposal of Rental Assets
+N200,OLEASE_INVENTORY_DISPOSED_GRADE_B,3,1201020,,CREDIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-상품-B등급,[Operating Lease:Return] Grade B Inventory Disposal-Merchandise - Grade B
+N200,OLEASE_INVENTORY_DISPOSED_GRADE_B,4,5471030,,CREDIT,REQUIRED,C0002,,,,[운용리스:반환] 반환입고 B급-렌탈자산폐기대체,[Operating Lease:Return] Grade B Inventory Disposal-Rentalassetdisposalandreplacement
+N200,OLEASE_RENTAL_ASSET_ACQUISITION,1,1428010,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 인식-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Recognition-Rental Assets
+N200,OLEASE_RENTAL_ASSET_ACQUISITION,2,1230010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 인식-시송품-상품,[Operating Lease:Rental Asset] Rental Asset Recognition-Goods in Transit-Merchandise
+N200,OLEASE_RENTAL_ASSET_DEPRECIATION,1,5113010,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 감가상각-운용리스매출원가-감가,[Operating Lease:Rental Asset] Rental Asset Depreciation-COGS-O-Lease-Depreciation
+N200,OLEASE_RENTAL_ASSET_DEPRECIATION,2,1431010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 감가상각-감가상각누계액-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Depreciation-Acc.Depreciation-RentalAsset
+N200,OLEASE_RENTAL_ASSET_DISPOSED,1,1431010,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 폐기-감가상각누계액-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Disposed-Acc.Depreciation-RentalAsset
+N200,OLEASE_RENTAL_ASSET_DISPOSED,2,5471030,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 폐기-렌탈자산폐기대체,[Operating Lease:Rental Asset] Rental Asset Disposed-Rentalassetdisposalandreplacement
+N200,OLEASE_RENTAL_ASSET_DISPOSED,3,1428010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 폐기-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Disposed-Rental Assets
+N200,OLEASE_RENTAL_ASSET_LOSS_DISPOSED,1,1431010,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 분실폐기-감가상각누계액-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Loss Disposed-Acc.Depreciation-RentalAsset
+N200,OLEASE_RENTAL_ASSET_LOSS_DISPOSED,2,5599010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 분실폐기-잡손실-고객분실화재,[Operating Lease:Rental Asset] Rental Asset Loss Disposed-MiscellaneousLosses-CustomerLossFire
+N200,OLEASE_RENTAL_ASSET_LOSS_DISPOSED,3,1428010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 분실폐기-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Loss Disposed-Rental Assets
+N200,OLEASE_RENTAL_ASSET_LOSS_DISPOSED,4,5471030,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 분실폐기-렌탈자산폐기대체,[Operating Lease:Rental Asset] Rental Asset Loss Disposed-Rentalassetdisposalandreplacement
+N200,OLEASE_RENTAL_ASSET_BREACHED_REGISTERED,1,5471010,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 손상처리-렌탈자산폐기손실-가해약,[Operating Lease:Rental Asset] Rental Asset Impairment-LossesonSuspendedRentalAccount
+N200,OLEASE_RENTAL_ASSET_BREACHED_REGISTERED,2,1431020,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 손상처리-손상차손누계액-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Impairment-Acc.ImpairmentLosses-RentalAsset
+N200,OLEASE_RENTAL_ASSET_BREACHED_CANCELLED,1,1431020,,DEBIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 손상처리 취소-손상차손누계액-렌탈자산,[Operating Lease:Rental Asset] Rental Asset Impairment Cancelled-Acc.ImpairmentLosses-RentalAsset
+N200,OLEASE_RENTAL_ASSET_BREACHED_CANCELLED,2,5471010,,CREDIT,REQUIRED,C0002,,,,[운용리스:렌탈자산] 렌탈자산 손상처리 취소-렌탈자산폐기손실-가해약,[Operating Lease:Rental Asset] Rental Asset Impairment Cancelled-LossesonSuspendedRentalAccount
+N200,OLEASE_REPLACEMENT_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0002,,,,[운용리스:교환] 교환출고-시송품-상품,[Operating Lease:Replacement] Replacement Shipment-Goods in Transit-Merchandise
+N200,OLEASE_REPLACEMENT_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0002,,,,[운용리스:교환] 교환출고-상품,[Operating Lease:Replacement] Replacement Shipment-Merchandise
+N200,OLEASE_REPLACEMENT_INSTALLATION_COMPLETED,1,1428010,,DEBIT,REQUIRED,C0002,,,,[운용리스:교환] 설치완료-렌탈자산,[Operating Lease:Replacement] Replacement Complete-Rental Assets
+N200,OLEASE_REPLACEMENT_INSTALLATION_COMPLETED,2,1230010,,CREDIT,REQUIRED,C0002,,,,[운용리스:교환] 설치완료-시송품-상품,[Operating Lease:Replacement] Replacement Complete-Goods in Transit-Merchandise
+N200,OLEASE_TERMINATION_DISMANTLING,1,5471010,,DEBIT,REQUIRED,C0002,,,,[운용리스:해지] 해체확정-렌탈자산폐기손실-가해약,[Operating Lease:Termination] Dismantling Confirmation-LossesonSuspendedRentalAccount
+N200,OLEASE_TERMINATION_DISMANTLING,2,1431020,,CREDIT,REQUIRED,C0002,,,,[운용리스:해지] 해체확정-손상차손누계액-렌탈자산,[Operating Lease:Termination] Dismantling Confirmation-Acc.ImpairmentLosses-RentalAsset
+N200,OLEASE_AS_REPAIR,1,5113020,,DEBIT,REQUIRED,C0002,,,,[운용리스:AS] 수리-렌탈매출원가-부품,[Operating Lease:AS] Repair-Cost of Rental Income - Parts
+N200,OLEASE_AS_REPAIR,2,1201040,,CREDIT,REQUIRED,C0002,,,,[운용리스:AS] 수리-부품,[Operating Lease:AS] Repair-Parts
+N200,FLEASE_SALES_RECOGNITION,1,1117060,,DEBIT,REQUIRED,C0003,,,,[금융리스] 설치완료-재화매출 인식-금융리스채권-할부발생,[Finance Lease] Installation Complete - Product Sales Recognition-Accounts Receivable-F Lease-Installment
+N200,FLEASE_SALES_RECOGNITION,2,4103030,,CREDIT,REQUIRED,C0003,,,,[금융리스] 설치완료-재화매출 인식-상품매출-금융리스,[Finance Lease] Installation Complete - Product Sales Recognition-Sales Goods-F-Lease
+N200,FLEASE_SALES_RECOGNITION,3,2215010,,CREDIT,REQUIRED,C0003,,,,[금융리스] 설치완료-재화매출 인식-현할차금-금융리스,[Finance Lease] Installation Complete - Product Sales Recognition-UnearnedInterestIncome-F.Lease
+N200,FLEASE_COGS_RECOGNITION,1,5103020,,DEBIT,REQUIRED,C0003,,,,[금융리스] 설치완료-매출원가 인식-상품매출원가-금융리스,[Finance Lease] Installation Complete - Cost Recognition-COGS-F-Lease
+N200,FLEASE_COGS_RECOGNITION,2,1230010,,CREDIT,REQUIRED,C0003,,,,[금융리스] 설치완료-매출원가 인식-시송품-상품,[Finance Lease] Installation Complete - Cost Recognition-Goods in Transit-Merchandise
+N200,FLEASE_PRICE_DIFFERENCE,1,5103020,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 설치완료-재고가액 확정-상품매출원가-금융리스,[Finance Lease] Installation Complete - Inventory Value Confirmation-COGS-F-Lease
+N200,FLEASE_PRICE_DIFFERENCE,2,5199030,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 설치완료-재고가액 확정-가격차이-상품,[Finance Lease] Installation Complete - Inventory Value Confirmation-Price Variance-Goods
+N200,FLEASE_PAYMENT_BILLING,1,1117040,,DEBIT,REQUIRED,C0003,,,,[금융리스] 청구-금융리스채권-월렌탈료,[Finance Lease] Billing-Accounts Receivable-F Lease-Monthly
+N200,FLEASE_PAYMENT_BILLING,2,1117060,,CREDIT,REQUIRED,C0003,,,,[금융리스] 청구-금융리스채권-할부발생,[Finance Lease] Billing-Accounts Receivable-F Lease-Installment
+N200,FLEASE_PAYMENT_BILLING,3,2111010,,CREDIT,REQUIRED,C0003,,,,[금융리스] 청구-선수금,[Finance Lease] Billing-AdvancesfromCustomers
+N200,FLEASE_PAYMENT_BILLING,4,1117014,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-외상매출금-A/S,[Finance Lease] Billing-Accounts Receivable - After-Sales Service
+N200,FLEASE_PAYMENT_BILLING,5,4116040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-용역매출-A/S,[Finance Lease] Billing-Service Revenue - After-Sales Service
+N200,FLEASE_PAYMENT_BILLING,6,1117013,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-외상매출금-부품,[Finance Lease] Billing-Accounts Receivable - Parts
+N200,FLEASE_PAYMENT_BILLING,7,4199040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-기타매출-부품,[Finance Lease] Billing-Miscellaneous Income-Parts
+N200,FLEASE_PAYMENT_BILLING,8,4116010,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-용역매출-설치해체,[Finance Lease] Billing-Sales Service-Labor
+N200,FLEASE_PAYMENT_BILLING,9,1117011,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-외상매출금-회수비,[Finance Lease] Billing-Accounts Receivable-ReturnFee
+N200,FLEASE_PAYMENT_BILLING,10,1136060,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-미수금-분실료,[Finance Lease] Billing-Other Receivables-Lost Fee
+N200,FLEASE_PAYMENT_BILLING,11,4299020,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-잡이익-분실료,[Finance Lease] Billing-Miscellaneous Income - Lost Fee
+N200,FLEASE_PAYMENT_BILLING,12,1117070,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-금융리스채권-위약금,[Finance Lease] Billing-Accounts Receivable-F Lease-Penalty
+N200,FLEASE_PAYMENT_BILLING,13,5471040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-계약해지이익-위약금-금융리스,[Finance Lease] Billing-Termination Loss - Penalty - Finance Lease
+N200,FLEASE_PAYMENT_BILLING,14,1136050,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 청구-미수금-연체료,[Finance Lease] Billing-Other Receivables-Late Fee
+N200,FLEASE_PAYMENT_BILLING,15,4299010,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 청구-잡이익-연체료,[Finance Lease] Billing-Miscellaneous Income - Late Fee
+N200,FLEASE_PAYMENT_RECEIVED,1,1136010,,DEBIT,REQUIRED,C0003,,,,[금융리스] 수납-카드미수금,[Finance Lease] Collection-Other Receivables-CreditCard
+N200,FLEASE_PAYMENT_RECEIVED,2,1117040,FLEASE_PAYMENT_BILLING,CREDIT,REQUIRED,C0003,,,,[금융리스] 수납-금융리스채권-월렌탈료,[Finance Lease] Collection-Accounts Receivable-F Lease-Monthly
+N200,FLEASE_PAYMENT_RECEIVED,3,2115020,,CREDIT,REQUIRED,C0003,,,,[금융리스] 수납-예수금-판매세-State,[Finance Lease] Collection-Deposits-SalesTax-State
+N200,FLEASE_PAYMENT_RECEIVED,4,2115030,,CREDIT,REQUIRED,C0003,,,,[금융리스] 수납-예수금-판매세-County,[Finance Lease] Collection-Deposits-SalesTax-County
+N200,FLEASE_PAYMENT_RECEIVED,5,2115040,,CREDIT,REQUIRED,C0003,,,,[금융리스] 수납-예수금-판매세-City,[Finance Lease] Collection-Deposits-SalesTax-City
+N200,FLEASE_PAYMENT_RECEIVED,6,2115050,,CREDIT,REQUIRED,C0003,,,,[금융리스] 수납-예수금-판매세-Special,[Finance Lease] Collection-Deposits-SalesTax-Special
+N200,FLEASE_PAYMENT_RECEIVED,7,1117014,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 수납-외상매출금-A/S,[Finance Lease] Collection-Accounts Receivable - After-Sales Service
+N200,FLEASE_PAYMENT_RECEIVED,8,4116040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-용역매출-A/S,[Finance Lease] Collection-Service Revenue - After-Sales Service
+N200,FLEASE_PAYMENT_RECEIVED,9,1117013,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 수납-외상매출금-부품,[Finance Lease] Collection-Accounts Receivable - Parts
+N200,FLEASE_PAYMENT_RECEIVED,10,4199040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-기타매출-부품,[Finance Lease] Collection-Miscellaneous Income-Parts
+N200,FLEASE_PAYMENT_RECEIVED,11,4116010,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-용역매출-설치해체,[Finance Lease] Collection-Sales Service-Labor
+N200,FLEASE_PAYMENT_RECEIVED,12,1117011,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 수납-외상매출금-회수비,[Finance Lease] Collection-Accounts Receivable-ReturnFee
+N200,FLEASE_PAYMENT_RECEIVED,13,1136060,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 수납-미수금-분실료,[Finance Lease] Collection-Other Receivables-Lost Fee
+N200,FLEASE_PAYMENT_RECEIVED,14,4299020,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-잡이익-분실료,[Finance Lease] Collection-Miscellaneous Income - Lost Fee
+N200,FLEASE_PAYMENT_RECEIVED,15,1117070,,DEBIT,OPTIONAL,C0003,,,,[금융리스] 수납-금융리스채권-위약금,[Finance Lease] Collection-Accounts Receivable-F Lease-Penalty
+N200,FLEASE_PAYMENT_RECEIVED,16,5471040,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-계약해지이익-위약금-금융리스,[Finance Lease] Collection-Termination Loss - Penalty - Finance Lease
+N200,FLEASE_PAYMENT_RECEIVED,17,1136050,,CREDIT,OPTIONAL,C0003,,,,[금융리스] 수납-미수금-연체료,[Finance Lease] Collection-Other Receivables-Late Fee
+N200,FLEASE_PAYMENT_DEPOSIT,1,1101010,,DEBIT,REQUIRED,C0003,,,,[금융리스] 입금-현금-보통예금,[Finance Lease] Payment Received-Cash - Regular Deposits
+N200,FLEASE_PAYMENT_DEPOSIT,2,5423020,,DEBIT,REQUIRED,C0003,,,,[금융리스] 입금-지급수수료-카드수수료,[Finance Lease] Payment Received-ServiceFees-CreditCard-Fees
+N200,FLEASE_PAYMENT_DEPOSIT,3,1136010,FLEASE_PAYMENT_RECEIVED,CREDIT,REQUIRED,C0003,,,,[금융리스] 입금-카드미수금,[Finance Lease] Payment Received-Other Receivables-CreditCard
+N200,FLEASE_FILTER_SHIPPED,1,2111010,,DEBIT,REQUIRED,C0003,,,,[금융리스:서비스매출] 필터배송-선수금,[Finance Lease:Revenue] Service Revenue - Filter Delivery-AdvancesfromCustomers
+N200,FLEASE_FILTER_SHIPPED,2,4116030,,CREDIT,REQUIRED,C0003,,,,[금융리스:서비스매출] 필터배송-용역매출-금융리스,[Finance Lease:Revenue] Service Revenue - Filter Delivery-Sales Service-Labor-F-Lease
+N200,FLEASE_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0003,,,,[금융리스] 제품출고-시송품-상품,[Finance Lease] Product Shipment-Goods in Transit-Merchandise
+N200,FLEASE_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0003,,,,[금융리스] 제품출고-상품,[Finance Lease] Product Shipment-Merchandise
+N200,FLEASE_PRODUCT_RECEIVED_GRADE_A,1,1201010,,DEBIT,REQUIRED,C0003,,,,[금융리스:해지] 반환입고-A급-상품,[Finance Lease:Termination] Return Received - Grade A-Merchandise
+N200,FLEASE_PRODUCT_RECEIVED_GRADE_A,2,1230010,,CREDIT,REQUIRED,C0003,,,,[금융리스:해지] 반환입고-A급-시송품-상품,[Finance Lease:Termination] Return Received - Grade A-Goods in Transit-Merchandise
+N200,FLEASE_PRODUCT_RECEIVED_GRADE_B,1,1201020,,DEBIT,REQUIRED,C0003,,,,[금융리스:해지] 반환입고-B급-상품-B등급,[Finance Lease:Termination] Return Received - Grade B-Merchandise - Grade B
+N200,FLEASE_PRODUCT_RECEIVED_GRADE_B,2,1900010,,CREDIT,REQUIRED,C0003,,,,[금융리스:해지] 반환입고-B급-임시-반환입고,[Finance Lease:Termination] Return Received - Grade B-Temporary-Return
+N200,FLEASE_INVENTORY_DISPOSED_GRADE_B,1,1900010,,DEBIT,OPTIONAL,C0003,,,,[금융리스:해지] B급 재고자산 폐기-임시-반환입고,[Finance Lease:Termination] Grade B Inventory Disposal-Temporary-Return
+N200,FLEASE_INVENTORY_DISPOSED_GRADE_B,2,1201020,,CREDIT,OPTIONAL,C0003,,,,[금융리스:해지] B급 재고자산 폐기-상품-B등급,[Finance Lease:Termination] Grade B Inventory Disposal-Merchandise - Grade B
+N200,FLEASE_FINANCIAL_ASSET_INTEREST_INCOME,1,2215010,,DEBIT,REQUIRED,C0003,,,,[금융리스:금융자산] 이자수익-현할차금-금융리스,[Finance Lease:Financial Asset] Interest Income-UnearnedInterestIncome-F.Lease
+N200,FLEASE_FINANCIAL_ASSET_INTEREST_INCOME,2,4201010,,CREDIT,REQUIRED,C0003,,,,[금융리스:금융자산] 이자수익-이자수익-금융리스,[Finance Lease:Financial Asset] Interest Income-Interest Income-F Lease
+N200,FLEASE_FINANCIAL_ASSET_DISPOSED,1,5471050,,DEBIT,REQUIRED,C0003,,,,[금융리스:금융자산] 잔여채권 정리-계약해지손실-위약금-금융리스,[Finance Lease:Financial Asset] Dispose of Remaining Receivables-Termination Gain - Penalty - Finance Lease
+N200,FLEASE_FINANCIAL_ASSET_DISPOSED,2,2215010,,DEBIT,REQUIRED,C0003,,,,[금융리스:금융자산] 잔여채권 정리-현할차금-금융리스,[Finance Lease:Financial Asset] Dispose of Remaining Receivables-UnearnedInterestIncome-F.Lease
+N200,FLEASE_FINANCIAL_ASSET_DISPOSED,3,1117060,,CREDIT,REQUIRED,C0003,,,,[금융리스:금융자산] 잔여채권 정리-금융리스채권-할부발생,[Finance Lease:Financial Asset] Dispose of Remaining Receivables-Accounts Receivable-F Lease-Installment
+N200,FLEASE_WITHDRAWAL_SALES_CANCELLED,1,4103030,,DEBIT,REQUIRED,C0003,,,,[금용리스:철회] 매출취소 완료-상품매출-금융리스,[Operating Lease:Withdrawal] Sales Cancelled-Sales Goods-F-Lease
+N200,FLEASE_WITHDRAWAL_SALES_CANCELLED,2,2215010,,DEBIT,REQUIRED,C0003,,,,[금용리스:철회] 매출취소 완료-현할차금-금융리스,[Operating Lease:Withdrawal] Sales Cancelled-UnearnedInterestIncome-F.Lease
+N200,FLEASE_WITHDRAWAL_SALES_CANCELLED,3,1117060,,CREDIT,REQUIRED,C0003,,,,[금용리스:철회] 매출취소 완료-금융리스채권-할부발생,[Operating Lease:Withdrawal] Sales Cancelled-Accounts Receivable-F Lease-Installment
+N200,FLEASE_WITHDRAWAL_COGS_CANCELLED,1,1900010,,DEBIT,REQUIRED,C0003,,,,[금용리스:철회] 매출원가취소 완료-임시-반환입고,[Operating Lease:Withdrawal] COGS Cancelled-Temporary-Return
+N200,FLEASE_WITHDRAWAL_COGS_CANCELLED,2,5103020,,CREDIT,REQUIRED,C0003,,,,[금용리스:철회] 매출원가취소 완료-상품매출원가-금융리스,[Operating Lease:Withdrawal] COGS Cancelled-COGS-F-Lease
+N200,FLEASE_REPLACEMENT_PRODUCT_SHIPPED,1,1230010,,DEBIT,REQUIRED,C0003,,,,[금융리스:교환] 교환출고-시송품-상품,[Finance Lease:Exchange] Exchange Shipment-Goods in Transit-Merchandise
+N200,FLEASE_REPLACEMENT_PRODUCT_SHIPPED,2,1201010,,CREDIT,REQUIRED,C0003,,,,[금융리스:교환] 교환출고-상품,[Finance Lease:Exchange] Exchange Shipment-Merchandise
+N200,FLEASE_REPLACEMENT_INSTALLATION_COMPLETED,1,5103020,,DEBIT,REQUIRED,C0003,,,,[금융리스:교환] 설치완료-상품매출원가-금융리스,[Finance Lease:Exchange] Installation Complete-COGS-F-Lease
+N200,FLEASE_REPLACEMENT_INSTALLATION_COMPLETED,2,1230010,,CREDIT,REQUIRED,C0003,,,,[금융리스:교환] 설치완료-시송품-상품,[Finance Lease:Exchange] Installation Complete-Goods in Transit-Merchandise
+N200,FLEASE_AS_REPAIR,1,5113020,,DEBIT,REQUIRED,C0003,,,,[금융리스:AS] 수리-렌탈매출원가-부품,[Finance Lease:AS] Repair-Cost of Rental Income - Parts
+N200,FLEASE_AS_REPAIR,2,1201040,,CREDIT,REQUIRED,C0003,,,,[금융리스:AS] 수리-부품,[Finance Lease:AS] Repair-Parts
+N200,LOGISTICS_GOODS_INVOICE_RECEIVED,1,1800010,,DEBIT,REQUIRED,C0004,,,,[물류] 상품 비용-GR/IR-상품,[Logistics] Goods Cost -GR/IR-Goods
+N200,LOGISTICS_GOODS_INVOICE_RECEIVED,2,2101010,,CREDIT,REQUIRED,C0004,,,,[물류] 상품 비용-외상매입금,[Logistics] Goods Cost -AccountPayable
+N200,LOGISTICS_GOODS_INVOICE_RECEIVED,3,5199030,,CREDIT,REQUIRED,C0004,,,,[물류] 상품 비용-가격차이-상품,[Logistics] Goods Cost -Price Variance-Goods
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,1,1800020,,DEBIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-GR/IR-운임,[Logistics] Goods Extra Cost-GR/IR-Transit
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,2,1800030,,DEBIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-GR/IR-기타부대비용,[Logistics] Goods Extra Cost-GR/IR-OtherExpense
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,3,1800040,,DEBIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-GR/IR-관세,[Logistics] Goods Extra Cost-GR/IR-IncomeTax
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,4,2107010,,CREDIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-미지급금,[Logistics] Goods Extra Cost-AccruedExpensesGroup
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,5,5199033,,CREDIT,OPTIONAL,C0004,,,,[물류] 상품 부대비용(관세/운임)-가격차이-운임,[Logistics] Goods Extra Cost-Price Variance-Others
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,6,2107010,,CREDIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-미지급금,[Logistics] Goods Extra Cost-AccruedExpensesGroup
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,7,5199034,,CREDIT,OPTIONAL,C0004,,,,[물류] 상품 부대비용(관세/운임)-가격차이-기타부대비용,[Logistics] Goods Extra Cost-Price Variance-Other Additional Costs
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,8,2107010,,CREDIT,REQUIRED,C0004,,,,[물류] 상품 부대비용(관세/운임)-미지급금,[Logistics] Goods Extra Cost-AccruedExpensesGroup
+N200,LOGISTICS_FORWARDER_INVOICE_RECEIVED,9,5199035,,CREDIT,OPTIONAL,C0004,,,,[물류] 상품 부대비용(관세/운임)-가격차이-관세,[Logistics] Goods Extra Cost-Price Variance-Custom Duties
+N200,LOGISTICS_GOODS_RECEIVED,1,1201010,,DEBIT,REQUIRED,C0004,,,,[물류] 제품 입고-상품,[Logistics] Goods Receipts-Merchandise
+N200,LOGISTICS_GOODS_RECEIVED,2,1800010,,CREDIT,REQUIRED,C0004,,,,[물류] 제품 입고-GR/IR-상품,[Logistics] Goods Receipts-GR/IR-Goods
+N200,LOGISTICS_GOODS_RECEIVED,3,1800020,,CREDIT,REQUIRED,C0004,,,,[물류] 제품 입고-GR/IR-운임,[Logistics] Goods Receipts-GR/IR-Transit
+N200,LOGISTICS_GOODS_RECEIVED,4,1800030,,CREDIT,REQUIRED,C0004,,,,[물류] 제품 입고-GR/IR-기타부대비용,[Logistics] Goods Receipts-GR/IR-OtherExpense
+N200,LOGISTICS_GOODS_RECEIVED,5,1800040,,CREDIT,REQUIRED,C0004,,,,[물류] 제품 입고-GR/IR-관세,[Logistics] Goods Receipts-GR/IR-IncomeTax

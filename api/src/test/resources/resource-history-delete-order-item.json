@@ -1,0 +1,13 @@
+{
+  "code": "SUCCESS",
+  "message": "Success.",
+  "data": {
+    "page": {
+      "current": 1,
+      "total": 1,
+      "size": 100,
+      "totalItems": 68
+    },
+    "items": []
+  }
+}

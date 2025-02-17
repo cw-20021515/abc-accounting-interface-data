@@ -1,0 +1,164 @@
+id,account_code,account_description,account_name,account_type,classification,create_time,group_code,group_description,group_name,is_group_account,level,parent_account_code,system_source
+1,4000000,수익,Revenue,G,REVENUE,2024-08-29 09:00:00.000 +0900,4000,수익,Revenue,Y,1,,ABC
+2,4100000,매출,Sales Revenue,S,REVENUE,2024-08-29 09:00:00.000 +0900,4100,매출액,Sales,Y,2,4000000,ABC
+3,4103000,상품매출,Sales-Goods,S,REVENUE,2024-08-29 09:00:00.000 +0900,4103,상품국내매출,Domestic Sales - Merchandise,N,3,4100000,ABC
+4,4103010,상품매출-일시불,Sales-Goods-Retail,S,REVENUE,2024-08-29 09:00:00.000 +0900,4103,상품국내매출,Domestic Sales - Merchandise,N,3,4100000,ABC
+5,4103020,상품매출-운용리스,Sales-Goods-O.Lease,S,REVENUE,2024-08-29 09:00:00.000 +0900,4103,상품국내매출,Domestic Sales - Merchandise,N,3,4100000,ABC
+6,4103030,상품매출-금융리스,Sales-Goods-F.Lease,S,REVENUE,2024-08-29 09:00:00.000 +0900,4103,상품국내매출,Domestic Sales - Merchandise,N,3,4100000,ABC
+7,4103040,상품매출-A/S,Merchandise Sales - After-Sales Service,S,REVENUE,2024-08-29 09:00:00.000 +0900,4103,상품국내매출,Domestic Sales - Merchandise,N,3,4100000,ABC
+8,4113000,렌탈매출,Rental Income,S,REVENUE,2024-08-29 09:00:00.000 +0900,4113,렌탈매출,Rental Income,N,3,4100000,ABC
+9,4113010,렌탈매출-렌탈료,Sales-Goods-Rental,S,REVENUE,2024-08-29 09:00:00.000 +0900,4113,렌탈매출,Rental Income,N,3,4100000,ABC
+10,4116000,서비스매출,Sales-Service,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+11,4116010,용역매출-설치해체,Sales-Service-Labor,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+12,4116020,용역매출-운용리스,Sales-Service-Labor-O.Lease,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+13,4116030,용역매출-금융리스,Sales-Service-Labor-F.Lease,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+14,4116040,용역매출-A/S,Service Revenue - After-Sales Service,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+15,4116041,용역매출-A/S-부품,Service Revenue-parts,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+16,4116050,멤버십매출,Sales-Service-Membership,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+17,4116060,방문관리매출,On-site Management Revenue,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+18,4199000,기타매출,MiscellaneousIncome,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+19,4199010,기타매출-상품,MiscellaneousIncome-Goods,S,REVENUE,2024-08-29 09:00:00.000 +0900,4116,용역매출,Service Income,N,3,4100000,ABC
+20,4199020,기타매출-리스등록비,MiscellaneousIncome-Lease-RegistrationFee,S,REVENUE,2024-08-29 09:00:00.000 +0900,4199,기타매출,Other Sales,N,3,4100000,ABC
+21,4199030,기타매출-필터,MiscellaneousIncome-Filter,S,REVENUE,2024-08-29 09:00:00.000 +0900,4199,기타매출,Other Sales,N,3,4100000,ABC
+22,4199040,기타매출-부품,MiscellaneousIncome-Parts,S,REVENUE,2024-08-29 09:00:00.000 +0900,4199,기타매출,Other Sales,N,3,4100000,ABC
+23,4200000,영업외수익,Non-operating Income,S,REVENUE,2024-08-29 09:00:00.000 +0900,4199,기타매출,Other Sales,N,3,4100000,ABC
+24,4201000,이자수익,InterestIncome,S,REVENUE,2024-08-29 09:00:00.000 +0900,4199,기타매출,Other Sales,N,3,4100000,ABC
+25,4201010,이자수익-금융리스,InterestIncome-F.Lease,G,REVENUE,2024-08-29 09:00:00.000 +0900,4200,영업외수익,Non-operating Income,Y,2,4000000,ABC
+26,4203000,배당금수익,Dividend Income,G,REVENUE,2024-08-29 09:00:00.000 +0900,4201,이자수익,Interest Income,N,3,4201010,ABC
+27,4205000,임대료수익,Rental Income2,G,REVENUE,2024-08-29 09:00:00.000 +0900,4201,이자수익,Interest Income,N,3,4201010,ABC
+28,4207000,수수료수익,Commission Income,G,REVENUE,2024-08-29 09:00:00.000 +0900,4203,배당금수익,Dividend Income,N,3,4201010,ABC
+29,4299000,잡이익,MiscellaneousIncome,G,REVENUE,2024-08-29 09:00:00.000 +0900,4205,임대료수익,Rental Income,N,3,4201010,ABC
+30,4299010,잡이익-연체료,MiscellaneousIncome-LateFee,G,REVENUE,2024-08-29 09:00:00.000 +0900,4207,수수료수익,Commission Income,N,3,4201010,ABC
+31,4299020,잡이익-분실료,MiscellaneousIncome-LostFee,G,REVENUE,2024-08-29 09:00:00.000 +0900,4299,잡이익,Miscellaneous Income,N,3,4201010,ABC
+32,5000000,비용,Expenses,G,EXPENSE,2024-08-29 09:00:00.000 +0900,4299,잡이익,Miscellaneous Income,N,3,4201010,ABC
+33,5100000,매출원가,Cost of Goods Sold,G,EXPENSE,2024-08-29 09:00:00.000 +0900,4299,잡이익,Miscellaneous Income,N,3,4201010,ABC
+34,5103000,상품매출원가,Cost of Goods Sales - Merchandise,G,EXPENSE,2024-08-29 09:00:00.000 +0900,5000,비용,Expenses,Y,1,,ABC
+35,5103010,상품매출원가-일시불,COGS-Retail,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5100,매출원가,Cost of Goods Sold,Y,2,5103000,ABC
+36,5103020,상품매출원가-금융리스,COGS-F.Lease,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5103,상품국내매출원가,Cost of Domestic Sales - Merchandise,N,3,5103010,ABC
+37,5103030,상품매출원가-A/S,COGS-AS,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5103,상품국내매출원가,Cost of Domestic Sales - Merchandise,N,3,5103010,ABC
+38,5103040,상품매출원가-폐기,COGS-Disposal,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5103,상품국내매출원가,Cost of Domestic Sales - Merchandise,N,3,5103010,ABC
+39,5113000,운용리스매출원가,COGS-O.Lease,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5103,상품국내매출원가,Cost of Domestic Sales - Merchandise,N,3,5103010,ABC
+40,5113010,운용리스매출원가-감가,COGS-O.Lease-Depreciation,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5103,상품국내매출원가,Cost of Domestic Sales - Merchandise,N,3,5103010,ABC
+41,5113020,렌탈매출원가-부품,Cost of Rental Income - Parts,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5113,렌탈매출원가,Cost of Rental Income,N,3,5103010,ABC
+42,5116000,용역매출원가,Cost of Service Revenue,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5113,렌탈매출원가,Cost of Rental Income,N,3,5103010,ABC
+43,5116010,자가관리매출원가-필터,Cost of Self-management Revenue - Filter,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5113,렌탈매출원가,Cost of Rental Income,N,3,5103010,ABC
+44,5116020,방문관리매출원가-필터,Cost of On-site Management Revenue - Filter,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+45,5116030,멤버십매출원가,Cost of Membership Revenue,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+46,5116040,멤버십매출원가-방문수당,Cost of Membership Revenue - On-site Allowance,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+47,5116050,멤버십매출원가-부품,COGS-Membership-Parts,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+48,5116060,멤버십매출원가-필터,COGS-Membership-Filters,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+49,5199000,기타매출원가,Cost of Other Sales,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+50,5199010,기타매출원가-필터,Cost of Other Sales-Filter,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5116,용역매출원가,Cost of Service Income,N,3,5103010,ABC
+51,5199020,기타매출원가-부품,Cost of Other Sales-Parts,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+52,5199030,가격차이-상품,PriceVariance-Goods,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+53,5199040,가격차이정산-상품,Price Difference Adjustment - Merchandise,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+54,5199050,렌탈자산-가액조정,PriceVariance-RentalAsset,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+55,5300000,판매비와관리비,Selling and Administrative Expenses,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+56,5301000,급여및수당,Salaries and Allowances,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+57,5301010,급여-A/S,Salaries - After-Sales Service,O,EXPENSE,2024-08-29 09:00:00.000 +0900,5199,기타매출원가,Cost of Other Sales,N,3,5103010,ABC
+58,5417000,세금과공과,Taxes and Public Dues,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5300,판매비와관리비,Selling and Administrative Expenses,Y,2,5103000,ABC
+59,5423000,지급수수료,ServiceFees,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5301,급여및수당,Salaries and Allowances,N,3,5417000,ABC
+60,5423010,지급수수료-결제수수료,ServiceFees-PaymentFees,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5301,급여및수당,Salaries and Allowances,N,3,5417000,ABC
+61,5423020,지급수수료-카드수수료,ServiceFees-CreditCardFees,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5417,세금과공과,Taxes and Public Dues,N,3,5417000,ABC
+62,5423030,지급수수료-ACH수수료,ServiceFees-ACHFees,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5423,지급수수료(경비),Commission Expense,N,3,5417000,ABC
+63,5437000,판촉비,Sales Promotion Costs,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5423,지급수수료(경비),Commission Expense,N,3,5417000,ABC
+64,5437010,판촉비-기타,Promotion Costs - Other,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5423,지급수수료(경비),Commission Expense,N,3,5417000,ABC
+65,5439000,판매수수료,Commissions,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5423,지급수수료(경비),Commission Expense,N,3,5417000,ABC
+66,5439010,판매수수료-판매인,Sales Commissions,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5437,판매촉진비,Sales Promotion Costs,N,3,5417000,ABC
+67,5439020,판매수수료-A/S,Sales Commissions - After-Sales Service,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5437,판매촉진비,Sales Promotion Costs,N,3,5417000,ABC
+68,5445000,광고선전비,Advertising Expenses,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5439,판매수수료,Sales Commissions,N,3,5417000,ABC
+69,5445010,광고선전비-현물,Advertising Expenses - In-kind,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5439,판매수수료,Sales Commissions,N,3,5417000,ABC
+70,5455000,운반비,Transportation Costs,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5439,판매수수료,Sales Commissions,N,3,5417000,ABC
+71,5457000,대손상각비,Bad Debt Expense,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5445,광고선전비,Advertising Expenses,N,3,5417000,ABC
+72,5459000,감가상각비,Depreciation Expense2,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5445,광고선전비,Advertising Expenses,N,3,5417000,ABC
+73,5471000,렌탈자산폐기손실,Loss on Disposal of Rental Assets,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5455,운반비,Transportation Costs,N,3,5417000,ABC
+74,5471010,렌탈자산폐기손실-가해약,LossesonSuspendedRentalAccount,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5457,대손상각비,Bad Debt Expense,N,3,5417000,ABC
+75,5471020,렌탈자산폐기손실,LossesondispositionofRentalAsset,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5459,감가상각비,Depreciation Expense,N,3,5417000,ABC
+76,5471030,렌탈자산폐기대체,Rentalassetdisposalandreplacement,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+77,5471040,계약해지이익-위약금-금융리스,F.Lease-PenaltyReceivable-Terminated,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+78,5471050,계약해지손실-위약금-금융리스,F.Lease-PenaltyReceivable-Terminated,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+79,5433000,보험료,Insurance Premiums,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+80,5500000,영업외비용,Non-operating Expenses,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+81,5525000,재고자산평가손실,Inventory Valuation Loss,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5471,렌탈자산폐기손실,Loss on Disposal of Rental Assets,N,3,5417000,ABC
+82,5527000,재고자산폐기손실,Inventory Disposal Loss,V,EXPENSE,2024-08-29 09:00:00.000 +0900,5433,보험료,Insurance Premiums,N,3,5417000,ABC
+83,5599000,잡손실,MiscellaneousLosses,G,EXPENSE,2024-08-29 09:00:00.000 +0900,5500,영업외비용,Non-operating Expenses,Y,2,5103000,ABC
+84,5599010,잡손실-고객분실화재,MiscellaneousLosses-CustomerLossFire,G,EXPENSE,2024-08-29 09:00:00.000 +0900,5525,재고자산평가손실,Inventory Valuation Loss,N,3,5599000,ABC
+85,1000000,자산,Assets,G,ASSETS,2024-08-29 09:00:00.000 +0900,5527,재고자산폐기손실,Inventory Disposal Loss,N,3,5599000,ABC
+86,1100000,유동자산,Current Assets,G,ASSETS,2024-08-29 09:00:00.000 +0900,5599,잡손실,Miscellaneous Losses,N,3,5599000,ABC
+87,1100100,당좌자산,Cash and Cash Equivalents,G,ASSETS,2024-08-29 09:00:00.000 +0900,5599,잡손실,Miscellaneous Losses,N,3,5599000,ABC
+88,1101000,현금및현금성자산,Short-term Trading Securities,G,ASSETS,2024-08-29 09:00:00.000 +0900,1000,자산,Assets,Y,1,,ABC
+89,1101010,현금-보통예금,Cash - Regular Deposits,G,ASSETS,2024-08-29 09:00:00.000 +0900,1100,유동자산,Current Assets,Y,2,1101000,ABC
+90,1101020,은행이체-입금정산,Bank Transfers - Deposit Settlement,G,ASSETS,2024-08-29 09:00:00.000 +0900,1100,당좌좌산,Cash and Cash Equivalents,Y,3,1101010,ABC
+91,1117000,매출채권,AccountsReceivable,G,ASSETS,2024-08-29 09:00:00.000 +0900,1101,현금 및 현금등가물,Cash and Cash Equivalents,N,4,1101020,ABC
+92,1117010,외상매출금-일시불,AccountsReceivable-Retail,G,ASSETS,2024-08-29 09:00:00.000 +0900,1101,현금 및 현금등가물,Cash and Cash Equivalents,N,4,1101020,ABC
+93,1117011,외상매출금-회수비,AccountsReceivable-ReturnFee,G,ASSETS,2024-08-29 09:00:00.000 +0900,1101,현금 및 현금등가물,Cash and Cash Equivalents,N,4,1101020,ABC
+94,1117012,외상매출금-필터,Accounts Receivable - Filter,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+95,1117013,외상매출금-부품,Accounts Receivable - Parts,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+96,1117014,외상매출금-A/S,Accounts Receivable - After-Sales Service,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+97,1117030,렌탈미수금-렌탈료,AccountsReceivable-Rental,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+98,1117040,금융리스채권-월렌탈료,AccountsReceivable-F.Lease-Monthly,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+99,1117050,금융리스채권-등록비,AccountsReceivable-F.Lease-Registration,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+100,1117060,금융리스채권-할부발생,AccountsReceivable-F.Lease-Installment,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+101,1117070,금융리스채권-위약금,AccountsReceivable-F.Lease-Penalty,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+102,1117080,멤버십미수금-회비,AccountsReceivable-Membership-Monthly,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+103,1136000,미수금,OtherReceivables,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+104,1136010,카드미수금,OtherReceivables-CreditCard,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+105,1136020,카드미수금-이체,OtherReceivables-CreditCard-Transfer,C,ASSETS,2024-08-29 09:00:00.000 +0900,1117,매출채권,Accounts Receivable,N,4,1101020,ABC
+106,1136030,카드미수금-승인,OtherReceivables-CreditCard-Approval,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+107,1136040,미수금-ACH,OtherReceivables-ACH,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+108,1136050,미수금-연체료,OtherReceivables-LateFee,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+109,1136060,미수금-분실료,OtherReceivables-LostFee,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+110,1127000,대손충당금-미수금,Allowance for Doubtful Accounts - Receivables,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+111,1131000,선급금,Prepayment,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+112,1344000,선급비용,Prepaid Expenses,G,ASSETS,2024-08-29 09:00:00.000 +0900,1136,부가세대급금,VAT Receivable,N,4,1101020,ABC
+113,1200000,재고자산,Inventory,G,ASSETS,2024-08-29 09:00:00.000 +0900,1127,대손충당금-미수금,Allowance for Doubtful Accounts - Other Receivables,N,4,1101020,ABC
+114,1201000,상품,Goods,G,ASSETS,2024-08-29 09:00:00.000 +0900,1131,선급금,Prepaid Expenses,N,4,1101020,ABC
+115,1201010,상품,Goods,A,ASSETS,2024-08-29 09:00:00.000 +0900,1344,회원권,Membership Rights,N,4,1101020,ABC
+116,1201020,상품-B등급,Merchandise - Grade B,M,ASSETS,2024-08-29 09:00:00.000 +0900,1200,재고자산,Inventory,Y,3,1101010,ABC
+117,1201030,필터,Filters,M,ASSETS,2024-08-29 09:00:00.000 +0900,1201,상품,Merchandise,N,4,1201020,ABC
+118,1201040,부품,Parts,M,ASSETS,2024-08-29 09:00:00.000 +0900,1201,상품,Merchandise,N,4,1201020,ABC
+119,1213000,저장품,Supplies,M,ASSETS,2024-08-29 09:00:00.000 +0900,1201,상품,Merchandise,N,4,1201020,ABC
+120,1230000,시송품,GoodsinTransit,M,ASSETS,2024-08-29 09:00:00.000 +0900,1201,상품,Merchandise,N,4,1201020,ABC
+121,1230010,시송품-상품,GoodsinTransit-Merchandise,M,ASSETS,2024-08-29 09:00:00.000 +0900,1201,상품,Merchandise,N,4,1201020,ABC
+122,1230020,시송품-상품택배,In-transit Goods - Merchandise (Delivery),M,ASSETS,2024-08-29 09:00:00.000 +0900,1213,저장품,Storage,N,4,1201020,ABC
+123,1230030,시송품-택배,In-transit Goods - Delivery,M,ASSETS,2024-08-29 09:00:00.000 +0900,1230,시송품,Goods in Consignment,N,4,1201020,ABC
+124,1299000,기타재고자산,Other Inventory,M,ASSETS,2024-08-29 09:00:00.000 +0900,1230,시송품,Goods in Consignment,N,4,1201020,ABC
+125,1800000,GR/IR,GR/IR,M,ASSETS,2024-08-29 09:00:00.000 +0900,1230,시송품,Goods in Consignment,N,4,1201020,ABC
+126,1800010,GR/IR-상품,GR/IR-Goods,M,ASSETS,2024-08-29 09:00:00.000 +0900,1230,시송품,Goods in Consignment,N,4,1201020,ABC
+127,1800020,GR/IR-운임,GR/IR-Transit,M,ASSETS,2024-08-29 09:00:00.000 +0900,1299,기타재고자산,Other Inventory Assets,N,4,1201020,ABC
+128,1800030,GR/IR-기타부대비용,GR/IR-OtherExpense,A,ASSETS,2024-08-29 09:00:00.000 +0900,1800,GR/IR,GR/IR,N,3,1101010,ABC
+129,1800040,GR/IR-관세,GR/IR-IncomeTax,A,ASSETS,2024-08-29 09:00:00.000 +0900,1800,GR/IR,GR/IR,N,3,1101010,ABC
+130,1900000,임시,Temporary,A,ASSETS,2024-08-29 09:00:00.000 +0900,1800,GR/IR,GR/IR,N,3,1101010,ABC
+131,1900010,임시-반환입고,Temporary-Return,A,ASSETS,2024-08-29 09:00:00.000 +0900,1800,GR/IR,GR/IR,N,3,1101010,ABC
+132,1300000,고정자산,Fixed Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1800,GR/IR,GR/IR,N,3,1101010,ABC
+133,1310000,투자자산,Investment Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1900,자산-임시,Temporary Assets,N,3,1101010,ABC
+134,1400000,유형자산,Tangible Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1900,자산-임시,Temporary Assets,N,3,1101010,ABC
+135,1428000,렌탈자산,Rental Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1300,고정자산,Fixed Assets,Y,2,1101000,ABC
+136,1428010,렌탈자산,RentalAsset,A,ASSETS,2024-08-29 09:00:00.000 +0900,1310,투자자산,Investment Assets,N,3,1428000,ABC
+137,1431000,감가상각누계액(렌탈자산),Accumulated Depreciation - Rental Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1400,유형자산,Tangible Assets,Y,3,1428000,ABC
+138,1431010,감가상각누계액-렌탈자산,Acc.Depreciation-RentalAsset,A,ASSETS,2024-08-29 09:00:00.000 +0900,1428,렌탈자산,Rental Assets,N,4,1431000,ABC
+139,1431020,손상차손누계액-렌탈자산,Acc.ImpairmentLosses-RentalAsset,A,ASSETS,2024-08-29 09:00:00.000 +0900,1428,렌탈자산,Rental Assets,N,4,1431000,ABC
+140,1500000,무형자산,Intangible Assets,A,ASSETS,2024-08-29 09:00:00.000 +0900,1431,감가상각누계액(렌탈자산),Accumulated Depreciation - Rental Assets,N,4,1431000,ABC
+141,2000000,부채,Liabilities,A,LIABILITIES,2024-08-29 09:00:00.000 +0900,1431,감가상각누계액(렌탈자산),Accumulated Depreciation - Rental Assets,N,4,1431000,ABC
+142,2100000,유동부채,CurrentLiabilities,A,LIABILITIES,2024-08-29 09:00:00.000 +0900,1431,감가상각누계액(렌탈자산),Accumulated Depreciation - Rental Assets,N,4,1431000,ABC
+143,2101000,외상매입금,AccountPayable,A,LIABILITIES,2024-08-29 09:00:00.000 +0900,1431,감가상각누계액(렌탈자산),Accumulated Depreciation - Rental Assets,N,4,1431000,ABC
+144,2101010,외상매입금,AccountPayable,A,LIABILITIES,2024-08-29 09:00:00.000 +0900,1500,무형자산,Intangible Assets,N,3,1428000,ABC
+145,2107000,미지급금,AccruedExpensesGroup,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2000,부채,Liabilities,Y,1,,ABC
+146,2107010,미지급금,AccruedExpenses,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2100,유동부채,Current Liabilities,Y,2,2107000,ABC
+147,2107020,미지급금-수수료,AccruedExpenses-Commision,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2101,외상매입금,Accounts Payable,N,3,2107010,ABC
+148,2107030,미지급금-급여,AccruedExpenses-Payroll,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2101,외상매입금,Accounts Payable,N,3,2107010,ABC
+149,2109000,미지급비용,AccruedLiabilities,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2107,미지급금,Accrued Expenses,N,3,2107010,ABC
+150,2111000,선수금,AdvancesfromCustomers,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2107,미지급금,Accrued Expenses,N,3,2107010,ABC
+151,2111010,선수금,AdvancesfromCustomers,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2107,미지급금,Accrued Expenses,N,3,2107010,ABC
+152,2113000,선수수익,Unearned Revenue,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2107,미지급금,Accrued Expenses,N,3,2107010,ABC
+153,2115000,예수금,Deposits,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2109,미지급비용,Accrued Costs,N,3,2107010,ABC
+154,2115001,예수금-판매세,Deposits-SalesTaxGroup,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2111,선수금,Advance Payments,N,3,2107010,ABC
+155,2115010,예수금-판매세,Deposits-SalesTax,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2111,선수금,Advance Payments,N,3,2107010,ABC
+156,2115020,예수금-판매세-State,Deposits-SalesTax-State,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2113,선수수익,Unearned Revenue,N,3,2107010,ABC
+157,2115030,예수금-판매세-County,Deposits-SalesTax-County,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+158,2115040,예수금-판매세-City,Deposits-SalesTax-City,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+159,2115050,예수금-판매세-Special,Deposits-SalesTax-Special,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+160,2115060,예수금-카드-BC,Deposits - Card - BC,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+161,2200000,고정부채,Non-current Liabilities,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+162,2215000,현재가치할인차금,UnearnedInterestIncome,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC
+163,2215010,현할차금-금융리스,UnearnedInterestIncome-F.Lease,G,LIABILITIES,2024-08-29 09:00:00.000 +0900,2115,예수금,Deposits Payable,N,3,2107010,ABC

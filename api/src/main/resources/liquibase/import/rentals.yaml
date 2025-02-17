@@ -1,0 +1,55 @@
+#-- data import from csv
+#-- CSV 파일에서 데이터를 users 테이블로 import
+#-- CONFIG DATA --
+#-- material_master
+#
+#COPY material
+#    (material_id,material_series_code,material_model_name,material_type,material_category_code,installation_type,filter_type,feature_code)
+#    FROM '/data/rentals/config/material.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#-- rental_code_master
+#COPY rental_code_master
+#    (rental_code,rental_code_name,rental_code_description,current_term,term1_period,term2_period,term3_period,term4_period,term5_period,contract_pricing_type,contract_duration,commitment_duration,lease_type,is_active,remark)
+#    FROM '/data/rentals/config/rental_code_master.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY rental_pricing_master
+#    (id,material_series_code,rental_code,material_care_type,price,currency,tax_included,period_type,start_date)
+#    FROM '/data/rentals/config/rental_pricing_master.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY rental_distribution_master
+#    (id,material_series_code,rental_distribution_type,onetime_price,membership_price,membership_dcprice_c24,free_service_duration,start_date)
+#    FROM '/data/rentals/config/rental_distribution_master.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY rental_distribution_rule
+#    (id, material_id,material_series_code,rental_code,material_care_type,lease_type,commitment_duration,adjusted_commitment_duration,dist_value_m01,dist_value_r01,dist_value_r02,dist_value_r03,dist_value_s01,dist_ratio_m01,dist_ratio_r01,dist_ratio_r02,dist_ratio_r03,dist_ratio_s01,dist_price_m01,dist_price_r01,dist_price_r02,dist_price_r03,dist_price_s01,start_date)
+#    FROM '/data/rentals/data/rental_distribution_rule.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#-- rental_asset_depreciation_master
+#COPY rental_asset_depreciation_master
+#    (id,material_id,useful_life,salvage_value,currency,depreciation_method,start_date)
+#    FROM '/data/rentals/data/rental_asset_depreciation_master.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#-- rentals == financial
+#COPY rental_financial_interest
+#    (reference_month,interest_rate,effective_start_date,effective_end_date)
+#    FROM '/data/rentals/data/rental_financial_interest.csv'
+#    DELIMITER ','
+#    CSV HEADER;
+#
+#COPY vendor_master
+#    (id,acct_num,address,alternate_phone,associated_entity,associated_id,business_number,city,code,company_id,company_name,country,country_code,county,create_time,currency,department_code,department_name,description,display_name,email,employer_code,family_name,fax,given_name,is_active,middle_name,mobile,office,remark,state,suffix,sync_token,tax_identifier,terms,title,update_time,web_addr,zip_code)
+#    FROM '/data/rentals/data/vendor_master.csv'
+#    DELIMITER ','
+#    CSV HEADER;

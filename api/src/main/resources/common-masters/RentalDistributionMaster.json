@@ -1,0 +1,45 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalDistributionMaster/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Distribution Master",
+  "description": "렌탈 안분 마스터 (재화/서비스 구분을 위한 분할구조)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "material_series_code": {
+        "type": "string",
+        "description": "품목 코드 (시리즈 코드)"
+      },
+      "rental_distribution_type": {
+        "type": "string",
+        "description": "렌탈 안분(분할)유형"
+      },
+      "onetime_price": {
+        "type": "number",
+        "description": "일시불 가격"
+      },
+      "membership_price": {
+        "type": "number",
+        "description": "멤버십 가격"
+      },
+      "membership_dcprice_c24": {
+        "type": "number",
+        "description": "멤버십 2년 약정시 할인"
+      },
+      "free_service_duration": {
+        "type": "integer",
+        "description": "무상 서비스 기간"
+      }
+    },
+    "required": [
+      "material_series_code",
+      "rental_distribution_type",
+      "onetime_price",
+      "membership_price",
+      "membership_dcprice_c24",
+      "free_service_duration"
+    ],
+    "additionalProperties": false
+  }
+}

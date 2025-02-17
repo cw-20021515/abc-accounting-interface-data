@@ -1,0 +1,5 @@
+#COPY audit_target_entity
+#    (id,entity_name,audit_action_type,company_id,is_active)
+#    FROM '/data/collects/audit_target_entity.csv'
+#    DELIMITER ','
+#    CSV HEADER;

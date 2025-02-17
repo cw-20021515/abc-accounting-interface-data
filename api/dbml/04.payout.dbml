@@ -1,0 +1,245 @@
+Table cost_center {
+  id varchar [primary key,note: '객체 식별 ID']
+  company_code varchar [ref : -company.code,not null, note: '부서가 속한 회사코드']
+  parent_department_code varchar [ref: - cost_center.code,note: '상위 부서 ID']
+  name varchar [not null, note: '부서 이름']
+  description varchar [not null, note: '부서 설명']
+  is_active varchar(1) [default: 'Y' ,note: '활성화 여부']
+  create_time timestamp [note: '부서 생성 날짜']
+  remark varchar [note: '비고']
+}
+
+Table employee {
+  id varchar [primary key,note: '직원 사번']
+  company_code varchar [ref : -company.code,not null, note: '회사코드']
+  department_id varchar [ ref: - department.id,note: '부서 id']
+  // role_code varchar [note: '직책 코드']
+  // role_name varchar [note: '직책 이름(팀장,팀원,파트장등)']
+  // grade_code varchar [note: '직급 코드']
+  // grade_name varchar [note: '직급 이름(대리,과장,차장,부장)']
+  // status varchar [note: '''
+  //   고용 상태
+  //   - ACTIVE(근무중)
+  //   - IN_ACTIVE(근무 종료)
+  //   - TERMINATED(퇴사)
+  //   ''']
+
+  // --------------------------------------------
+  // name 속성 정의
+  // --------------------------------------------
+  title_name varchar [note: '직책 이름']
+  first_name varchar [note: '이름']
+  middle_name varchar [note: 'middle name']
+  last_name varchar [note: '성']
+  family_name varchar [note: '가족 이름']
+  name_suffix varchar [note: '이름 앞에 붙는 수식 (예 : sir)']
+  phone varchar [note: '유선 연락처']
+  mobile varchar [note:
+  '''
+    휴대폰 정보(SP(개인사업자)일 경우의 개인 휴대폰 번호)
+        E.164 표준 형식의 휴대폰 번호 ( +[국가코드][지역코드][가입자 번호]
+    국가 : +1 (미국)
+    지역코드 : 5555
+    가입자번호 : 1234 5678
+    실제 입력 : +1 5555 1234 4567
+  '''
+    ]
+  fax varchar [note: 'fax 번호']
+  email varchar [note: '첫번째 이메일 주소']
+  // --------------------------------------------
+  // address 속성 정의
+  // --------------------------------------------
+  country varchar [note: '주소가 위치한 국가의 코드(예 : US,KR)']
+  city varchar [note: '주소가 위치한 도시 이름']
+  state varchar [note: '주, 도, 광역시 등 행정 구역의 코드를 나타냄 (예 : CA)']
+  county varchar [note: '군(county) 또는 구(district)와 같은 하위 행정 구역']
+  zip_code varchar [note: '우편번호']
+  address1 varchar [note: '주소정보 1']
+  address2 varchar [note: '주소정보 2']
+
+  is_active varchar(1) [default: 'Y' ,note: '활성화 여부']
+  remark varchar [note: '비고']
+}
+Table vendor {
+  id varchar [primary key,note: '객체 식별 ID']
+  type varchar [note: '거래처 상세 타입'] // 차후에 활용도 검토
+  company_code varchar [not null, note: '회사코드']
+  // --------------------------------------------
+  // name 속성 정의
+  // --------------------------------------------
+  first_name varchar [note: '이름']
+  middle_name varchar [note: 'vendor name']
+  last_name varchar [note: '성']
+  family_name varchar [note: '가족 이름']
+  name_suffix varchar [note: '이름 앞에 붙는 수식 (예 : sir)']
+  phone varchar [note: '유선 연락처']
+
+  mobile varchar [note:
+  '''
+    휴대폰 정보(SP(개인사업자)일 경우의 개인 휴대폰 번호)
+        E.164 표준 형식의 휴대폰 번호 ( +[국가코드][지역코드][가입자 번호]
+    국가 : +1 (미국)
+    지역코드 : 5555
+    가입자번호 : 1234 5678
+    실제 입력 : +1 5555 1234 4567
+  '''
+    ]
+  fax varchar [note: 'fax 번호']
+  email varchar [note: '첫번째 이메일 주소']
+  web_addr varchar [note: 'web site 주소']
+  // --------------------------------------------
+  // address 속성 정의
+  // --------------------------------------------
+  country varchar [note: '주소가 위치한 국가의 코드(예 : US,KR)']
+  city varchar [note: '주소가 위치한 도시 이름']
+  state varchar [note: '주, 도, 광역시 등 행정 구역의 코드를 나타냄 (예 : CA)']
+  county varchar [note: '군(county) 또는 구(district)와 같은 하위 행정 구역']
+  zip_code varchar [note: '우편번호']
+  address1 varchar [note: '주소정보 1']
+  address2 varchar [note: '주소정보 2']
+
+  description varchar [note: 'vendor 상세 설명']
+  create_time datetime [note: 'vendor 생성일시']
+  is_active varchar(1) [default: 'Y' ,note: '활성화 여부']
+  remark varchar [note: '''추가 코멘트 작성용''']
+}
+
+Table payout {
+  id varchar [primary key, note: '미지급금 ID']
+  company_code varchar [not null, note: '회사코드']
+  title varchar [note: '미지급금 제목']
+  description varchar [note: '미지급금 상세 설명']
+  type varchar [default:'VENDOR' ,
+  note:
+  '''
+    미지급금 유형
+    - VENDOR(업체 비용)
+    - EMPLOYEE(개인비용)
+  ''']
+  currency varchar [note: ' 통화']
+  amount decimal [note: '공급가액(세금 미포함)']
+  tax_amount decimal [note: '세액(순수 세금) 총합']
+  total_amount decimal [note: '공급가액(세금 포함)']
+
+  document_time datetime [note: '증빙일']
+  entry_time datetime [note: '발행일']
+  posting_time datetime [note: '전기일']
+  due_date date [note: '지급 기일'] // QBO PaymentTerms 동작 확인 필요
+  vendor_id varchar [ref: - vendor.id,note: '공급 업체 코드']
+  employee_id varchar [ref: - employee.id, note: '지급 요청 문서 작성자 코드']
+  department_id varchar [ ref: - department.id,note: '귀속부서 코드']
+  invoice_id varchar [ref: -if_purchase_order_invoice.invoice_no,note: 'invoice id']
+  purchase_order_id varchar [ref: -if_purchase_order.purchase_order_id,note: '구매 주문 id']
+  bill_of_lading_id varchar [note: '선하증권 id']
+  approval_id varchar [note: '지급 승인 요청 id']
+  approval_status varchar [note:
+  '''
+    지급 결재 상태
+      - DRAFT (초안)
+      - PENDING_CONSENT(합의대기)
+      - PENDING_APPROVAL(결재대기)
+      - PENDING_PROCESS(처리대기)
+      - REJECT(반려)
+      - COMPLETE(완료)
+  '''
+    ]
+  create_time datetime [note: '생성 시간']
+  remark varchar [note: '적요']
+  is_active varchar(1) [default: 'Y' ,note: '활성화 여부']
+  indexes {
+   (document_time, entry_time,posting_time,create_time) [unique]
+  }
+}
+
+// 지급 요청의 개별 항목
+// 인보이스에 지급 요청을 추가해야 할 경우 발생되는 데이터
+Table payout_item {
+  id varchar [primary key, note: '미지급금 아이템 ID']
+  company_code varchar [not null, note: '회사코드']
+  payout_id varchar [ref: - payout.id,note: '미지급금 ID']
+  name varchar [note: '미지급금 항목의 이름']
+  description varchar [note: '미지급금 항목의 상세 설명']
+  quantity decimal [note: '''수량''']
+  type varchar [note: '''
+    거래처 지급 유형
+    - MATERIAL(자재 대금 지급)
+    - EMPLOYEE(직원 비용 청구 지급)
+    - GENERAL(일반 비용 청구 지급)
+    ''']
+  unit_measure decimal [note: '''
+    품목의 단위
+    - PIECE (개)
+    - BOX(박스)
+  ''']
+  unit_price decimal [note: '단가']
+  amount decimal [note: '공급가액(세금 미포함)']
+  tax_amount decimal [note: '세액(순수 세금) 총합']
+  total_amount decimal [note: '공급가액(세금 포함)']
+  line_number integer [note: '거래라인 아이템번호']
+  invoice_item_id varchar [ref:-if_purchase_order_invoice_item.invoice_item_id,note: 'invoice item id']
+  purchase_order_item_id varchar [ref:-if_purchase_order_item.purchase_order_item_id,note: '구매 주문 item id']
+  material_id varchar [note: '비용항목으로 포함된 상품 또는 제품에 대한 상세 확인용 ID']
+  account_code varchar [note: '계정코드']
+  profit_center_id varchar [note: '예산 센터의 ID']
+  cost_center_id varchar [ref: - department.id,note: '비용 센터의 ID']
+  budget_usage_time datetime [note: '예산 사용 일자']
+  budget_allocation varchar [note: '예산의 사용처']
+  remark varchar [note: '추가 코멘트 작성용']
+}
+
+table payout_result {
+  id varchar [primary key,note: '객체 식별 ID']
+  company_code varchar [not null, note: '회사코드']
+  payout_id varchar [
+    ref: - payout.id,
+    note: '미지급금 ID'
+  ]
+  type varchar [note: '''
+    지급 유형
+    - MATERIAL(자재 대금 지급)
+    - EMPLOYEE(직원 비용 청구 지급)
+    - GENERAL(일반 비용 청구 지급)
+    ''']
+  status varchar [note:
+  '''
+    지급 상태
+  '''
+    ]
+  block_reason varchar [note:
+  '''
+    지불 차단 사유
+  '''
+    ]
+  amount decimal [note: '지급총액(세금 미포함)']
+  tax_amount decimal [note: '지급 세액(순수 세금) 총합']
+  total_amount decimal [note: '지급 총액(세금 포함)']
+  balance decimal [note: '지급 잔액']
+  transaction_id varchar [note: '실제 지급 ID']
+  transaction_retry integer [note: '지급 시도 횟수']
+  currency varchar [note: '지급 통화']
+
+  due_date date [note: '지급 기일'] // QBO PaymentTerms 동작 확인 필요
+  complete_time datetime [note: '지급 완료일']
+  process_time datetime [note: '지급 처리 일시']
+
+  method varchar [note: '지불 수단']
+  description varchar [note: '미지급금 항목의 상세 설명']
+  remark varchar [note: '추가 코멘트 작성용']
+
+  is_expired varchar(1) [default: 'Y' ,note: '만료 여부']
+  is_completed varchar(1) [default: 'Y' ,note: '완료 여부']
+}
+// 증빙 자료로 활용되는 데이터 관리 테이블
+Table payout_attachment {
+  id varchar [primary key, note: '증빙자료 식별자']
+  payout_id varchar [ref: - payout.id,note: '트랜잭션 ID']
+  origin_file_name varchar [note: '원본 파일 이름']
+  modified_file_name varchar [note: '수정된 파일 이름']
+  resource_path varchar [note: 'resource 저장 경로']
+  resource_size decimal [note: 'resource size']
+  mime_type decimal [note: 'resource mime 유형']
+  create_time datetime [note: 'resource 생성일']
+  expire_time datetime [note: '파일 만료 일시']
+  is_deleted varchar(1) [default: 'Y' ,note: '삭제 여부']
+  remark varchar [note: '비고']
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "code": "AR",
+    "name": "Account Receivable"
+  },
+  {
+    "code": "AP",
+    "name": "Account Payable"
+  },
+  {
+    "code": "MA",
+    "name": "Material"
+  },
+  {
+    "code": "AA",
+    "name": "Rental Asset"
+  }
+]

@@ -1,0 +1,1 @@
+id,payment_id,transaction_type,transaction_id,service_charge_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,charge_items,tax_lines,address,create_time,update_time

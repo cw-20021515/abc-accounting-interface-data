@@ -1,0 +1,286 @@
+company_code,account_code,name,description,account_class,account_type,is_open_item_mgmt,consolidation_account_code,qbo_parent_account_code,qbo_account_type,qbo_account_subtype,system_source,is_active
+T200,1101010,Cash,현금,ASSET,GENERAL,N,111111,,Bank,CashOnHand,ABC,Y
+T200,1101030,Cash on hand (Petty cash),소액현금,ASSET,GENERAL,N,111111,,Bank,CashOnHand,ABC,Y
+T200,1103001,Current Deposits (1),당좌예금(1),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T200,1103002,Current Deposits (2),당좌예금(2),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T200,1103003,Current Deposits (3),당좌예금(3),ASSET,GENERAL,N,111112,,Bank,Checking,ABC,Y
+T200,1105001,Deposits on Demand (1),보통예금(1),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T200,1105002,Deposits on Demand (2),보통예금(2),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T200,1105003,Deposits on Demand (3),보통예금(3),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T200,1105004,Deposits on Demand (4),보통예금(4),ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T200,1105005,Outstanding check,미결제수표,ASSET,GENERAL,N,111113,,Bank,Checking,ABC,Y
+T200,1117010,Accounts Receivable - Rental,렌탈미수금-렌탈료,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117011,Accounts Receivable - Rental Penalty,렌탈미수금-위약금,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117020,Accounts Receivable - Membership,멤버쉽미수금-멤버쉽회비,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117021,Accounts Receivable - Membership penalty,멤버쉽미수금-위약금,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117041,Finance lease receivable - Billing,금융리스채권-월 렌탈료,ASSET,CUSTOMER,Y,111611,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117042,Finance lease receivable - Penalty,금융리스채권-위약금,ASSET,CUSTOMER,Y,111611,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117043,Finance lease receivable - Equipment_Current,금융리스채권-할부발생(리스렌탈료 일부상계),ASSET,CUSTOMER,Y,111611,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117044,Finance lease receivable - Equipment_Current C,금융리스채권-할부발생(단기조정),ASSET,CUSTOMER,N,111611,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1117050,Accounts Receivable - Sales,외상매출금-일시불 판매,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117060,Accounts Receivable - Installment,외상매출금-할부,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117061,Accounts Receivable - Return,외상매출금-회수비,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117070,Accounts Receivable - Installment (LT),장기할부채권-할부발생,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117080,Accounts Receivable - Installment (LT)_Adjustment,장기할부채권-할부발생 단기조정,ASSET,CUSTOMER,N,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117090,Accounts Receivable - Installment (LT)_Billing,장기할부채권-월할부금,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1117100,Accounts Receivable - Service,외상매출금-용역수입,ASSET,CUSTOMER,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1118010,Allowance for bad debt - O.Lease,대손충당금(렌탈미수금),ASSET,GENERAL,N,111314,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1118020,Allowance for bad debt - Membership,대손충당금(멤버쉽미수금),ASSET,GENERAL,N,111314,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1118030,Allowance for bad debt - AR,대손충당금(외상매출금),ASSET,GENERAL,N,111314,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1118058,Allowance for bad debt - Finance Lease,대손충당금(금융리스),ASSET,GENERAL,N,111613,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1120010,Notes Receivable,받을어음,ASSET,GENERAL,Y,111312,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1121010,Allowance for bad debt - Notes,대손충당금(받을어음),ASSET,GENERAL,N,111314,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1122010,Present value discount of account receivable,현재가치할인차금-할부-단기,ASSET,GENERAL,N,111313,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1122011,Present value discount of account receivable (Adjustment),현재가치할인차금-할부(단기조정),ASSET,GENERAL,N,111313,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1122012,Present value discounts Current,현재가치할인차금-금융리스 단기,ASSET,GENERAL,N,111612,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1122013,Present value discounts Current C,현재가치할인차금-금융리스 단기조정,ASSET,GENERAL,N,111612,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1123010,Short-term Loans (employees),단기대여금-임직원,ASSET,GENERAL,N,111317,,Other Current Asset,LoansToOfficers,ABC,Y
+T200,1123020,Short-term Loans,단기대여금-관계사,ASSET,GENERAL,N,111317,,Other Current Asset,LoansToOthers,ABC,Y
+T200,1124010,Allowance for bad debt - Short-term Loans,대손충당금(단기대여금),ASSET,GENERAL,N,111319,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1126010,OTHER RECEIVABLES,미수금,ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126020,Undeposited Fund - Credit Card,카드미수금,ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126021,Undeposited Fund - ACH,미수금-ACH,ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126030,Other Receivables - Lost Fee,미수금-분실료,ASSET,GENERAL,N,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126040,Other Receivables - Late Fee (O. lease),미수금-연체이자(렌탈),ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126050,Other Receivables - Late Fee (Membership),미수금-연체이자(멤버쉽),ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126060,Other Receivables - Late Fee (Installment),미수금-연체이자(할부),ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1126070,Other Receivables - Late Fee (F. lease),미수금-연체이자(금융리스),ASSET,GENERAL,Y,111320,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1127010,Allowance for bad debt - Other Receivable,대손충당금(미수금),ASSET,GENERAL,N,111322,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1129010,Accrued Revenues,미수수익,ASSET,GENERAL,N,111323,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1129990,Allowance for bad debt - accrued revenues,대손충당금(미수수익),ASSET,GENERAL,N,111324,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1130010,(A) Security deposit - Current,임차보증금(유동),ASSET,GENERAL,N,111325,,Other Asset,SecurityDeposits,ABC,Y
+T200,1130015,(A) Security deposit - Present Value Discounts - Current,현재가치할인차금-임차보증금(유동),ASSET,GENERAL,N,111326,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1131010,Advance Payment,선급금,ASSET,GENERAL,N,111511,,Accounts Payable,AccountsPayable,ABC,Y
+T200,1134010,Prepaid expense,선급비용,ASSET,GENERAL,N,111513,,Other Current Asset,PrepaidExpenses,ABC,Y
+T200,1136010,Prepaid Goods and services tax (GST),부가세대급금,ASSET,GENERAL,N,111514,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1138010,Prepaid taxes,선급법인세,ASSET,GENERAL,N,111411,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1201010,Inventories,상품,ASSET,MATERIAL,N,111711,,Other Current Asset,Inventory,ABC,Y
+T200,1201011,Inventory - in transit,시송품-상품,ASSET,MATERIAL,N,111711,,Other Current Asset,Inventory,ABC,Y
+T200,1201020,Inventory - Valuation Allowance,평가충당금(상품),ASSET,MATERIAL,N,111712,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1215010,GR/IR - Import,미착품,ASSET,MATERIAL,N,111732,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1301010,Long-term financial instruments,장기금융상품,ASSET,GENERAL,N,121211,,Bank,Savings,ABC,Y
+T200,1309010,Long-term Loans Receivable,장기대여금,ASSET,GENERAL,N,121215,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1311010,Allowance for bad debt - Long term loan,대손충당금(장기대여금),ASSET,GENERAL,N,121217,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1313010,Accounts Receivable - LT,장기성매출채권,ASSET,GENERAL,Y,121212,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1313011,Finance lease receivable - Non-Current,장기성매출채권(금융리스발생),ASSET,GENERAL,N,121811,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1313012,Finance lease receivable - Suspended,장기성매출채권(금융리스발생-가해약),ASSET,GENERAL,N,121811,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1313015,Accounts Receivable - Installment - LT,장기성매출채권(장기할부),ASSET,GENERAL,Y,121212,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1314010,Present value discounts - AR_Non-Current,현재가치할인차금(장기성매출채권),ASSET,GENERAL,N,121213,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1314011,Present value discounts - F.lease_Non-Current,현재가치할인차금(장기성매출채권-금융리스),ASSET,GENERAL,N,121812,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1314012,Present value discounts - AR(installment)_Non-Current,현재가치할인차금(장기성매출채권-할부),ASSET,GENERAL,N,121213,,Other Current Asset,OtherCurrentAssets,ABC,Y
+T200,1315010,Allowance for bad debt - AR LT,대손충당금(장기성매출채권),ASSET,GENERAL,N,121214,,Other Current Asset,AllowanceForBadDebts,ABC,Y
+T200,1315020,Allowance for bad debt - Finance Lease - Non Current,대손충당금(금융리스장기),ASSET,GENERAL,N,121813,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1328010,(A) Security deposit,임차보증금,ASSET,GENERAL,N,121221,,Other Asset,SecurityDeposits,ABC,Y
+T200,1328020,(A) Security deposit - Present Value Discounts,현재가치할인차금-임차보증금,ASSET,GENERAL,N,121222,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1329010,OTHER RECEIVABLES - LT,장기미수금,ASSET,GENERAL,Y,121218,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,1348010,Deferred tax assets,이연법인세자산(고정),ASSET,GENERAL,N,121611,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1350010,LT prepaid expenses,장기선급비용,ASSET,GENERAL,N,121714,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1399010,Other investment asset,기타투자자산,ASSET,GENERAL,N,121716,,Other Asset,OtherLongTermAssets,ABC,Y
+T200,1401010,Land,토지,ASSET,ASSET,N,122110,,Fixed Asset,Land,ABC,Y
+T200,1404010,Buildings,건물,ASSET,ASSET,N,122150,,Fixed Asset,Buildings,ABC,Y
+T200,1407010,Accumulated depreciation - Buildings,감가상각누계액(건물),ASSET,ASSET,N,122160,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1407019,Accumulated impairment loss - Buildings,손상차손누계액(건물),ASSET,ASSET,N,122170,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1416010,Vehicles,차량운반구,ASSET,ASSET,N,122270,,Fixed Asset,Vehicles,ABC,Y
+T200,1419010,Accumulated depreciation - vehicles,감가상각누계액(차량운반구),ASSET,ASSET,N,122280,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1419019,Accumulated impairment loss - vehicles,손상차손누계액(차량운반구),ASSET,ASSET,N,122290,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1424010,Equipments,비품,ASSET,ASSET,N,122350,,Fixed Asset,FurnitureAndFixtures,ABC,Y
+T200,1427010,Accumulated depreciation - Equipments,감가상각누계액(비품),ASSET,ASSET,N,122360,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1427019,Accumulated impairment loss - Equipments,손상차손누계액(비품),ASSET,ASSET,N,122370,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1428010,Rental Asset,렌탈자산,ASSET,ASSET,N,122390,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1428020,Rental Asset - Installation,렌탈자산(수수료),ASSET,ASSET,N,122390,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1431010,Accumulated depreciation - Rental asset,감가상각누계액(렌탈자산),ASSET,ASSET,N,122400,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1431011,AccDepreciation - RentalAsset - Installation,감가상각누계액(렌탈자산수수료),ASSET,ASSET,N,122400,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1431019,Provision for Suspended Rental Account,손상차손누계액(렌탈자산),ASSET,ASSET,N,122410,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1493010,Construction in progress,건설중인자산(유형),ASSET,ASSET,N,122430,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1496010,Other tangible asset,기타유형자산,ASSET,ASSET,N,122490,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1499010,Accumulated depreciation - others,감가상각누계액(기타유형자산),ASSET,ASSET,N,122500,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1499019,Accumulated impairment loss - others,손상차손누계액(기타유형자산),ASSET,ASSET,N,122510,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1501010,Goodwill,영업권,ASSET,ASSET,N,124110,,Other Asset,Goodwill,ABC,Y
+T200,1511010,Computer Software,컴퓨터소프트웨어,ASSET,ASSET,N,124250,,Fixed Asset,FixedAssetSoftware,ABC,Y
+T200,1511018,Accumulated depreciation - Computer Software,감가누계액(컴퓨터소프트웨어),ASSET,ASSET,N,124260,,Fixed Asset,AccumulatedAmortization,ABC,Y
+T200,1511019,Accumulated impairment loss - software,무형손상차손누계액(컴퓨터소프트웨어),ASSET,ASSET,N,124350,,Fixed Asset,IntangibleAssets,ABC,Y
+T200,1596010,Construction in progress - Intangible,건설중인자산(무형),ASSET,ASSET,N,124370,,Fixed Asset,IntangibleAssets,ABC,Y
+T200,1596030,Finance Lease Asset,사용권자산,ASSET,ASSET,N,122590,,Fixed Asset,OtherFixedAssets,ABC,Y
+T200,1596038,Accumulated depreciation - Finance Lease Asset,감가누계액(사용권자산),ASSET,ASSET,N,122600,,Fixed Asset,AccumulatedDepreciation,ABC,Y
+T200,1598010,Other intangible asset,기타의무형자산,ASSET,ASSET,N,124330,,Fixed Asset,IntangibleAssets,ABC,Y
+T200,1598018,Accumulated depreciation - Other intangible,감가누계액(기타의무형자산),ASSET,ASSET,N,124340,,Fixed Asset,AccumulatedAmortization,ABC,Y
+T200,1598019,Accumulated impairment loss - other intangible,무형손상차손누계액(기타의무형자산),ASSET,ASSET,N,124350,,Fixed Asset,IntangibleAssets,ABC,Y
+T200,2101010,Trade accounts payable,외상매입금,LIABILITY,GENERAL,N,211211,,Accounts Payable,AccountsPayable,ABC,Y
+T200,2101990,Undetermined purchase liability,미확정매입채무(미착품의반대),LIABILITY,GENERAL,N,211211,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2105010,Short-term loan,단기차입금,LIABILITY,GENERAL,N,211311,,Other Current Liability,LoanPayable,ABC,Y
+T200,2105011,Short-term loan (foreign),단기차입금(해외),LIABILITY,GENERAL,N,211312,,Other Current Liability,LoanPayable,ABC,Y
+T200,2107010,Other accounts payable,미지급금,LIABILITY,GENERAL,N,211212,,Accounts Payable,AccountsPayable,ABC,Y
+T200,2107020,Other accounts payable - Payroll,미지급금-급여,LIABILITY,GENERAL,N,211212,,Other Current Liability,PayrollClearing,ABC,Y
+T200,2109010,Accrued expenses,미지급비용,LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2109012,Accrued expenses - annual allowance,미지급비용(연차-보상분),LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2111010,Advances from customers,선수금,LIABILITY,GENERAL,Y,211811,,Accounts Receivable,AccountsReceivable,ABC,Y
+T200,2111020,Prepayment,선납,LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2111030,Advance received - Retail - Service,선수금-무상S,LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2111040,Unearned Service Income - O. Lease,선수금-운용(비리스),LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2111050,Unearned Service Income - F. Lease,선수금-금융(비리스),LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2111060,Unearned Service Income - Membership,선수금-멤버(비리스),LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2111070,Advance received - Deferred revenue (prepayment),선수금-렌탈선납,LIABILITY,GENERAL,N,211811,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2113010,Unearned income,선수수익,LIABILITY,GENERAL,N,211816,,Other Current Liability,DeferredRevenue,ABC,Y
+T200,2115100,Payroll tax payable - Federal,예수금-국민연금,LIABILITY,GENERAL,N,211815,,Other Current Liability,StateLocalIncomeTaxPayable,ABC,Y
+T200,2115200,Payroll tax payable - State,예수금-건강보험,LIABILITY,GENERAL,N,211815,,Other Current Liability,StateLocalIncomeTaxPayable,ABC,Y
+T200,2117010,Sales tax payable,부가세예수금,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T200,2117011,Tax payable - State,예수금-판매세-State,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T200,2117012,Tax payable - County,예수금-판매세-County,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T200,2117013,Tax payable - City,예수금-판매세-City,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T200,2117014,Tax payable - Special,예수금-판매세-Special,LIABILITY,GENERAL,N,211814,,Other Current Liability,SalesTaxPayable,ABC,Y
+T200,2119010,(L) Security deposit,임대보증금,LIABILITY,GENERAL,N,221215,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2121010,Allowance for sales returns,반품추정부채,LIABILITY,GENERAL,N,211715,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2121020,Provision for Sales return - F. Lease,반품추정부채(금융),LIABILITY,GENERAL,N,211715,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2121050,Contingent Liabilities - Current,기타(손실)충당부채,LIABILITY,GENERAL,N,211717,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2124010,Finance Lease Liability - Current,리스부채-사용권자산(유동),LIABILITY,GENERAL,N,211911,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2125010,Accrued expenses-bonus,상여충당금,LIABILITY,GENERAL,N,211213,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2127010,Income tax payable,미지급법인세,LIABILITY,GENERAL,N,211611,,Other Current Liability,FederalIncomeTaxPayable,ABC,Y
+T200,2129010,Dividend payable,미지급배당금,LIABILITY,GENERAL,N,211813,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2131010,Current Portion of Long-term Liabilities,유동성장기부채,LIABILITY,GENERAL,N,211511,,Other Current Liability,LoanPayable,ABC,Y
+T200,2150051,Provision for restoration,복구충당부채-임차(유동),LIABILITY,GENERAL,N,211716,,Other Current Liability,OtherCurrentLiabilities,ABC,Y
+T200,2212010,Long-term Loans Payable,장기차입금,LIABILITY,GENERAL,N,221311,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2240010,Deferred tax liabilities,이연법인세부채(고정),LIABILITY,GENERAL,N,221611,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2250050,Provision for restoration - Long-term,복구충당부채,LIABILITY,GENERAL,N,221714,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2250070,Contingent Liabilities,소송사건충당부채(비유동),LIABILITY,GENERAL,N,221717,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2260010,Advance received - LT,장기선수금,LIABILITY,GENERAL,N,221815,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2260011,Advance received - Installment LT,장기선수금-할부매출,LIABILITY,GENERAL,N,221815,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2260012,Advance received - Deferred revenue (prepayment) LT,장기선수금-렌탈선납,LIABILITY,GENERAL,N,221815,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,2260040,Finance Lease Liability,리스부채-사용권자산(비유동),LIABILITY,GENERAL,N,221911,,Long Term Liability,OtherLongTermLiabilities,ABC,Y
+T200,3101010,Common stock,보통주자본금,EQUITY,GENERAL,N,311010,,Equity,CommonStock,ABC,Y
+T200,3103010,Preferred stocks,우선주자본금,EQUITY,GENERAL,N,311020,,Equity,PreferredStock,ABC,Y
+T200,3201010,Additional Paid-in Capital,주식발행초과금,EQUITY,GENERAL,N,312020,,Equity,OwnersEquity,ABC,Y
+T200,4101010,Sales - Wholesale,상품매출액-일시불,REVENUE,SALES,N,410200,,Income,SalesOfProductIncome,ABC,Y
+T200,4101011,SALES - OUTRIGHT/INSTALMENT,상품매출액-일시불(할부),REVENUE,SALES,N,410200,,Income,SalesOfProductIncome,ABC,Y
+T200,4101012,SALES - OUTRIGHT/INSTALMENT (LT),상품매출-장기할부,REVENUE,SALES,N,410200,,Income,SalesOfProductIncome,ABC,Y
+T200,4103050,Sales - F. lease - Equipment,상품매출액-금융리스,REVENUE,SALES,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4103051,SALES - RENTAL (FL- PROVISION FOR RETURN),상품매출액-금융리스(반품),REVENUE,SALES,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4103052,Sales Discount - F. lease (Prepayment),상품매출할인-금융리스(선납할인),REVENUE,SALES,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4113010,Sales - Rental,렌탈료매출-재화,REVENUE,SALES,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4113011,Sales - Rental Service,렌탈료매출-서비스,REVENUE,SALES,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4113021,Sales Discount - O. lease (Prepayment),매출할인(렌탈-선납할인),REVENUE,SALES,N,410300,,Income,DiscountsRefundsGiven,ABC,Y
+T200,4113025,Sales Discount - O. lease (Prepayment)_reversal,매출할인환입-렌탈선납,REVENUE,SALES,N,410300,,Income,DiscountsRefundsGiven,ABC,Y
+T200,4113041,Sales - Membership,멤버쉽매출(월회비),REVENUE,SALES,N,410300,,Income,ServiceFeeIncome,ABC,Y
+T200,4113051,Sales Discount - Mem (Prepayment),매출할인(멤버쉽-선납할인),REVENUE,SALES,N,410300,,Income,DiscountsRefundsGiven,ABC,Y
+T200,4116010,Service Revenue - (Installation),용역수입(설치),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4116020,Service Revenue - A/S,용역수입(A/S),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4116021,Service Revenue - Installation and Dismantling,용역수입(이전설치및해체),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4116030,Service Revenue - warehouse,용역수입(창고관리대행),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4116040,Service Revenue - QC,용역수입(품질검수),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4116070,Sales - F. lease - Service,용역수입(금융리스),REVENUE,SALES,N,410300,,Income,ServiceFeeIncome,ABC,Y
+T200,4116090,Service Revenue - Intallment,용역수입(장기할부),REVENUE,SALES,N,410600,,Income,ServiceFeeIncome,ABC,Y
+T200,4199010,Other Sales,기타매출,REVENUE,SALES,N,410600,,Income,OtherPrimaryIncome,ABC,Y
+T200,4201010,Interest Income,이자수익,REVENUE,GENERAL,N,610100,,Other Income,InterestEarned,ABC,Y
+T200,4201011,Interest income - F. Lease Sales,이자수익-금융리스,REVENUE,GENERAL,N,410300,,Income,SalesOfProductIncome,ABC,Y
+T200,4201013,SALES - INSTALMENT (Interest revenue),이자수익-장기할부(상품),REVENUE,GENERAL,N,410200,,Income,SalesOfProductIncome,ABC,Y
+T200,4201020,Interest income - Office Rent - Security Deposit,이자수익-보증금현할차,REVENUE,GENERAL,N,610100,,Other Income,InterestEarned,ABC,Y
+T200,4203010,Dividend Income,배당금수익,REVENUE,GENERAL,N,610200,,Other Income,DividendIncome,ABC,Y
+T200,4205010,Rental Income,임대료수입,REVENUE,GENERAL,N,520100,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4207010,Commission Income,수수료수익,REVENUE,GENERAL,N,520200,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4221010,Gains on disposition of tangible assets,유형자산처분이익,REVENUE,GENERAL,N,520500,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4221020,Gains on disposition of intangible assets,무형자산처분이익,REVENUE,GENERAL,N,520700,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4237040,Penalty income on rental cancellation - F. Lease,계약해지이익(위약금)-금융리스,REVENUE,GENERAL,N,531500,,Income,SalesOfProductIncome,ABC,Y
+T200,4299010,Miscellaneous Income - Others,잡이익-기타,REVENUE,GENERAL,N,550300,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4299020,Miscellaneous Income - Lost Fee,잡이익-분실료,REVENUE,GENERAL,N,550300,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,4299030,Miscellaneous Income - Late Fee,잡이익-연체이자,REVENUE,GENERAL,N,550300,,Other Income,OtherMiscellaneousIncome,ABC,Y
+T200,5103010,COGS - Product,상품국내매출원가-상품출고(일시불),EXPENSE,COGS,N,420200,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5103012,COGS - Filter,상품국내매출원가-상품.일시불.무상(부품),EXPENSE,COGS,N,420200,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5103013,Losses on Valuation of Inventories,상품국내매출원가-부품폐기,EXPENSE,COGS,N,420200,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5103014,COGS - Product (Installment),상품국내매출원가-상품출고(장기할부),EXPENSE,COGS,N,420200,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5103050,COGS - F. Lease,상품국내매출원가-상품출고(금융리스),EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5103051,COGS - Rental Installation - F. Lease,상품국내매출원가-설치수수료(금융리스),EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5113010,Cost of Good Sold - Filter & Parts,렌탈매출원가-부품교환,EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5113012,Cost of Good Sold - Depreciation,렌탈매출원가-감가상각비,EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5113013,Cost of Good Sold - Rental Installation - O. Lease,렌탈매출원가-설치수수료,EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5113040,Cost of Good Sold - Membership - Filter,멤버쉽매출원가-부품교환,EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5199010,Cost of Other Sales,기타매출원가,EXPENSE,COGS,N,420700,,Cost of Goods Sold,OtherCostsOfServiceCos,ABC,Y
+T200,5203050,Price Variance - Goods,가격차이(상품),EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5203290,Price Variance - RentalAsset,렌탈자산가액조정,EXPENSE,COGS,N,420300,,Cost of Goods Sold,SuppliesMaterialsCogs,ABC,Y
+T200,5301010,Payroll expense - Employees,급여-사원급여,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5301020,Payroll expense - Bonus,급여-사원상여금,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5301030,Payroll expense - Overtime,급여-Overtime,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5301040,Payroll expense - Officers,급여-임원급여,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5301050,Payroll expense - Officers Bonus,급여-임원상여금,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5301060,Payroll expense - annual allowance,급여-연월차수당,EXPENSE,GENERAL,N,510100,,Expense,PayrollExpenses,ABC,Y
+T200,5305010,Severance pay,퇴직급여,EXPENSE,GENERAL,N,510400,,Expense,PayrollExpenses,ABC,Y
+T200,5309010,Compensation Expenses Associated with Stock Option,주식보상비용,EXPENSE,GENERAL,N,514200,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5401010,Employee welfare - Worker's compensation,복리후생비-부서운영비,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5401020,Employee welfare - Overtime meals,복리후생비-야근(특근)식대,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5401030,Employee welfare - Health Insurance,복리후생비-건강보험,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5401040,Employee welfare - Others,복리후생비-기타,EXPENSE,GENERAL,N,510600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5403010,Travel Expenses - Transportation,여비교통비-교통비,EXPENSE,GENERAL,N,510800,,Expense,Travel,ABC,Y
+T200,5403020,Travel Expenses - Accommodation,여비교통비-숙박,EXPENSE,GENERAL,N,510800,,Expense,Travel,ABC,Y
+T200,5403030,Travel Expenses - Meals,여비교통비-식대,EXPENSE,GENERAL,N,510800,,Expense,TravelMeals,ABC,Y
+T200,5405010,Meeting Expenses,회의비-업무협의비,EXPENSE,GENERAL,N,513300,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5407010,Telephone - Office,통신비-전화료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T200,5407020,Postage and stamp,통신비-우편료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T200,5407030,Internet fee,통신비-정보통신이용료,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T200,5407040,Telephone - Others,통신비-기타,EXPENSE,GENERAL,N,511000,,Expense,Communications,ABC,Y
+T200,5409010,Dues and Subscription,도서인쇄비-정기간행물,EXPENSE,GENERAL,N,511700,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5409020,Printing and reproduction,도서인쇄비-도서구입,EXPENSE,GENERAL,N,511700,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5411010,Training and Employee Education - Employees,교육훈련비-정직원,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5411020,Training and Employee Education - Sales Dept.,교육훈련비-판매인,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5411990,Training and Employee Education - Other,교육훈련비-기타,EXPENSE,GENERAL,N,512700,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5413010,Utility bills,수도광열비,EXPENSE,GENERAL,N,513800,,Expense,Utilities,ABC,Y
+T200,5415010,Office supplies,소모품비-사무용품,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T200,5415020,Supplies - Installation parts,소모품비-소모성설치자재,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T200,5415030,CONSUMABLE TOOLS,소모품비-집기성소모품,EXPENSE,GENERAL,N,511600,,Expense,SuppliesMaterials,ABC,Y
+T200,5417010,Taxes and Licenses,세금과공과,EXPENSE,GENERAL,N,511100,,Expense,Utilities,ABC,Y
+T200,5419010,Rent - Office,지급임차료-사무실임차료,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T200,5419020,Equipment Rental,지급임차료-장비임차료,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T200,5419030,Rent - Others,지급임차료-기타,EXPENSE,GENERAL,N,511200,,Expense,RentOrLeaseOfBuildings,ABC,Y
+T200,5423010,Bank Service Charge,지급수수료-금융거래수수료,EXPENSE,GENERAL,N,512600,,Expense,BankCharges,ABC,Y
+T200,5423020,Professional fees,지급수수료-전문가자문료,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T200,5423030,Professional fees - Other,지급수수료-대행용역수수료(기타),EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T200,5423040,Service Fees - IT System,지급수수료-IT유지보수료,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T200,5423050,Service Fees - Scrap,지급수수료-폐기물처리비,EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T200,5423060,Service Fees - Necoa Tech,지급수수료-대행용역수수료(네코아테크),EXPENSE,GENERAL,N,512600,,Expense,LegalProfessionalFees,ABC,Y
+T200,5429010,Repairs and Maintenance,수선비,EXPENSE,GENERAL,N,511500,,Expense,RepairMaintenance,ABC,Y
+T200,5431010,Auto Expenses,차량유지비,EXPENSE,GENERAL,N,510900,,Expense,Auto,ABC,Y
+T200,5433010,Insurances - Auto,보험료-차량보험,EXPENSE,GENERAL,N,512400,,Expense,Insurance,ABC,Y
+T200,5433020,Insurances - General Liability,보험료-PL보험료,EXPENSE,GENERAL,N,512400,,Expense,Insurance,ABC,Y
+T200,5437010,Sales promotion expenses - Head office,판매촉진비-영업본부,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5437020,Sales promotion expenses - Branches,판매촉진비-현장,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5437030,Sales promotion expenses - Events,판매촉진비-이벤트,EXPENSE,GENERAL,N,512000,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5439010,Commissions - Purchase Contract,판매수수료,EXPENSE,GENERAL,N,513000,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5441010,Entertainments,접대비-일반,EXPENSE,GENERAL,N,510700,,Expense,Entertainment,ABC,Y
+T200,5443010,Sample Expenses,견본비,EXPENSE,GENERAL,N,513600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5445010,Advertising and Promotions - TV,광고선전비-(TV),EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T200,5445020,Advertising and Promotions - Radio,광고선전비-(라디오),EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T200,5445030,Advertising and Promotions - Newspaper,광고선전비-신문인쇄광고,EXPENSE,GENERAL,N,511900,,Expense,AdvertisingPromotional,ABC,Y
+T200,5455010,Shipping and Delivery - Regular,운반비-제상품운송비,EXPENSE,GENERAL,N,512300,,Expense,ShippingFreightDelivery,ABC,Y
+T200,5455020,Shipping and Delivery - Other,운반비-운반비(기타),EXPENSE,GENERAL,N,512300,,Expense,ShippingFreightDelivery,ABC,Y
+T200,5457010,Bad debt expenses - O. Lease,매출채권채권손상차손(운용리스),EXPENSE,GENERAL,N,531200,,Expense,BadDebts,ABC,Y
+T200,5457011,Bad debt expenses - F. Lease,매출채권손상차손-금융리스,EXPENSE,GENERAL,N,531200,,Expense,BadDebts,ABC,Y
+T200,5459010,Depreciation - Building,감가상각비-건물,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T200,5459020,Depreciation - Vehicles,감가상각비-차량운반구,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T200,5459030,Depreciation - Equipments,감가상각비-비품,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T200,5459040,Depreciation - Amortization - Finance Lease Asset,감가상각비-사용권자산,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T200,5459050,Depreciation - Other tangible asset,감가상각비-기타유형자산,EXPENSE,GENERAL,N,511300,,Other Expense,Depreciation,ABC,Y
+T200,5461010,Depreciation - Amortization - Computer Software,무형자산상각비-컴퓨터소프트웨어,EXPENSE,GENERAL,N,511400,,Other Expense,Amortization,ABC,Y
+T200,5461020,Depreciation - Amortization - Other intangible asset,무형자산상각비-기타,EXPENSE,GENERAL,N,511400,,Other Expense,Amortization,ABC,Y
+T200,5467010,Consumer compensation,소비자보상비,EXPENSE,GENERAL,N,514600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5471010,Losses on disposition of rental asset,렌탈자산폐기손실,EXPENSE,GENERAL,N,531600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5471011,Losses on disposition of rental asset (Replacement),렌탈자산폐기대체,EXPENSE,GENERAL,N,531600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5471030,Disposition - Rental Installation - O. Lease,렌탈폐손(렌탈원가-설치수-이연),EXPENSE,GENERAL,N,531600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5471045,Losses on Suspended Rental Account,렌탈자산폐기손실-가해약,EXPENSE,GENERAL,N,531600,,Expense,OtherBusinessExpenses,ABC,Y
+T200,5471070,Penalty income on rental cancellation - O. Lease,계약해지이익(위약금)-렌탈,EXPENSE,GENERAL,N,531600,,Income,SalesOfProductIncome,ABC,Y
+T200,5471072,F. Lease Termination Loss_Equipment,계약해지손실(위약금)-금융리스,EXPENSE,GENERAL,N,531500,,Income,SalesOfProductIncome,ABC,Y
+T200,5501010,Interest expenses,지급이자와할인료,EXPENSE,GENERAL,N,620100,,Expense,InterestPaid,ABC,Y
+T200,5501020,Interest expenses - Prepayment,이자비용-렌탈선납,EXPENSE,GENERAL,N,620100,,Expense,InterestPaid,ABC,Y
+T200,5501030,Interest expenses - Finance Lease,이자비용-리스부채,EXPENSE,GENERAL,N,620100,,Expense,InterestPaid,ABC,Y
+T200,5507010,EXCHANGE_GAIN_OR_LOSS,외환 이익or 손실,EXPENSE,GENERAL,N,560200,,Other Expense,ExchangeGainOrLoss,ABC,Y
+T200,5509010,Donation,기부금,EXPENSE,GENERAL,N,560400,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5537010,Other bad debt expenses,기타의 대손상각비,EXPENSE,GENERAL,N,532000,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5541010,Disposition losses on tangible asset,유형자산처분손실,EXPENSE,GENERAL,N,530300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5541020,Disposition losses on intangible asset,무형자산처분손실,EXPENSE,GENERAL,N,530500,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5549010,"Impairment Losses on Property, Plant, and Equipment",자산손상차손,EXPENSE,GENERAL,N,518010,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5599010,Miscellaneous Losses,잡손실,EXPENSE,GENERAL,N,560300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5599011,Miscellaneous Losses (Loss or Fire),잡손실-고객분실화재,EXPENSE,GENERAL,N,560300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5599055,Guarantee Fees,금융보증비용,EXPENSE,GENERAL,N,621300,,Other Expense,OtherMiscellaneousExpense,ABC,Y
+T200,5701010,Current Income Tax,법인세비용,EXPENSE,GENERAL,N,650100,,Expense,TaxesPaid,ABC,Y
+T200,9112010,GR/IR-Goods,GR/IR-상품,ASSET,MATERIAL,N,,,,,ABC,Y
+T200,9112020,GR/IR-Customs,GR/IR-관세,ASSET,MATERIAL,N,,,,,ABC,Y
+T200,9112030,GR/IR-Freight,GR/IR-운임,ASSET,MATERIAL,N,,,,,ABC,Y
+T200,9112040,GR/IR-Other,GR/IR-기타부대비용,ASSET,MATERIAL,N,,,,,ABC,Y
+T200,9113820,Temporary Return Stock,임시-반환입고,ASSET,MATERIAL,N,,,,,ABC,Y
+T200,9503001,Bank Clearing,BC,ASSET,ASSET,N,211815,,Other Current Liability,OtherCurrentLiabilities,ABC,Y

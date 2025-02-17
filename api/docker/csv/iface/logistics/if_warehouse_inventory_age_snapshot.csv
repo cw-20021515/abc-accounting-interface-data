@@ -1,0 +1,1 @@
+id,warehouse_id,material_id,grade,min_aging_days,max_aging_days,quantity,create_time

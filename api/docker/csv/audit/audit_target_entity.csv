@@ -1,0 +1,2 @@
+id,entity_name,company_id,audit_action_type,is_active
+1,AuditTargetEntity,N200,ALL,Y

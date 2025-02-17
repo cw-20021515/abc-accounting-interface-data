@@ -1,0 +1,327 @@
+Table "if_order_item" {
+  "id"                      varchar [pk, note:"ID"]
+  "order_item_id"           varchar [pk, note:"주문항목ID"]
+  "order_item_status"       varchar [not null, note:"주문항목상태"]
+  "last_order_item_status"  varchar [note:"직전주문항목상태"]
+  "order_product_type"      varchar [not null, note:"주문 상품 유형(설치/배송 구분)"]
+  "order_item_type"         varchar [not null, note:"주문항목유형(일시불/렌탈 구분)"]
+  "order_id"                varchar [not null, note:"주문번호"]
+  "channel_id"              varchar [not null, note:"채널ID"]
+  "customer_id"             varchar [not null, note:"고객ID"]
+  "referrer_code"           varchar [note:"레퍼럴코드"]
+  "contract_id"             varchar [note:"계약ID(렌탈 주문만 해당)"]
+  "material_id"             varchar [not null, note:"자재ID"]
+  "quantity"                integer [not null, note:"수량"]
+  "address"                 json [not null, note:"주소정보"]
+  "tax"                     NUMERIC(38,2) [not null,note:"판매세"]
+  "tax_lines"               json [note:"판매세 정보"]
+  "subtotal_price"          NUMERIC(38,2) [not null,note:"결제금액(세금미포함)"]
+  "item_price"              NUMERIC(38,2) [not null,note:"개별상품가격"]
+  "discount_price"          NUMERIC(38,2) [not null,note:"할인가격"]
+  "registration_price"      NUMERIC(38,2) [note:"등록비"]
+  "create_time"             timestamp [not null, note:"생성일시"]
+  "update_time"             timestamp [not null, note:"수정일시"]
+
+  // 상태변화를 반영할 수 있어야 함.
+  indexes {
+   (order_item_id, order_item_status, last_order_item_status) [unique]
+  }
+
+  Note: '주문 정보'
+}
+
+Table "if_onetime_payment" {
+  "id"                        varchar [pk, note:"ID"]
+  "payment_id"                varchar [pk, note:"결제ID"]
+  "transaction_type"          varchar [not null, note: "거래유형(Shopify Payments의 거래유형(결제))"]
+  "order_id"                  varchar [not null, note: "주문ID"]
+  "transaction_id"            varchar [not null, note: "채널 거래ID"]
+  "payment_method"            varchar [note: "결제수단"]
+  "payment_time"              timestamp(6) [note: "결제시간"]
+  "currency"                  varchar [not null, note:'거래통화']
+  "total_price"               NUMERIC(38,2) [not null, note:"결제금액(세금포함)"]
+  "tax"                       NUMERIC(38,2) [not null, note:"판매세"]
+  "subtotal_price"            NUMERIC(38,2) [not null, note:"결제금액(세금미포함)"]
+  "item_price"                NUMERIC(38,2) [not null, note:"개별상품가격"]
+  "discount_price"            NUMERIC(38,2) [not null, note:"할인가격"]
+  "prepaid_amount"            NUMERIC(38,2) [note:"선결제금액"]
+  "registration_price"        NUMERIC(38,2) [note:"등록비"]
+  "promotions"                json [note:"프로모션 정보"]
+  "tax_lines"                 json [note:"판매세 정보"]
+  "address"                   json [note:"주소정보"]
+  "refund"                    jsonb [note:"환불정보"]
+  "update_time"               timestamp(6) [note:"수정시간"]
+
+  indexes {
+   (payment_id, update_time) [unique]
+  }
+  Note: '일시불 결제정보'
+}
+
+Table "if_service_flow" {
+  "id"                    varchar [pk, note:"ID"]
+  "service_flow_id"       varchar [not null, note:"서비스플로우ID"]
+  "service_status"        varchar [not null, note:"서비스플로우상태"]
+  "last_service_status"   varchar [note:"직전 서비스플로우상태"]
+  "service_type"          varchar [not null, note:"서비스유형"]
+  "install_id"            varchar [note:"설치ID"]
+  "serial_number"         varchar [note:"시리얼번호"]
+  "branch_id"             varchar [note:"브랜치 ID"]
+  "warehouse_id"          varchar [note:"창고 ID"]
+  "technician_id"         varchar [note:"테크니션ID"]
+  "order_item_id"         varchar [not null, note:"주문항목ID"]
+  "create_time"           timestamp [not null, note:"생성시간"]
+  "update_time"           timestamp [not null, note:"수정시간"]
+
+  indexes {
+   (service_flow_id, service_status, last_service_status) [unique]
+  }
+  Note: '서비스 플로우 정보(HISTORY)'
+}
+
+Table "if_contract" {
+  "id"                    varchar [pk, note:"ID"]
+  "contract_id"           varchar [not null, note: "계약ID"]
+  "contract_status"       varchar [not null, note: "계약상태"]
+  "last_contract_status"  varchar [note: "직전 계약상태"]
+  "rental_code"           varchar(10) [not null, note: "렌탈코드"]
+  "order_item_id"         varchar [not null, note: "주문항목ID"]
+  "customer_id"           varchar [not null, note:"고객ID"]
+  "start_date"            date [note:"계약시작일"]
+  "end_date"              date [note:"계약종료일"]
+  "duration_in_months"    integer [note: "계약기간"]
+  "payment_day"           integer [not null, note: "결제일"]
+  "create_time"           timestamp [not null, note:"생성일시"]
+  "update_time"           timestamp [not null, note:"수정일시"]
+
+  // 상태변화를 반영할 수 있어야 함. 단, 정상->가해약, 정상을 표현해야 함
+  indexes {
+   (contract_id, contract_status, last_contract_status) [unique]
+  }
+  Note: '계약 정보(HISTORY)'
+}
+
+
+
+Table "if_charge" {
+  "id"                    varchar [pk, note:"ID"]
+  "charge_id"             varchar [not null, note:"청구ID"]
+  "charge_status"         varchar [not null, note:"청구상태"]
+  "last_charge_status"    varchar [note:"직전 청구상태"]
+  "billing_cycle"         integer [not null, note:"청구회차"]
+  "target_month"          varchar [not null, note:"대상월"]
+  "contract_id"           varchar [not null, note:"계약ID"]
+  "start_date"            date [note:"시작일"]
+  "end_date"              date [note:"종료일"]
+  "create_time"           timestamp [not null, note:"생성일시"]
+  "update_time"           timestamp [not null, note:"수정일시"]
+
+  indexes {
+   (charge_id, charge_status, last_charge_status) [unique]
+  }
+
+  Note: '청구 정보(HISTORY)'
+}
+
+Table "if_charge_item" {
+ "charge_item_id"         varchar [pk, note:"청구항목ID"]
+ "charge_item_type"       varchar [not null, note:"청구항목유형"]
+ "quantity"               integer [not null, note:"수량"]
+ "subtotal_price"         numeric(10,4) [not null, note:"전체금액(세금미포함)"]
+ "item_price"             numeric(10,4) [not null, note:"아이템금액"]
+ "discount_price"         numeric(10,4) [not null, note:"할인금액"]
+ "prepaid_amount"         numeric(10,4) [not null, note:"선급금액"]
+ "promotions"             json [note:"프로모션"]
+ "currency"               varchar  [not null, note:"거래통화"]
+ "is_tax_exempt"          boolean [not null, note:"면세여부"]
+ "charge_id"              varchar [not null, note:"청구ID"]
+ "service_flow_id"        varchar [note:"서비스플로우ID"]
+ "material_id"            varchar [note:"자재ID"]
+ "create_time"            timestamp [not null, note:"생성일시"]
+ "update_time"            timestamp [not null, note:"수정일시"]
+
+  indexes {
+   (charge_item_id, charge_item_type) [unique]
+  }
+  Note: '요금 청구 항목 정보'
+}
+
+Table "if_charge_invoice" {
+ "id"                     varchar [pk, note:"ID"]
+ "charge_id"              varchar [not null, note:"청구ID"]
+ "invoice_id"             varchar [not null, note:"청구서ID"]
+ "create_time"            timestamp [not null, note:"생성시간"]
+ "update_time"            timestamp [not null, note:"수정시간"]
+ Note: '청구서 관계정보(M:N)'
+}
+
+Table "if_invoice" {
+  "id"                    varchar [pk, note:"ID"]
+  "invoice_id"            varchar [note:"인보이스ID"]
+  "contract_id"           varchar [not null, note:"계약ID"]
+  "invoice_status"        varchar [not null, note:"인보이스상태"]
+  "billing_month"         varchar [not null, note:"청구월"]
+  "payment_due_date"      date [not null, note:"납부일자"]
+  "total_price"           NUMERIC(38,2) [not null, note:"전체금액"]
+  "charges"               jsonb [not null, Note:"청구정보"]
+  "create_time"           timestamp [not null, Note:"생성일시"]
+  "update_time"           timestamp [not null, Note:"수정일시"]
+
+  indexes {
+   (invoice_id, invoice_status) [unique]
+  }
+  Note:"청구서 정보(HISTORY)"
+}
+
+Table "if_charge_payment" {
+  "id" varchar [pk, note:"ID"]
+  "payment_id"              varchar [not null, note:"결제ID"]
+  "transaction_type"        varchar [not null, note: "거래유형(Shopify Payments의 거래유형(결제))"]
+  "charge_id"               varchar [not null, note:"청구ID"]
+  "invoice_id"              varchar [note:"인보이스ID"]
+  "transaction_id"          varchar [note:"거래ID(Shopify)"]
+  "payment_method"          varchar [note:"결제수단"]
+  "payment_time"            timestamp [note:"결제시간"]
+  "total_price"             NUMERIC(38,2) [not null, note:"결제금액(세금포함)"]
+  "tax"                     NUMERIC(38,2) [not null, note:"판매세"]
+  "subtotal_price"          NUMERIC(38,2) [not null, note:"결제금액(세금미포함)"]
+  "charge_items"            json [not null, note:"청구항목"]
+  "tax_lines"               json [not null, note:"판매세"]
+  "installment_months"      integer [note:"할부개월수"]
+  "currency"                varchar [not null, note:"거래통화"]
+  "address"                 json [not null, note:"주소정보"]
+
+  indexes {
+   (payment_id, transaction_type) [unique]
+  }
+  Note: '청구 결제 정보(HISTORY)'
+}
+
+Table "if_service_charge" {
+  "id"                    varchar [pk, note:"ID"]
+  "service_charge_id"     varchar [not null, note:"서비스 청구 ID"]
+  "charge_status" varchar [not null, note:"서비스 청구상태"]
+  "last_charge_status"    varchar [note:"직전 서비스 청구상태"]
+  "service_flow_id"       varchar [not null, note:"서비스 플로우 ID"]
+  "service_billing_type"  varchar [not null, note:"서비스 빌링유형"]
+  "create_time"           timestamp [not null, note:"생성시간"]
+  "update_time"           timestamp [not null, note:"수정시간"]
+
+  indexes {
+   (service_charge_id, charge_status, last_charge_status) [unique]
+  }
+  Note: "서비스 청구(HISTORY)"
+}
+
+Table "if_service_charge_item"{
+  "id"                      varchar [pk, note:"ID"]
+  "charge_item_id"          varchar [not null, note:"서비스 청구항목 ID"]
+  "charge_item_type"        varchar [not null, note:"청구아이템 유형"]
+  "quantity"                varchar [not null, note:"수량"]
+  "subtotal_price"          NUMERIC(38,2) [not null, note:"전체금액(세금제외)"]
+  "item_price"              NUMERIC(38,2) [not null, note:"아이템금액"]
+  "discount_price"          NUMERIC(38,2) [not null, note:"아이템 할인금액"]
+  "prepaid_amount"          NUMERIC(38,2) [not null, note:"선지급 금액"]
+  "promotions"              json [note:"프로모션 정보"]
+  "currency"                varchar [not null, note: "통화"]
+  "is_tax_exempt"           boolean [not null, note: "면세여부"]
+  "create_time"             timestamp [not null, note:"생성시간"]
+  "update_time"             timestamp [not null, note:"수정시간"]
+  "service_charge_id"       varchar [not null, note:"서비스청구 ID"]
+  "material_id"             varchar [note:"자재ID"]
+
+  indexes {
+   (charge_item_id, charge_item_type) [unique]
+  }
+  Note: "서비스 청구 항목(HISTORY)"
+}
+
+Table "if_service_charge_payment" {
+  "id"                    varchar [pk, note:"ID"]
+  "payment_id"            varchar [not null, note:"결제"]
+  "transaction_type"      varchar [not null, note:"거래유형"]
+  "transaction_id"        varchar [not null, note:"거래ID"]
+  "service_charge_id"     varchar [not null, note:"서비스 청구 ID"]
+  "payment_method"        varchar [not null, note:"결제방법 (렌탈/현장수납?)"]
+  "payment_time"          timestamp [note: "결제시간"]
+  "currency"              varchar
+  "total_price"           NUMERIC(38,2) [not null, note: "결제금액(세금포함)"]
+  "tax"                   NUMERIC(38,2) [not null, note:"판매세"]
+  "subtotal_price"        NUMERIC(38,2) [not null, note:"결제금액(세금미포함)"]
+  "item_price"            NUMERIC(38,2) [not null, note:"개별상품가격"]
+  "discount_price"        NUMERIC(38,2) [not null, note:"할인가격"]
+  "charge_items"          json  [not null, note:"청구항목"]
+  "tax_lines"             json  [not null, note:"판매세정보"]
+  "address"               json  [not null, note:"주소"]
+  "create_time"           timstatmp [not null, note:"생성시간"]
+  "update_time"           timestamp [not null, note:"수정시간"]
+
+  indexes {
+   (payment_id, transaction_type) [unique]
+  }
+  Note: '서비스 결제정보(HISTORY)'
+}
+
+Table "if_customer" {
+  "customer_id"           varchar [pk, note:"고객ID"]
+  "email"                 varchar [not null, note:"이메일"]
+  "phone"                 varchar [note:"전화번호"]
+  "user_id"               varchar [note:"AMS ID"]
+  "last_name"             varchar [note:"성"]
+  "first_name"            varchar [note:"이름"]
+  "account_type"          varchar [not null, note:"고객유형(CORPORATE/INDIVIDUAL/STAFF/ACADEMY/OTHERS)"]
+  "customer_status"       varchar [not null, note:"고객상태(ACTIVE/BANKRUPT/DECEASED)"]
+  "referrer_code"         varchar [not null, note: "레퍼럴코드"]
+  "create_time"           timestamp [not null, note:"생성일시"]
+  "update_time"           timestamp [not null, note:"수정일시"]
+
+  Note: '고객 정보'
+}
+
+Table "if_channel" {
+ "channel_id"             varchar [pk, note:"채널ID"]
+ "channel_type"           varchar [not null, note:"채널타입"]
+ "channel_name"           varchar [not null, note:"채널이름"]
+ "channel_detail"         varchar [not null, note:"채널상세"]
+ "create_time"            timestamp [not null, note:"생성시간"]
+ "update_time"            timestamp [not null, note:"수정시간"]
+
+ Note: '채널 정보'
+}
+
+
+Table "if_material" {
+  "material_id"                 varchar [pk, note:"자재ID"]
+  "material_type"               varchar [not null, note:"자재유형"]
+  "material_model_name"         varchar [note:"모델이름"]
+  "material_model_name_prefix"  varchar [note:"모델이름(prefix)"]
+  "material_name"               varchar [not null, note:"자재이름"]
+  "material_series_code"        varchar [note:"시리즈코드"]
+  "material_series_name"        varchar [note:"시리즈명"]
+  "material_category_code"      varchar [not null, note:"카테고리코드"]
+  "material_category_name"      varchar [note: "카테고리명"]
+  "manufacturer_code"           varchar [not null, note:"제조사 생산코드 (SAP)"]
+  "brand_name"                  varchar [note:"브랜드명"]
+  "product_type"                varchar [not null, note:"제품유형"]
+  "feature_code"                varchar [not null, note:"특징"]
+  "filter_type"                 varchar [not null, note:"필터유형"]
+  "installation_type"           varchar [not null, note:"설치유형"]
+  "shipping_method_type"        varchar [not null, note:"배송유형"]
+  "description"                 varchar  [not null, note:"설명"]
+  "create_time"                 timestamp [not null, note:"생성시간"]
+  "update_time"                 timestamp [not null, note:"수정시간"]
+
+  Note: '자재 정보'
+}
+
+Ref: "if_order_item"."channel_id" > "if_channel"."channel_id"
+Ref: "if_order_item"."material_id" > "if_material"."material_id"
+Ref: "if_order_item"."customer_id" > "if_customer"."customer_id"
+Ref: "if_order_item"."order_item_id" <> "if_service_flow"."order_item_id"
+Ref: "if_order_item"."order_item_id" < "if_onetime_payment"."order_item_id"
+Ref: "if_customer"."customer_id" < "if_contract"."customer_id"
+Ref: "if_contract"."contract_id" < "if_charge"."contract_id"
+Ref: "if_charge"."charge_id" < "if_charge_item"."charge_id"
+Ref: "if_charge"."charge_id" < "if_charge_payment"."charge_id"
+// Ref: "if_address"."address_id" < "if_charge_payment"."address_id"
+// Ref: "if_address"."address_id" < "if_onetime_payment"."address_id"

@@ -1,0 +1,101 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DATASOURCE_MAIN_HOST:localhost}:${DATASOURCE_MAIN_PORT:15432}/${DATASOURCE_MAIN_DATABASE:abc_accounting}
+    username: ${DATASOURCE_MAIN_USERNAME:abc_accounting}
+    password: ${DATASOURCE_MAIN_PASSWORD:abc_accounting}
+    driver-class-name: org.postgresql.Driver
+  data:
+    redis:
+      host: ${REDIS_PRIMARY_HOST:localhost}
+      port: ${REDIS_PRIMARY_PORT:16379}
+      repositories:
+        enabled: true
+  liquibase:
+#    contexts: ${spring.profiles.active:default}
+#    liquibase-schema: liquibase
+#    database-change-log-table: database_changelog
+#    database-change-log-lock-table: database_changelog_lock
+    change-log: classpath:liquibase/master.yaml
+  jpa:
+    open-in-view: false
+    show-sql: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # 이 부분 추가
+        use_sql_comments: false
+        format_sql: false
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 1000
+          fetch_size: 1000
+      database-platform: org.hibernate.dialect.PostgreSQLDialect  # 이 부분도 추가
+  threads:
+    virtual:
+      enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://sdk.necoa.do/oauth2/jwks
+  docker:
+    compose:
+      file: "./api/docker/docker-compose.yml"
+
+server:
+  port: 9090
+  shutdown: graceful
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+
+abc-sdk:
+  api-key: ${ABC_SDK_API_KEY:abc-accounting}
+  authorizer:
+    enabled: true
+    repository:
+      type: caffeine
+
+collects:
+  read:
+    page:
+      max-size: 100
+      sort-by: createTime
+project:
+  accounting:
+    temp-file-path: /Users/Shared/upload/present/payout/file/
+
+scheduling:
+  audit-trigger-manager:
+    refresh:
+      time-unit: MINUTES
+      fixed-delay: 10    # 10분
+      initial-delay : 1 # 10분
+  audit-event-listener:
+    poll:
+      time-unit: MINUTES
+      fixed-delay: 10    # 10분
+      initial-delay: 1 # 1분
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+
+
+# ABC 설정
+abc:
+  accounting:
+    account-balance:
+      enable: true
+    rentals:
+      onetime:
+        enable_taxline: true

@@ -1,0 +1,5 @@
+hash_code,entity,field,value,channel_id,channel_name,channel_type,channel_detail,create_time,update_time,is_active
+8413e0bdfcfd81aeca61449de3b77cf5,,,,aa9ef31a90e57a6a172ea2ef7014cd16,www.necoa.com,ONLINE_MALL,"",2024-12-19 05:43:04.408000 +00:00,2024-12-19 05:43:04.408000 +00:00,Y
+8106e81e44e30fcd4647be283de5d223,,,,8622ace6b04c90c339cf3e170c604be8,necoa.com,ONLINE_MALL,,2024-11-05 23:53:16.615000 +00:00,2024-11-05 23:53:16.615000 +00:00,Y
+553c96811d67ad4c7c32afde0b43acc4,,,,b4d0a73361df1bbe3e0e44e91eefb321,SPM,ONLINE_MALL,Shopping Mall,2024-11-18 17:10:54.875000 +00:00,2024-11-18 17:10:54.875000 +00:00,Y
+9e3572c57a7a549b04d482cca68a2b41,,,,mall001,Online mall,ONLINE_MALL,,2024-06-24 00:00:00.000000 +00:00,2024-06-24 00:00:00.000000 +00:00,Y

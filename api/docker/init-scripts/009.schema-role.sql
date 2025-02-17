@@ -1,0 +1,8 @@
+-- grant select, update, usage on sequence rental_distribution_master_id_seq to athospipe;
+-- grant select, update, usage on sequence rental_distribution_rule_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_depreciation_master_id_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_depreciation_master_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_history_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_history_id_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_depreciation_schedule_seq to athospipe;
+-- grant select, update, usage on sequence rental_asset_depreciation_schedule_id_seq to athospipe;

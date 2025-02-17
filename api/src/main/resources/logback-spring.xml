@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE_JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <mdc/>
+                <timestamp/>
+                <threadName/>
+                <message/>
+                <loggerName/>
+                <logLevel/>
+                <stackTrace/>
+                <callerData/>
+            </providers>
+        </encoder>
+    </appender>
+
+    <!-- 테스트 환경 설정 -->
+    <springProfile name="test">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+<!--        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>-->
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <!-- 개발 환경 -->
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{15}) - %M\(%L\) - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <logger name="org.springframework" level="INFO" additivity="true" />
+        <logger name="org.hibernate" level="INFO" additivity="true" />
+        <logger name="com.abc.us" level="DEBUG" additivity="true" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <!-- 로컬 환경 설정 -->
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework" level="INFO" additivity="true" />
+        <logger name="org.hibernate" level="INFO" additivity="true" />
+        <logger name="com.abc.us" level="DEBUG" additivity="true" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <!-- 개발 환경 설정 -->
+    <springProfile name="dev">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework" level="INFO" additivity="true" />
+        <logger name="org.hibernate" level="INFO" additivity="true" />
+        <logger name="com.abc.us" level="DEBUG" additivity="true" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <!-- 스테이징 환경 설정 -->
+    <springProfile name="stg">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework" level="INFO" additivity="true" />
+        <logger name="org.hibernate" level="INFO" additivity="true" />
+        <logger name="com.abc.us" level="INFO" additivity="true" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_JSON" />
+        </root>
+    </springProfile>
+
+    <!-- 프로덕션 환경 설정 -->
+    <springProfile name="prd">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework" level="WARN" additivity="true" />
+        <logger name="org.hibernate" level="WARN" additivity="true" />
+        <logger name="com.abc.us" level="WARN" additivity="true" />
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_JSON" />
+        </root>
+    </springProfile>
+
+</configuration>

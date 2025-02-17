@@ -1,0 +1,5 @@
+id,acct_num,address,alternate_phone,associated_entity,associated_id,business_number,city,code,company_id,company_name,country,country_code,county,create_time,currency,department_code,department_name,description,display_name,email,employer_code,family_name,fax,given_name,is_active,middle_name,mobile,office,remark,state,suffix,sync_token,tax_identifier,terms,title,update_time,web_addr,zip_code
+1b55e325-2e9b-4edb-8240-feb43ffd5f93,,"Austin, TX 78701, USA",,,,,Austin,1,,,,US,Travis County,,,,,코웨이,코웨이,netmarble@netmarble.com,NaN,코웨이,NaN,코웨이,true,NaN,1000001234,NaN,NaN,TX,,,,,,,,78701
+670fd466-9324-42bb-82e0-091c4915b66f,,"Austin, TX 78702, USA",,,,,Austin,2,,,,US,Travis County,,,,,넷마블,넷마블,coway@coway.com,NaN,넷마블,NaN,넷마블,true,NaN,1000001235,NaN,NaN,TX,,,,,,,,78702
+42171124-7e6e-4387-8516-f2cd3f04f4ff,,"Austin, TX 78703, USA",,,,,Austin,3,,,,US,Travis County,,,,,코웨이 직원,김수진,20221631@coway.com,20221631.0,김,NaN,수진,true,NaN,1000001236,1236.0,NaN,TX,,,,,,,,78703
+e7a568d4-e4a9-467a-90b1-f62ca0fe0824,,"Austin, TX 78703, USA",,,,,Austin,4,,,,US,Travis County,,,,,코웨이 직원,이상희,20022331@coway.com,20022331.0,이,NaN,상희,true,NaN,1000001237,1237.0,NaN,TX,,,,,,,,78704

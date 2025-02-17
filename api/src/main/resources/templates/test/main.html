@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Accounting Test</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            const today = new Date().toLocaleDateString('en-CA')
+            const datepickerOption = {
+                dateFormat: 'yy-mm-dd'
+            }
+            $('#startDateTime').datepicker(datepickerOption).val(today)
+            $('#endDateTime').datepicker(datepickerOption).val(today)
+        })
+
+        function callApi(button, url) {
+            const $button = $(button)
+            const $code = $button.find('code')
+            $code.text('processing...')
+            $button.prop('disabled', true)
+
+            const startDateTime = $('#startDateTime').val()
+            const endDateTime = $('#endDateTime').val()
+            const timezone = $('#timezone').val()
+            const companyCode = $('#companyCode').val()
+            const version = $('#version').val()
+            const orderIds = $('#orderIds').val().trim()
+            const orderItemIds = $('#orderItemIds').val().trim()
+            const customerIds = $('#customerIds').val().trim()
+            const contractIds = $('#contractIds').val().trim()
+            $.post(
+                url,
+                {
+                    'startDateTime': getDateTime(startDateTime),
+                    'endDateTime': getDateTime(endDateTime),
+                    timezone,
+                    companyCode,
+                    version,
+                    orderIds,
+                    orderItemIds,
+                    customerIds,
+                    contractIds
+                }
+            ).done(function (data) {
+                $code.text('ok')
+                $button.prop('disabled', false)
+                console.log('data:', data)
+            }).fail(function (data) {
+                $code.text('error')
+                $button.prop('disabled', false)
+                console.log('data:', data)
+            })
+        }
+
+        function getDateTime(value) {
+            const date = new Date(value)
+            const res = date.toLocaleDateString('en-CA') + 'T00:00'
+            return res
+        }
+    </script>
+</head>
+<body>
+<h3>Accounting Test</h3>
+
+<div>
+    Date: <input type="text" id="startDateTime" /> ~ <input type="text" id="endDateTime" />
+    <br />
+    Timezone:
+    <select id="timezone">
+        <option value="America/Chicago">America/Chicago</option>
+    </select>
+    <br />
+    CompanyCode:
+    <select id="companyCode">
+        <option value="N200">N200</option>
+        <option value="T200">T200</option>
+    </select>
+    <br />
+    Version:
+    <select id="version">
+        <option value="v1">v1</option>
+        <option value="v2">v2</option>
+    </select>
+    <br />
+    OrderIds: <input type="text" id="orderIds" />
+    <br />
+    OrderItemIds: <input type="text" id="orderItemIds" />
+    <br />
+    CustomerIds: <input type="text" id="customerIds" />
+    <br />
+    ContractIds: <input type="text" id="contractIds" />
+    <br />
+</div>
+<div>
+    <p>운용리스</p>
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/processing/registration')">
+        자산등록
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/processing/depreciation')">
+        감가상각
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/COLO010')">
+        제품출고 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/CORA010')">
+        설치완료 전표(렌탈자산 인식)
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/CORA020')">
+        감가상각 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/COCP010')">
+        청구 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/COCP030')">
+        수납 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/COCP040')">
+        입금 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/operating-lease/batch/posting/COSS001')">
+        필터배송 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+</div>
+<div>
+    <p>금융리스</p>
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/processing/registration')">
+        자산등록
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/processing/depreciation')">
+        상각
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFLO010')">
+        제품출고 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFOR020')">
+        매출인식 전표(재화 매출)
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFOR030')">
+        매출 원가 인식
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFOR040')">
+        재고가액 확정
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFCP010')">
+        청구 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFCP020')">
+        수납 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFCP030')">
+        입금 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFFA010')">
+        월마감작업 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+    <button onclick="callApi(this, '/accounting/v1/rentals/financial-lease/batch/posting/CFSS010')">
+        필터교체 전표
+        <code style="color: red"></code>
+    </button>
+    <br />
+
+</div>
+</body>
+</html>

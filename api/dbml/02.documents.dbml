@@ -1,0 +1,308 @@
+// Document table
+Table document {
+  id varchar(20) [pk, note: '전표ID']
+  version bigint [not null, note: '버전']
+  doc_hash varchar(32) [unique, not null, note: '전표해시']
+  doc_type varchar(2) [not null, note: '전표유형']
+  doc_status varchar(2) [not null, note: '전표상태']
+  workflow_status varchar(2) [not null, note: '전자결제상태']
+  workflow_id varchar(20) [note: '전자결재ID']
+  document_date date [note: '증빙일']
+  posting_date date [note: '전기일']
+  entry_date date [note: '발행일']
+  fiscal_year int [not null, note: '회계연도']
+  fiscal_month int [not null, note: '회계월']
+  company_code varchar(4) [not null, note: '회사코드']
+  tx_currency varchar(3) [not null, note: '거래통화']
+  tx_amount NUMERIC(38,2) [not null, note: '거래금액']
+  currency varchar(3) [not null, note: '회계통화']
+  amount NUMERIC(38,2) [note: '회계금액']
+  reference varchar(255) [note: '참조']
+  text varchar(255) [note: '텍스트']
+  is_deleted char(1) [default: 'N', note: '삭제여부']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(50) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(50) [not null, note: '수정자']
+
+  Note: '전표'
+}
+
+// Document Origin table
+Table document_origin {
+  doc_id varchar(20) [pk, note: '전표ID']
+  doc_template_code varchar(255) [not null, note: '전표템플릿코드']
+  biz_system varchar(10) [not null, note: '비즈니스시스템']
+  biz_tx_id varchar(50) [not null, note: '비즈니스 거래ID']
+  biz_process varchar(50) [not null, note: '비즈니스 프로세스']
+  biz_event varchar(50) [not null, note: '비즈니스 이벤트']
+  accounting_event varchar(255) [not null, note: '회계 이벤트']
+
+  Note: '전표비즈니스'
+}
+
+// Document Relation table
+Table document_relation {
+  id varchar(32) [pk, note: 'ID']
+  doc_id varchar(20) [not null, note: '전표ID']
+  ref_doc_id varchar(20) [not null, note: '참조전표ID']
+  relation_type varchar(2) [not null, note: '관계유형']
+  reason varchar(255) [note: '사유']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+
+  indexes {
+    doc_id
+    ref_doc_id
+  }
+
+  Note: '전표관계'
+}
+
+// Document Item table
+Table document_item {
+  id varchar(20) [pk, note: '전표항목ID']
+  version bigint [not null, note: '버전']
+  doc_item_status varchar(2) [not null, note: '전표항목상태']
+  doc_id varchar(20) [not null, note: '전표ID']
+  line_number integer [not null, note: '라인번호']
+  account_code varchar(10) [not null, note: '계정코드']
+  account_side char(1) [not null, note: '차/대 구분']
+  company_code varchar(4) [not null, note: '회사코드']
+  tx_currency varchar(3) [not null, note: '거래통화']
+  tx_amount NUMERIC(38,2) [not null, note: '거래금액']
+  currency varchar(3) [not null, note: '회계통화']
+  amount NUMERIC(38,2) [not null, note: '회계금액']
+  exchange_rate_id varchar(20) [note: '환율ID']
+  text varchar(255) [not null, note: '텍스트']
+  doc_template_code varchar(255) [note: '전표템플릿코드']
+  cost_center varchar(50) [not null, note: '코스트센터']
+  profit_center varchar(50) [note: '손익센터']
+  segment varchar(50) [note: '세그먼트']
+  project varchar(50) [note: '프로젝트']
+  customer_id varchar(50) [note: '고객ID']
+  vendor_id varchar(50) [note: '거래처ID']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(50) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(50) [not null, note: '수정자']
+
+  Note: '전표항목'
+}
+
+// Document Item Attribute table
+Table document_item_attribute {
+  doc_item_id varchar [pk, note: '전표항목ID']
+  attribute_type varchar [pk, note: '카테고리']
+  value varchar [note: '값']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+
+  Note: '전표항목속성'
+}
+
+// Document History table
+Table document_history {
+  id bigserial [pk, note: 'ID']
+  doc_id varchar(20) [not null, note: '전표ID']
+  version bigint [not null, note: '버전']
+  doc_hash varchar(32) [not null, note: '전표해시']
+  doc_type varchar(2) [not null, note: '전표유형']
+  doc_status varchar(2) [not null, note: '전표상태']
+  workflow_status varchar(2) [not null, note: '전자결제상태']
+  workflow_id varchar(20) [note: '전자결재ID']
+  document_date date [note: '증빙일']
+  posting_date date [note: '전기일']
+  entry_date date [note: '발행일']
+  fiscal_year int [not null, note: '회계연도']
+  fiscal_month int [not null, note: '회계기간']
+  company_code varchar(4) [not null, note: '회사코드']
+  tx_currency varchar(3) [not null, note: '거래통화']
+  tx_amount NUMERIC(38,2) [not null, note: '거래금액']
+  currency varchar(3) [not null, note: '회계통화']
+  amount NUMERIC(38,2) [note: '회계금액']
+  reference varchar(255) [note: '참조']
+  text varchar(255) [note: '텍스트']
+  is_deleted char(1) [default: 'N', note: '삭제여부']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(50) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(50) [not null, note: '수정자']
+
+  Note: '전표이력'
+}
+
+// Document Item History table
+Table document_item_history {
+  id bigserial [pk, note: 'ID']
+  doc_item_id varchar(20) [note: '전표항목ID']
+  version bigint [not null, note: '버전']
+  doc_item_status varchar(2) [not null, note: '전표항목상태']
+  doc_id varchar(20) [not null, note: '전표ID']
+  line_number integer [not null, note: '라인번호']
+  account_code varchar(10) [not null, note: '계정코드']
+  account_side char(1) [not null, note: '차/대 구분']
+  company_code varchar(4) [not null, note: '회사코드']
+  tx_currency varchar(3) [not null, note: '거래통화']
+  tx_amount NUMERIC(38,2) [not null, note: '거래금액']
+  currency varchar(3) [not null, note: '회계통화']
+  amount NUMERIC(38,2) [not null, note: '회계금액']
+  exchange_rate_id varchar(20) [not null, note: '환율ID']
+  text varchar(255) [not null, note: '텍스트']
+  doc_template_code varchar(255) [note: '전표템플릿코드']
+  cost_center varchar(50) [not null, note: '코스트센터']
+  profit_center varchar(50) [note: '손익센터']
+  segment varchar(50) [note: '세그먼트']
+  project varchar(50) [note: '프로젝트']
+  customer_id varchar(50) [note: '고객ID']
+  vendor_id varchar(50) [note: '거래처ID']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(50) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(50) [not null, note: '수정자']
+
+  Note: '전표항목이력'
+}
+
+// Document Item Relation table
+Table document_item_relation {
+  id varchar(20) [pk, note: 'ID']
+  doc_item_id varchar(20) [not null, note: '전표항목ID']
+  ref_doc_item_id varchar(20) [not null, note: '참조전표항목ID']
+  relation_type varchar(2) [not null, note: '관계유형']
+  reason varchar(255) [note: '사유']
+  ref_amount NUMERIC(38,2) [note: '참조금액']
+  amount NUMERIC(38,2) [note: '금액']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+
+  indexes {
+    doc_item_id
+    ref_doc_item_id
+  }
+
+  Note: '전표항목관계'
+}
+
+// Document Note table
+Table document_note {
+  id bigserial [pk, note: 'ID']
+  doc_id varchar(20) [not null, note: '전표ID']
+  is_deleted char(1) [default: 'N', note: '삭제여부']
+  contents text [note: '내용']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(50) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(50) [not null, note: '수정자']
+}
+
+// Document Attachment table
+Table document_attachment {
+  id bigserial [pk, note: 'ID']
+  doc_id varchar(20) [not null, note: '전표ID']
+  file_name varchar(255) [not null, note: '파일명']
+  internal_path varchar(255) [not null, note: '파일내부경로']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성시간']
+  created_by varchar(20) [not null, note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정시간']
+  updated_by varchar(20) [not null, note: '수정자']
+}
+
+// Custom Sequence table
+Table custom_sequence {
+  sequence_name varchar(20) [pk]
+  current_value bigint [not null]
+  version bigint [not null]
+}
+
+// Exchange Rate table
+Table exchange_rate {
+  id bigserial [pk, note: '환율ID']
+  from_currency varchar(3) [not null, note: '기준통화']
+  to_currency varchar(3) [not null, note: '변환통화']
+  exchange_rate_date date [not null, note: '환율일']
+  exchange_rate decimal(38,12) [not null, note: '환율']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성일시']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정일시']
+
+  Note: '환율정보'
+}
+
+// Document Item Attribute Master table
+Table document_item_attribute_master {
+  id bigserial [pk]
+  account_type varchar(20) [not null, note: '계정유형코드']
+  attribute_category varchar(20) [not null, note: '속성 카테고리']
+  attribute_type varchar(50) [not null, note: '속성 유형']
+  field_requirement varchar(20) [not null, note: '필드요구사항']
+  is_active char(1) [not null, note: 'Active 여부']
+  condition_logic varchar(50) [note: '조건']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정 일시']
+
+  indexes {
+    (account_type, attribute_category, attribute_type, field_requirement) [unique]
+  }
+}
+
+// Document Template table
+Table document_template {
+  company_code varchar(4) [pk, not null, note: '회사코드']
+  doc_template_code varchar(255) [pk, not null, note: '전표템플릿코드']
+  biz_category varchar(50) [not null, note: '카테고리']
+  biz_system varchar(50) [not null, note: '비즈시스템']
+  sales_type varchar(50) [note: '판매유형']
+  biz_process varchar(50) [not null, note: '비즈니스 프로세스']
+  biz_event varchar(50) [not null, note: '비즈니스 이벤트']
+  account_event_category varchar(50) [note: '회계 이벤트 카테고리']
+  account_event varchar(50) [note: '회계 이벤트']
+  text_kor varchar(255) [not null, note: '한글 텍스트']
+  text_eng varchar(255) [note: '영문 텍스트']
+  is_active char(1) [not null, default: 'Y', note: '사용여부']
+  biz_event_order integer [not null, note: '비즈니스 이벤트 순서']
+  document_type varchar(20) [not null, note: '전표유형']
+  processing_type varchar(20) [note: '처리유형']
+  order_item_status varchar(50) [note: '주문항목 상태']
+  charge_status varchar(50) [note: '청구 상태']
+  contract_status varchar(50) [note: '계약 상태']
+  service_flow_status varchar(50) [note: '서비스 플로우 상태']
+  logistics_status varchar(50) [note: '물류 상태']
+  create_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+
+  Note: '전표 템플릿'
+}
+
+// Document Template Item table
+Table document_template_item {
+  id bigserial [pk, note: 'id']
+  company_code varchar(4) [not null, note: '회사코드']
+  doc_template_code varchar(255) [not null, note: '전표템플릿코드']
+  line_number integer [not null, note: '전표항목번호']
+  account_code varchar(10) [not null, note: '계정코드']
+  ref_doc_template_code varchar(255) [note: '참조 전표템플릿코드']
+  account_side varchar(10) [not null, note: '차대구분']
+  requirement_type varchar(20) [not null, note: '필수여부']
+  cost_center varchar(20) [not null, note: '비용센터']
+  profit_center varchar(20) [note: '수익센터']
+  segment varchar(50) [note: '세그먼트']
+  project varchar(50) [note: '프로젝트']
+  item_text_kor text [not null, note: '한글 텍스트']
+  item_text_eng text [note: '영문 텍스트']
+  create_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+
+  indexes {
+    (company_code, doc_template_code)
+  }
+
+  Note: '전표 템플릿 항목'
+}
+
+// Relationships
+Ref: document_origin.doc_id > document.id
+Ref: document_relation.doc_id > document.id
+Ref: document_item.doc_id > document.id
+Ref: document_item_attribute.doc_item_id > document_item.id
+Ref: document_history.doc_id > document.id
+Ref: document_item_history.doc_item_id > document_item.id
+Ref: document_item_history.doc_id > document.id
+Ref: document_item_relation.doc_item_id > document_item.id
+Ref: document_note.doc_id > document.id
+Ref: document_attachment.doc_id > document.id
+Ref: document_template_item.(company_code, doc_template_code) > document_template.(company_code, doc_template_code)

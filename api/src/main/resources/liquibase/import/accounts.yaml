@@ -1,0 +1,58 @@
+databaseChangeLog:
+#--------------------------------------------------------------------------
+#   입력 성공
+#  - changeSet:
+#      id: account-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "account"
+#            file: classpath:/liquibase/csv/documents/config/account.csv
+#            separator: ","
+#            encoding: "UTF-8"
+#--------------------------------------------------------------------------
+#   입력 성공
+#  - changeSet:
+#      id: account-241207-2
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "account"
+#            file: classpath:/liquibase/csv/documents/config/account_for_qbo.csv
+#            separator: ","
+#            encoding: "UTF-8"
+#--------------------------------------------------------------------------
+#   입력 성공
+#  - changeSet:
+#      id: account_group-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "account_group"
+#            file: classpath:/liquibase/csv/documents/config/account_group.csv
+#            separator: ","
+#            encoding: "UTF-8"
+
+#--------------------------------------------------------------------------
+#   오류 발생
+#  - changeSet:
+#      id: cost_center_info-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "cost_center_info"
+#            file: classpath:/liquibase/csv/documents/config/cost_center_info.csv
+#            separator: ","
+#            encoding: "UTF-8"
+
+#--------------------------------------------------------------------------
+#   오류 발생
+#  - changeSet:
+#      id: accounts_account_info-241207-1
+#      author: tongtler@coway.com
+#      changes:
+#        - loadData:
+#            tableName: "accounts_account_info"
+#            file: classpath:/liquibase/csv/documents/config/accounts_account_info.csv
+#            separator: ","
+#            encoding: "UTF-8"

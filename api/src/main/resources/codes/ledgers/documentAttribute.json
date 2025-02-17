@@ -1,0 +1,117 @@
+[
+  {
+    "code": "customerId",
+    "name": "고객ID",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "orderId",
+    "name": "주문ID",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "orderItemId",
+    "name": "주문아이템ID",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "contractId",
+    "name": "계약ID",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "serialNumber",
+    "name": "시리얼번호",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "salesType",
+    "name": "판매유형",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "salesItem",
+    "name": "판매항목",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "rentalCode",
+    "name": "렌탈코드",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "contractPeriod",
+    "name": "약정기간",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "contractCount",
+    "name": "계약회차",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "channelId",
+    "name": "채널ID",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "referralCode",
+    "name": "레퍼럴코드",
+    "accountType": "CUSTOMER"
+  },
+  {
+    "code": "vendorId",
+    "name": "거래처ID",
+    "accountType": "VENDOR"
+  },
+  {
+    "code": "payoutId",
+    "name": "지급ID",
+    "accountType": "VENDOR"
+  },
+  {
+    "code": "invoiceId",
+    "name": "인보이스",
+    "accountType": "VENDOR"
+  },
+  {
+    "code": "purchaseOrderId",
+    "name": "PO",
+    "accountType": "VENDOR"
+  },
+  {
+    "code": "materialId",
+    "name": "자재ID",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "materialCategory",
+    "name": "분류",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "productType",
+    "name": "제품군",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "materialName",
+    "name": "품목",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "installType",
+    "name": "설치유형",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "filterType",
+    "name": "필터",
+    "accountType": "MATERIAL"
+  },
+  {
+    "code": "featureType",
+    "name": "기능군",
+    "accountType": "MATERIAL"
+  }
+]

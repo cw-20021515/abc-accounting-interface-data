@@ -1,0 +1,43 @@
+spring:
+  config:
+    activate:
+      on-profile: prd
+  liquibase:
+    enabled: false
+  application:
+    name: abc-accounting-api-prd
+  data:
+    redis:
+      ssl:
+        enabled: true
+  docker:
+    compose:
+      enabled: false
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            url: https://apis.abc.necoa.do
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: FULL
+          oms:
+            url: https://apis.abc.necoa.do
+            connectTimeout: 60000
+            readTimeout: 60000
+            loggerLevel: BASIC
+project:
+  accounting:
+    temp-file-path: /Users/Shared/upload/accounting/payout/file/
+scheduling:
+  credentials:
+    enabled: true
+    refresh:
+      time-unit: MINUTES
+      fixed-delay: 10    # 10분
+      initial-delay: 1 # 1분
+credential:
+  playground: PRODUCTION
+  profile : prd
+  redirectUri: https://apis.abc.necoa.do/accounting/v1/qbo/oauth2/redirect

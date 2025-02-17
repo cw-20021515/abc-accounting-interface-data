@@ -1,0 +1,116 @@
+{
+  "$id": "/commons/v1/common-masters/master-schemas/RentalDistributionRule/schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rental Distribution Rule",
+  "description": "렌탈 안분(분할) 규칙",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "material_id": {
+        "type": "string",
+        "description": "자재ID"
+      },
+      "material_series_code": {
+        "type": "string",
+        "description": "품목코드 (시리즈코드)"
+      },
+      "rental_code": {
+        "type": "string",
+        "description": "렌탈코드"
+      },
+      "material_care_type": {
+        "type": "string",
+        "description": "제품 관리방식(자가관리, 방문관리), https://abc.necoa.dev/system/common-codes/common-code?id=MaterialCareType"
+      },
+      "lease_type": {
+        "type": "string",
+        "description": "회계처리 유형(운용리스, 금융리스), https://abc.necoa.dev/system/common-codes/common-code?id=LeaseType"
+      },
+      "commitment_duration": {
+        "type": "integer",
+        "description": "약정기간"
+      },
+      "adjusted_commitment_duration": {
+        "type": "integer",
+        "description": "조정 약정기간"
+      },
+      "dist_value_m01": {
+        "type": "number",
+        "description": "안분 금액 - 재화(M01)"
+      },
+      "dist_value_r01": {
+        "type": "number",
+        "description": "안분 금액 - 교체품1(R01)"
+      },
+      "dist_value_r02": {
+        "type": "number",
+        "description": "안분 금액 - 교체품2(R02)"
+      },
+      "dist_value_r03": {
+        "type": "number",
+        "description": "안분 금액 - 교체품3(R03)"
+      },
+      "dist_value_s01": {
+        "type": "number",
+        "description": "안분 금액 - 서비스(S01)"
+      },
+      "dist_ratio_m01": {
+        "type": "number",
+        "description": "안분 비율 - 재화(M01)"
+      },
+      "dist_ratio_r01": {
+        "type": "number",
+        "description": "안분 비율 - 교체품1(R01)"
+      },
+      "dist_ratio_r02": {
+        "type": "number",
+        "description": "안분 비율 - 교체품2(R02)"
+      },
+      "dist_ratio_r03": {
+        "type": "number",
+        "description": "안분 비율 - 교체품3(R03)"
+      },
+      "dist_ratio_s01": {
+        "type": "number",
+        "description": "안분 비율 - 서비스(S01)"
+      },
+      "dist_price_m01": {
+        "type": "number",
+        "description": "안분 가격 - 재화(M01)"
+      },
+      "dist_price_r01": {
+        "type": "number",
+        "description": "안분 가격 - 교체품1(R01)"
+      },
+      "dist_price_r02": {
+        "type": "number",
+        "description": "안분 가격 - 교체품2(R02)"
+      },
+      "dist_price_r03": {
+        "type": "number",
+        "description": "안분 가격 - 교체품3(R03)"
+      },
+      "dist_price_s01": {
+        "type": "number",
+        "description": "안분 가격 - 서비스(S01)"
+      }
+    },
+    "required": [
+      "material_id",
+      "material_series_code",
+      "rental_code",
+      "material_care_type",
+      "lease_type",
+      "commitment_duration",
+      "adjusted_commitment_duration",
+      "dist_value_m01",
+      "dist_value_s01",
+      "dist_ratio_m01",
+      "dist_ratio_s01",
+      "dist_price_m01",
+      "dist_price_s01"
+    ],
+    "additionalProperties": false
+  }
+}

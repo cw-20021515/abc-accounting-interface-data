@@ -1,0 +1,193 @@
+// Company table
+Table company {
+  code varchar(4) [pk, note: '회사코드']
+  name varchar(255) [not null, note: '회사명']
+  description varchar(255) [not null, note: '회사 설명']
+  country varchar(2) [not null, note: '국가']
+  currency varchar(3) [not null, note: '통화']
+  timezone varchar(20) [not null, note: '시간대']
+  fiscal_start_month int [not null, default: 1, note: '회계시작월']
+  is_active char(1) [not null, default: 'Y', note: '사용여부']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+  created_by varchar(255) [note: '생성자']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정 일시']
+  updated_by varchar(255) [note: '수정자']
+
+  Note: 'Account table for managing financial accounts'
+}
+
+// Account table
+Table account {
+  company_code varchar(4) [not null, note: '회사코드']
+  account_code varchar(10) [not null, note: '계정코드']
+  name varchar(255) [not null, note: '계정이름(영어)']
+  description varchar(255) [not null, note: '계정설명(한글)']
+  account_type varchar(10) [not null, note: '계정유형']
+  account_class varchar(10) [not null, note: '계정유형 (예: 자산, 부채, 수익, 비용 등)']
+  is_active char(1) [not null, note: 'Active 여부에 활용']
+  is_open_item_mgmt char(1) [not null, note: '미결관리 여부']
+  qbo_account_type varchar(50) [not null, note: 'Quickbook 계정유형']
+  qbo_account_subtype varchar(50) [not null, note: 'Quickbook 계정서브유형']
+  system_source varchar(10) [not null, note: '시스템 소스 유형']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정 일시']
+
+  indexes {
+    (company_code, account_code) [pk]
+  }
+
+  Note: 'Account table for managing financial accounts'
+}
+
+// Account Group table
+Table account_group {
+  id varchar(10) [pk, note: '계정그룹ID']
+  company_code varchar(4) [not null, note: '회사코드']
+  code varchar(10) [not null, note: '계정그룹코드']
+  level integer [not null, note: '계정그룹 레벨']
+  description varchar(255) [note: '그룹 설명']
+  name varchar(255) [not null, note: '계정그룹 이름']
+  parent_id varchar(10) [note: '부모 그룹ID']
+  start_account_code varchar(10) [not null, note: '계정코드 시작값']
+  end_account_code varchar(10) [not null, note: '계정코드 종료값']
+  is_active char(1) [not null, note: 'Active 여부']
+  system_source varchar(10) [not null, note: '시스템 소스 유형']
+  create_time timestamp [default: `CURRENT_TIMESTAMP`, note: '생성 일시']
+  update_time timestamp [default: `CURRENT_TIMESTAMP`, note: '수정 일시']
+
+  Note: 'Account grouping table for hierarchical account structure'
+}
+
+// Consolidation Account table
+Table consolidation_account {
+  code varchar(10) [pk, note: '연결계정코드']
+  level integer [not null, note: '연결계정레벨']
+  parent_code varchar(10) [note: '상위연결계정코드']
+  name varchar(255) [not null, note: '계정명']
+  eng_name varchar(255) [not null, note: '계정명(영어)']
+  description varchar(255) [note: '계정설명']
+  is_postable char(1) [not null, note: '기표가능여부']
+  is_active char(1) [not null, note: '사용여부']
+  system_source varchar(255) [not null]
+  create_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성일시']
+  created_by varchar(255) [note: '생성자']
+  update_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '수정일시']
+  updated_by varchar(255) [note: '수정자']
+
+  Note: '연결계정(ECM)'
+}
+
+// Account Balance table
+Table account_balance {
+  company_code varchar(4) [not null, note: '회사 코드']
+  account_code varchar(255) [not null, note: '계정 코드']
+  account_nature varchar(50) [not null, note: '계정 차대구분']
+  doc_item_id varchar(255) [not null, note: '전표 항목 ID']
+  document_date date [not null, note: '증빙일']
+  posting_date date [not null, note: '전기일']
+  entry_date date [not null, note: '발행일']
+  balance NUMERIC(38,2) [not null, note: '잔액']
+  accumulated_debit NUMERIC(38,2) [not null, note: '차변 누적액']
+  accumulated_credit NUMERIC(38,2) [not null, note: '대변 누적액']
+  record_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '기록 시간']
+
+  indexes {
+    (company_code, account_code) [pk]
+  }
+
+  Note: '계정 잔액'
+}
+
+// Account Balance Record table
+Table account_balance_record {
+  id bigint [pk, note: 'ID']
+  company_code varchar(4) [not null, note: '회사 코드']
+  account_code varchar(255) [not null, note: '계정 코드']
+  account_nature varchar(50) [not null, note: '계정 차대구분']
+  doc_item_id varchar(255) [not null, note: '전표 항목 ID']
+  document_date date [not null, note: '증빙일']
+  posting_date date [not null, note: '전기일']
+  entry_date date [not null, note: '발행일']
+  record_type varchar(50) [not null, note: '기록 유형']
+  change_amount NUMERIC(38,2) [not null, note: '변경 금액']
+  balance_after_change NUMERIC(38,2) [not null, note: '변경 후 잔액']
+  accumulated_debit_after_change NUMERIC(38,2) [not null, note: '변경 후 차변 누적액']
+  accumulated_credit_after_change NUMERIC(38,2) [not null, note: '변경 후 대변 누적액']
+  record_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '기록 시간']
+
+  indexes {
+    (company_code, account_code, id) [name: 'idx_account_balance_record_account']
+    record_time [name: 'idx_account_balance_record_time']
+  }
+
+  Note: '계정 잔액 변경 기록'
+}
+
+// Fiscal Closing table
+Table fiscal_closing {
+  company_code varchar(4) [not null, note: '회사 코드']
+  fiscal_year integer [not null, note: '회계연도']
+  fiscal_month integer [not null, note: '회계월']
+  status varchar(10) [not null, note: '상태']
+  reason varchar(255) [not null, note: '사유']
+  create_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성일시']
+  created_by varchar(255) [note: '생성자']
+  update_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '수정일시']
+  updated_by varchar(255) [note: '수정자']
+  version bigint [not null, default: 0]
+
+  indexes {
+    (company_code, fiscal_year, fiscal_month) [pk]
+  }
+
+  Note: '회계 월 마감 정보'
+}
+
+// Fiscal Closing History table
+Table fiscal_closing_history {
+  id bigint [pk, note: 'ID']
+  company_code varchar(4) [not null, note: '회사 코드']
+  fiscal_year integer [not null, note: '회계연도']
+  fiscal_month integer [not null, note: '회계월']
+  status varchar(10) [not null, note: '상태']
+  reason varchar(255) [not null, note: '사유']
+  create_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성일시']
+  created_by varchar(255) [note: '생성자']
+  update_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '수정일시']
+  updated_by varchar(255) [note: '수정자']
+
+  Note: '회계 월 마감 정보 이력'
+}
+
+// Fiscal Closing Balance Snapshot table
+Table fiscal_closing_balance_snapshot {
+  id bigint [pk, note: 'ID']
+  company_code varchar(4) [not null, note: '회사 코드']
+  fiscal_year integer [not null]
+  fiscal_month integer [not null]
+  account_code varchar(255) [not null, note: '계정 코드']
+  account_nature varchar(50) [not null, note: '계정 차대구분']
+  balance numeric(38,6) [not null, note: '잔액']
+  accumulated_debit numeric(38,6) [not null, note: '차변 누계액']
+  accumulated_credit numeric(38,6) [not null, note: '대변 누계액']
+  snapshot_date date [not null, note: '스냅샷 날짜']
+  snapshot_type varchar(50) [not null, note: '스냅샷 유형']
+  created_time timestamp [not null, default: `CURRENT_TIMESTAMP`, note: '생성 시간']
+
+  indexes {
+    (company_code, fiscal_year, fiscal_month) [name: 'idx_fiscal_closing_balance_snapshot_fiscal_key']
+    (company_code, account_code) [name: 'idx_fiscal_closing_balance_snapshot_account']
+  }
+
+  Note: '회계 월별 마감 잔액 스냅샷'
+}
+
+// Relationships
+Ref: account.company_code > company.code
+Ref: account_group.parent_id > account_group.id
+Ref: consolidation_account.parent_code > consolidation_account.code
+Ref: account_balance.company_code > company.code
+Ref: account_balance_record.company_code > company.code
+Ref: fiscal_closing.company_code > company.code
+Ref: fiscal_closing_history.company_code > company.code
+Ref: fiscal_closing_balance_snapshot.company_code > company.code

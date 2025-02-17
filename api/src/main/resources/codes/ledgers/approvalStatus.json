@@ -1,0 +1,22 @@
+[
+  {
+    "code": "I",
+    "name": "Initial"
+  },
+  {
+    "code": "S",
+    "name": "Submitted"
+  },
+  {
+    "code": "W",
+    "name": "Waiting"
+  },
+  {
+    "code": "R",
+    "name": "Rejected"
+  },
+  {
+    "code": "A",
+    "name": "Approved"
+  }
+]
