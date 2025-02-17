@@ -1,0 +1,89 @@
+COPY if_channel(channel_id,channel_type,channel_name,channel_detail,create_time,update_time)
+    FROM '/data/iface/oms_old/if_channel.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_charge(id,charge_id,charge_status,last_charge_status,billing_cycle,target_month,contract_id,start_date,end_date,create_time,update_time)
+    FROM '/data/iface/oms_old/if_charge.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_charge_invoice(id,charge_id,invoice_id,create_time,update_time)
+    FROM '/data/iface/oms_old/if_charge_invoice.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_charge_item(charge_item_id,charge_item_type,quantity,subtotal_price,item_price,discount_price,prepaid_amount,promotions,currency,is_tax_exempt,charge_id,service_flow_id,material_id,create_time,update_time)
+    FROM '/data/iface/oms_old/if_charge_item.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_charge_payment(id,payment_id,transaction_type,charge_id,invoice_id,transaction_id,payment_method,payment_time,total_price,tax,subtotal_price,charge_items,tax_lines,installment_months,currency,address)
+    FROM '/data/iface/oms_old/if_charge_payment.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_contract(id,contract_id,contract_status,last_contract_status,rental_code,order_item_id,customer_id,start_date,end_date,duration_in_months,payment_day,create_time,update_time)
+    FROM '/data/iface/oms_old/if_contract.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_customer(customer_id,email,phone,user_id,last_name,first_name,account_type,customer_status,referrer_code,create_time,update_time)
+    FROM '/data/iface/oms_old/if_customer.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_customer(customer_id,email,phone,user_id,last_name,first_name,account_type,customer_status,referrer_code,create_time,update_time)
+    FROM '/data/iface/oms_old/if_customer_vendor.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_invoice(id,invoice_id,contract_id,invoice_status,billing_month,payment_due_date,total_price,charges,create_time,update_time)
+    FROM '/data/iface/oms_old/if_invoice.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_material(material_id,material_type,material_model_name,material_name,material_model_name_prefix,material_series_code,material_series_name,material_category_code,material_category_name,manufacturer_code,brand_name,product_type,feature_code,filter_type,installation_type,shipping_method_type,description,create_time,update_time)
+    FROM '/data/iface/oms_old/if_material.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_onetime_payment(id,payment_id,transaction_type,order_id,transaction_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,prepaid_amount,registration_price,promotions,tax_lines,address,refund,update_time)
+    FROM '/data/iface/oms_old/if_onetime_payment.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_onetime_payment(id,payment_id,transaction_type,order_id,transaction_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,prepaid_amount,registration_price,promotions,tax_lines,address,refund,update_time)
+    FROM '/data/iface/oms_old/if_onetime_payment_2502.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_order_item(id,order_item_id,order_item_status,last_order_item_status,order_product_type,order_item_type,order_id,channel_id,customer_id,referrer_code,contract_id,material_id,quantity,address,tax,tax_lines,subtotal_price,item_price,discount_price,registration_price,create_time,update_time)
+    FROM '/data/iface/oms_old/if_order_item.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_order_item(id,order_item_id,order_item_status,last_order_item_status,order_product_type,order_item_type,order_id,channel_id,customer_id,referrer_code,contract_id,material_id,quantity,address,tax,tax_lines,subtotal_price,item_price,discount_price,registration_price,create_time,update_time)
+    FROM '/data/iface/oms_old/if_order_item_2502.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_service_charge(id,service_charge_id,charge_status,last_charge_status,service_flow_id,service_billing_type,create_time,update_time)
+    FROM '/data/iface/oms_old/if_service_charge.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_service_charge_item(id,charge_item_id,charge_item_type,quantity,subtotal_price,item_price,discount_price,prepaid_amount,promotions,currency,is_tax_exempt,create_time,update_time,service_charge_id,material_id)
+    FROM '/data/iface/oms_old/if_service_charge_item.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_service_charge_payment(id,payment_id,transaction_type,transaction_id,service_charge_id,payment_method,payment_time,currency,total_price,tax,subtotal_price,item_price,discount_price,charge_items,tax_lines,address,create_time,update_time)
+    FROM '/data/iface/oms_old/if_service_charge_payment.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+COPY if_service_flow(id,service_flow_id,service_status,last_service_status,service_type,install_id,serial_number,branch_id,warehouse_id,technician_id,order_item_id,create_time,update_time)
+    FROM '/data/iface/oms_old/if_service_flow.csv'
+    DELIMITER ','
+    CSV HEADER;

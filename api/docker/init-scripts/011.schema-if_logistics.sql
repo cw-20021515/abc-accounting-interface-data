@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS  "if_inventory_movement"
     "service_flow_id" varchar,
     "inbound_purchase_order_item_id" varchar,
     "inbound_bl_no" varchar,
-    "material_id" varchar,
+    "material_id" varchar not null,
     "grade" varchar NOT NULL,
     "quantity" int NOT NULL,
     "create_time" timestamp(6) with time zone NOT NULL
