@@ -1,0 +1,1666 @@
+-- INSERT INTO if_purchase_order_item (
+--     purchase_order_id,
+--     purchase_order_item_id,
+--     material_id,
+--     quantity,
+--     unit_price,
+--     currency,
+--     create_time
+-- )
+-- SELECT
+--     purchase_order_id,
+--     id AS purchase_order_item_id,
+--     material_id,
+--     quantity,
+--     unit_price,
+--     currency,
+--     create_time
+-- FROM purchase_order_item p
+-- WHERE 1=1
+--   AND NOT EXISTS (
+--     SELECT 1
+--     FROM if_purchase_order_item ipoi
+--     WHERE ipoi.purchase_order_item_id = p.id
+-- );
+--
+--
+-- INSERT INTO if_purchase_order (
+--     purchase_order_id,
+--     purchase_order_status,
+--     vendor_id,
+--     customer_id,
+--     create_time
+-- )
+-- SELECT id,
+--        purchase_order_status,
+--        vendor_id,
+--        NULL,
+--        create_time
+-- FROM purchase_order p
+-- WHERE 1=1
+--   AND NOT EXISTS (
+--     SELECT 1 FROM if_purchase_order ipo WHERE ipo.purchase_order_id = p.id
+-- );
+--
+--
+--
+-- INSERT INTO if_warehouse (
+--     warehouse_id,
+--     parent_warehouse_id,
+--     name,
+--     warehouse_type,
+--     time_zone,
+--     is_active,
+--     create_time
+-- )
+-- SELECT
+--     id,
+--     parent_warehouse_id,
+--     name,
+--     warehouse_type,
+--     'America/Chicago' AS time_zone,
+--     CASE
+--         WHEN is_active = TRUE THEN 'Y'
+--         ELSE 'N'
+--         END AS is_active,
+--     create_time
+-- FROM warehouse w
+-- WHERE NOT EXISTS (
+--     SELECT 1 FROM if_warehouse iw WHERE iw.warehouse_id = w.id
+-- );
+--
+-- WITH id_purchase_order_cte AS (
+--     SELECT
+--         inbound_warehouse_id AS soruce_warehouse_id,
+--         null AS detination_warehouse_id,
+--         null AS warehouse_transfer_id,
+--         'INBOUND' AS movement_category,
+--         'INBOUND_PURCHASE' AS movement_group,
+--         'INBOUND_PURCHASE_ORDER' AS movement_type,
+--         po_item.id AS inbound_purchase_order_item_id,
+--         a.bill_of_lading_number AS inbound_bl_no,
+--         a.service_flow_id as service_flow_id,
+--         b.material_id AS material_id,
+--         'GRADE_A' AS grade,
+--         b.receive_quantity AS quantity,
+--         CASE WHEN b.receive_quantity = b.quantity
+--                  THEN 'COMPLETED'
+--              ELSE 'PARTIALLY_RECEIVED'
+--             END AS transfer_status,
+--         a.complete_time AS create_time
+--     FROM inbound_delivery a
+--              JOIN inbound_delivery_item b
+--                   ON a.id = b.inbound_delivery_id
+--              JOIN purchase_order_item po_item
+--                   ON a.purchase_order_id = po_item.purchase_order_id
+--                       AND b.material_id = po_item.material_id
+--     WHERE 1=1
+--       AND a.inbound_delivery_status = 'COMPLETED'
+--       AND a.inbound_delivery_type = 'PURCHASE_ORDER'
+--     ORDER BY a.create_time DESC
+-- ),
+--      id_warehouse_transfer_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   LEFT JOIN warehouse_transfer c
+--                             ON c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_technician_hold_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   LEFT JOIN warehouse_transfer c
+--                             ON c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_install_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   LEFT JOIN warehouse_transfer c
+--                             ON c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'INSTALL'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_inventory_adjustment_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_ADJUSTMENT' AS movement_group,
+--              'INBOUND_INVENTORY_ADJUSTMENT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   LEFT JOIN warehouse_transfer c
+--                             ON c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'INVENTORY_ADJUSTMENT'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--
+--      ),
+--      id_uninstalled_to_technician_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_RETURN' AS movement_group,
+--              'INBOUND_CUSTOMER_RETURN' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'UNINSTALLED_TO_TECHNICIAN'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_uninstalled_to_warehouse_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   LEFT join warehouse_transfer c
+--                             on c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND inbound_delivery_type = 'UNINSTALLED_TO_WAREHOUSE'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_technician_hold_return_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_install_canceled_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              CASE WHEN b.receive_quantity = b.quantity
+--                       THEN 'COMPLETED'
+--                   ELSE 'PARTIALLY_RECEIVED'
+--                  END AS transfer_status,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.inbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND a.inbound_delivery_type = 'INSTALL_CANCELED'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      combined_inbound_cte AS (
+--          SELECT * FROM id_purchase_order_cte
+--          UNION ALL
+--          SELECT * FROM id_warehouse_transfer_cte
+--          UNION ALL
+--          SELECT * FROM id_technician_hold_cte
+--          UNION ALL
+--          SELECT * FROM id_install_cte
+--          UNION ALL
+--          SELECT * FROM id_inventory_adjustment_cte
+--          UNION ALL
+--          SELECT * FROM id_uninstalled_to_technician_cte
+--          UNION ALL
+--          SELECT * FROM id_uninstalled_to_warehouse_cte
+--          UNION ALL
+--          SELECT * FROM id_technician_hold_return_cte
+--          UNION ALL
+--          SELECT * FROM id_install_canceled_cte
+--      ),
+--      od_courier_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'COURIER'
+--      ),
+--      od_install_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL'
+--      ),
+--      od_warehouse_transfer_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--      ),
+--      od_technician_hold_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD'
+--      ),
+--      od_inventory_adjustment_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_ADJUSTMENT' AS movement_group,
+--              'OUTBOUND_INVENTORY_ADJUSTMENT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INVENTORY_ADJUSTMENT'
+--      ),
+--      od_after_sales_service_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE'
+--      ),
+--      od_uninstalled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'UNINSTALLED_RETURN'
+--
+--      ),
+--      od_technician_hold_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--
+--      ),
+--      od_install_canceled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL_CANCELED_RETURN'
+--      ),
+--      od_after_sales_service_canceled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   left join warehouse_transfer c
+--                             on c.outbound_delivery_id = a.id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE_CANCELED_RETURN'
+--
+--      ),
+--      od_installed_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALLED'
+--      ),
+--      od_after_sales_service_completed_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              'SHIPPED' as transfer_status,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE 1=1
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE_COMPLETED'
+--      ),
+--      combined_outbound_cte AS (
+--          SELECT * FROM od_courier_cte
+--          UNION ALL
+--          SELECT * FROM od_install_cte
+--          UNION ALL
+--          SELECT * FROM od_warehouse_transfer_cte
+--          UNION ALL
+--          SELECT * FROM od_technician_hold_cte
+--          UNION ALL
+--          SELECT * FROM od_inventory_adjustment_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_cte
+--          UNION ALL
+--          SELECT * FROM od_uninstalled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_technician_hold_return_cte
+--          UNION ALL
+--          SELECT * FROM od_install_canceled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_canceled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_installed_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_completed_cte
+--      )
+-- INSERT INTO if_inventory_movement (
+--     source_warehouse_id,
+--     destination_warehouse_id,
+--     warehouse_transfer_id,
+--     movement_category,
+--     movement_group,
+--     movement_type,
+--     inbound_purchase_order_item_id,
+--     inbound_bl_no,
+--     service_flow_id,
+--     material_id,
+--     grade,
+--     quantity,
+--     transfer_status,
+--     create_time
+-- )
+-- SELECT *
+-- FROM (
+--          SELECT * FROM combined_inbound_cte
+--          UNION ALL
+--          SELECT * FROM combined_outbound_cte
+--      ) AS movement_data
+-- ORDER BY create_time ASC;
+--
+--
+--
+-- --------이전 내용
+--
+-- WITH id_purchase_order_cte AS (
+--     SELECT
+--         inbound_warehouse_id AS soruce_warehouse_id,
+--         null AS detination_warehouse_id,
+--         null AS warehouse_transfer_id,
+--         'INBOUND' AS movement_category,
+--         'INBOUND_PURCHASE' AS movement_group,
+--         'INBOUND_PURCHASE_ORDER' AS movement_type,
+--         po_item.id AS inbound_purchase_order_item_id,
+--         a.bill_of_lading_number AS inbound_bl_no,
+--         a.service_flow_id as service_flow_id,
+--         b.material_id AS material_id,
+--         'GRADE_A' AS grade,
+--         b.receive_quantity AS quantity,
+--         a.complete_time AS create_time
+--     FROM inbound_delivery a
+--              JOIN inbound_delivery_item b
+--                   ON a.id = b.inbound_delivery_id
+--              JOIN purchase_order_item po_item
+--                   ON a.purchase_order_id = po_item.purchase_order_id
+--                       AND b.material_id = po_item.material_id
+--     WHERE a.create_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--       AND a.inbound_delivery_status = 'COMPLETED'
+--       AND a.inbound_delivery_type = 'PURCHASE_ORDER'
+--     ORDER BY a.create_time DESC
+-- ),
+--      id_warehouse_transfer_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      id_technician_hold_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      id_install_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'INSTALL'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'INSTALL'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      id_inventory_adjustment_cte AS (
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_ADJUSTMENT' AS movement_group,
+--              'INBOUND_INVENTORY_ADJUSTMENT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'INVENTORY_ADJUSTMENT'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--
+--      ),
+--      id_uninstalled_to_technician_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_RETURN' AS movement_group,
+--              'INBOUND_CUSTOMER_RETURN' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'UNINSTALLED_TO_TECHNICIAN'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--      ),
+--      id_uninstalled_to_warehouse_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND inbound_delivery_type = 'UNINSTALLED_TO_WAREHOUSE'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'UNINSTALLED_TO_WAREHOUSE'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      id_technician_hold_return_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      id_install_canceled_cte AS (
+--          select
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'INBOUND' AS movement_category,
+--              'INBOUND_TRANSFER' AS movement_group,
+--              'INBOUND_TRANSFER_FROM_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.receive_quantity AS quantity,
+--              a.complete_time AS create_time
+--          from inbound_delivery a
+--                   join inbound_delivery_item b
+--                        on a.id = b.inbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'INSTALL_CANCELED'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          UNION ALL
+--          SELECT
+--              inbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              0 AS quantity,
+--              a.complete_time AS create_time
+--          FROM inbound_delivery a
+--                   JOIN inbound_delivery_item b
+--                        ON a.id = b.inbound_delivery_id
+--                   JOIN warehouse_transfer c
+--                        ON c.inbound_delivery_id = a.id
+--          WHERE a.complete_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND a.inbound_delivery_type = 'INSTALL_CANCELED'
+--            AND a.inbound_delivery_status = 'COMPLETED'
+--          ORDER BY create_time
+--      ),
+--      combined_inbound_cte AS (
+--          SELECT * FROM id_purchase_order_cte
+--          UNION ALL
+--          SELECT * FROM id_warehouse_transfer_cte
+--          UNION ALL
+--          SELECT * FROM id_technician_hold_cte
+--          UNION ALL
+--          SELECT * FROM id_install_cte
+--          UNION ALL
+--          SELECT * FROM id_inventory_adjustment_cte
+--          UNION ALL
+--          SELECT * FROM id_uninstalled_to_technician_cte
+--          UNION ALL
+--          SELECT * FROM id_uninstalled_to_warehouse_cte
+--          UNION ALL
+--          SELECT * FROM id_technician_hold_return_cte
+--          UNION ALL
+--          SELECT * FROM id_install_canceled_cte
+--      ),
+--      od_courier_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'COURIER'
+--      ),
+--      od_install_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL'
+--          order by create_time
+--
+--      ),
+--      od_warehouse_transfer_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'WAREHOUSE_TRANSFER'
+--          order by create_time
+--      ),
+--      od_technician_hold_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD'
+--          order by create_time
+--      ),
+--      od_inventory_adjustment_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_ADJUSTMENT' AS movement_group,
+--              'OUTBOUND_INVENTORY_ADJUSTMENT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INVENTORY_ADJUSTMENT'
+--      ),
+--      od_after_sales_service_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE'
+--          order by create_time
+--      ),
+--      od_uninstalled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'UNINSTALLED_RETURN'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'UNINSTALLED_RETURN'
+--          order by create_time
+--      ),
+--      od_technician_hold_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'TECHNICIAN_HOLD_RETURN'
+--          order by create_time
+--      ),
+--      od_install_canceled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL_CANCELED_RETURN'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALL_CANCELED_RETURN'
+--          order by create_time
+--      ),
+--      od_after_sales_service_canceled_return_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_TRANSFER' AS movement_group,
+--              'OUTBOUND_TRANSFER_TO_OTHER_WAREHOUSE' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE_CANCELED_RETURN'
+--          UNION ALL
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              c.to_warehouse_id AS detination_warehouse_id,
+--              c.id AS warehouse_transfer_id,
+--              'IN_TRANSIT' AS movement_category,
+--              'IN_TRANSIT' AS movement_group,
+--              'IN_TRANSIT' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_B' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--                   join warehouse_transfer c
+--                        on c.outbound_delivery_id = a.id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE_CANCELED_RETURN'
+--          order by create_time
+--      ),
+--      od_installed_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'INSTALLED'
+--      ),
+--      od_after_sales_service_completed_cte as (
+--          select
+--              outbound_warehouse_id AS soruce_warehouse_id,
+--              null AS detination_warehouse_id,
+--              null AS warehouse_transfer_id,
+--              'OUTBOUND' AS movement_category,
+--              'OUTBOUND_SALES' AS movement_group,
+--              'OUTBOUND_SALES_ORDER' AS movement_type,
+--              null AS inbound_purchase_order_item_id,
+--              null AS inbound_bl_no,
+--              a.service_flow_id as service_flow_id,
+--              b.material_id AS material_id,
+--              'GRADE_A' AS grade,
+--              b.quantity AS quantity,
+--              a.shipping_time AS create_time
+--          from outbound_delivery a
+--                   join outbound_delivery_item b
+--                        on a.id = b.outbound_delivery_id
+--          WHERE a.shipping_time BETWEEN '2024-11-01 00:00:00' AND '2025-01-31 23:59:59'
+--            AND outbound_delivery_status = 'SHIPPED'
+--            AND outbound_delivery_type = 'AFTER_SALES_SERVICE_COMPLETED'
+--      ),
+--      combined_outbound_cte AS (
+--          SELECT * FROM od_courier_cte
+--          UNION ALL
+--          SELECT * FROM od_install_cte
+--          UNION ALL
+--          SELECT * FROM od_warehouse_transfer_cte
+--          UNION ALL
+--          SELECT * FROM od_technician_hold_cte
+--          UNION ALL
+--          SELECT * FROM od_inventory_adjustment_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_cte
+--          UNION ALL
+--          SELECT * FROM od_uninstalled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_technician_hold_return_cte
+--          UNION ALL
+--          SELECT * FROM od_install_canceled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_canceled_return_cte
+--          UNION ALL
+--          SELECT * FROM od_installed_cte
+--          UNION ALL
+--          SELECT * FROM od_after_sales_service_completed_cte
+--      )
+-- INSERT INTO if_inventory_movement (
+--     source_warehouse_id,
+--     destination_warehouse_id,
+--     warehouse_transfer_id,
+--     movement_category,
+--     movement_group,
+--     movement_type,
+--     inbound_purchase_order_item_id,
+--     inbound_bl_no,
+--     service_flow_id,
+--     material_id,
+--     grade,
+--     quantity,
+--     create_time
+-- )
+-- SELECT *
+-- FROM (
+--          SELECT * FROM combined_inbound_cte
+--          UNION ALL
+--          SELECT * FROM combined_outbound_cte
+--      ) AS movement_data
+-- ORDER BY create_time ASC;
+--
+--
+-- INSERT INTO if_purchase_order_item (
+--     purchase_order_id,
+--     purchase_order_item_id,
+--     material_id,
+--     quantity,
+--     unit_price,
+--     currency,
+--     create_time
+-- )
+-- SELECT
+--     purchase_order_id,
+--     id AS purchase_order_item_id,
+--     material_id,
+--     quantity,
+--     unit_price,
+--     currency,
+--     create_time
+-- FROM purchase_order_item p
+-- WHERE 1=1
+--   AND NOT EXISTS (
+--     SELECT 1
+--     FROM if_purchase_order_item ipoi
+--     WHERE ipoi.purchase_order_item_id = p.id
+-- );
+--
+--
+-- INSERT INTO if_purchase_order (
+--     purchase_order_id,
+--     purchase_order_status,
+--     vendor_id,
+--     customer_id,
+--     create_time
+-- )
+-- SELECT id,
+--        purchase_order_status,
+--        vendor_id,
+--        NULL,
+--        create_time
+-- FROM purchase_order p
+-- WHERE 1=1
+--   AND NOT EXISTS (
+--     SELECT 1 FROM if_purchase_order ipo WHERE ipo.purchase_order_id = p.id
+-- );
+--
+-- INSERT INTO if_warehouse (
+--     warehouse_id,
+--     parent_warehouse_id,
+--     name,
+--     warehouse_type,
+--     time_zone,
+--     is_active,
+--     create_time
+-- )
+-- SELECT
+--     id,
+--     parent_warehouse_id,
+--     name,
+--     warehouse_type,
+--     'America/Chicago' AS time_zone,
+--     CASE
+--         WHEN is_active = TRUE THEN 'Y'
+--         ELSE 'N'
+--         END AS is_active,
+--     create_time
+-- FROM warehouse w
+-- WHERE NOT EXISTS (
+--     SELECT 1 FROM if_warehouse iw WHERE iw.warehouse_id = w.id
+-- );
+--
